@@ -1,0 +1,630 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0542FA0D19F99F4B004207EA /* LGVocabularyClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0542FA0C19F99F4B004207EA /* LGVocabularyClient.m */; };
+		0542FA0F19F9A6F5004207EA /* LGRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0542FA0E19F9A6F5004207EA /* LGRootViewController.swift */; };
+		0581057019F7FE7F000FB82A /* LGLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0581056F19F7FE7F000FB82A /* LGLoginViewController.swift */; };
+		0593007619F53CBD004526DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0593007519F53CBD004526DC /* AppDelegate.swift */; };
+		0593007919F53CBD004526DC /* lanGuruSwift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0593007719F53CBD004526DC /* lanGuruSwift.xcdatamodeld */; };
+		0593008019F53CBD004526DC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0593007F19F53CBD004526DC /* Images.xcassets */; };
+		0593008319F53CBD004526DC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0593008119F53CBD004526DC /* LaunchScreen.xib */; };
+		0593008F19F53CBD004526DC /* lanGuruSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0593008E19F53CBD004526DC /* lanGuruSwiftTests.swift */; };
+		0593009919F53CD9004526DC /* WebServiceClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0593009819F53CD9004526DC /* WebServiceClient.swift */; };
+		0593009F19F53CF4004526DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0593009E19F53CF4004526DC /* Main.storyboard */; };
+		059300A119F53CFD004526DC /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059300A019F53CFD004526DC /* CoreDataManager.swift */; };
+		059300A319F53D65004526DC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059300A219F53D65004526DC /* User.swift */; };
+		059300A519F53D66004526DC /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059300A419F53D66004526DC /* Word.swift */; };
+		059300AA19F546C2004526DC /* LGVocabularyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059300A919F546C2004526DC /* LGVocabularyTableViewController.swift */; };
+		059300AC19F552FB004526DC /* LGVocabularyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059300AB19F552FB004526DC /* LGVocabularyTableViewCell.swift */; };
+		059300B919F5576E004526DC /* PNTButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 059300B619F5576E004526DC /* PNTButton.m */; };
+		059300BA19F5576E004526DC /* PNTUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 059300B819F5576E004526DC /* PNTUtility.m */; };
+		059300BF19F55DF5004526DC /* LGGamingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059300BE19F55DF5004526DC /* LGGamingViewController.swift */; };
+		0593019419F590CA004526DC /* LGTrainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0593019319F590CA004526DC /* LGTrainingViewController.swift */; };
+		0593019A19F5A23E004526DC /* LGProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0593019919F5A23E004526DC /* LGProgressBar.m */; };
+		05FB9A7619F9393500FBD772 /* LGLoginClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FB9A7519F9393500FBD772 /* LGLoginClient.m */; };
+		05FB9A7919F939A900FBD772 /* LGCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FB9A7819F939A900FBD772 /* LGCoreDataManager.m */; };
+		05FB9A7C19F94A2E00FBD772 /* LGClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FB9A7B19F94A2E00FBD772 /* LGClient.m */; };
+		05FB9A8019F975C900FBD772 /* LGFacebookClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FB9A7F19F975C900FBD772 /* LGFacebookClient.m */; };
+		05FB9A8219F97EA200FBD772 /* LGProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FB9A8119F97EA200FBD772 /* LGProfileViewController.swift */; };
+		05FB9A8419F9920000FBD772 /* LGRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FB9A8319F9920000FBD772 /* LGRegistrationViewController.swift */; };
+		1D85B55CAF1C58C7672A8E72 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C62C723800CCDC4C71B44BF5 /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0593008919F53CBD004526DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0593006819F53CBD004526DC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0593006F19F53CBD004526DC;
+			remoteInfo = lanGuruSwift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0542FA0B19F99F4B004207EA /* LGVocabularyClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGVocabularyClient.h; path = BusinessLogic/LGVocabularyClient.h; sourceTree = "<group>"; };
+		0542FA0C19F99F4B004207EA /* LGVocabularyClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LGVocabularyClient.m; path = BusinessLogic/LGVocabularyClient.m; sourceTree = "<group>"; };
+		0542FA0E19F9A6F5004207EA /* LGRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LGRootViewController.swift; path = UI/LGRootViewController.swift; sourceTree = "<group>"; };
+		0581056F19F7FE7F000FB82A /* LGLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LGLoginViewController.swift; path = UI/LGLoginViewController.swift; sourceTree = "<group>"; };
+		0593007019F53CBD004526DC /* lanGuruSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lanGuruSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0593007419F53CBD004526DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0593007519F53CBD004526DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0593007819F53CBD004526DC /* lanGuruSwift.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = lanGuruSwift.xcdatamodel; sourceTree = "<group>"; };
+		0593007F19F53CBD004526DC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		0593008219F53CBD004526DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		0593008819F53CBD004526DC /* lanGuruSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lanGuruSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0593008D19F53CBD004526DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0593008E19F53CBD004526DC /* lanGuruSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lanGuruSwiftTests.swift; sourceTree = "<group>"; };
+		0593009819F53CD9004526DC /* WebServiceClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceClient.swift; sourceTree = "<group>"; };
+		0593009E19F53CF4004526DC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		059300A019F53CFD004526DC /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		059300A219F53D65004526DC /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		059300A419F53D66004526DC /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		059300A619F53DC2004526DC /* lanGuruSwift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "lanGuruSwift-Bridging-Header.h"; sourceTree = "<group>"; };
+		059300A919F546C2004526DC /* LGVocabularyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGVocabularyTableViewController.swift; sourceTree = "<group>"; };
+		059300AB19F552FB004526DC /* LGVocabularyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGVocabularyTableViewCell.swift; sourceTree = "<group>"; };
+		059300B519F5576E004526DC /* PNTButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNTButton.h; sourceTree = "<group>"; };
+		059300B619F5576E004526DC /* PNTButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNTButton.m; sourceTree = "<group>"; };
+		059300B719F5576E004526DC /* PNTUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNTUtility.h; sourceTree = "<group>"; };
+		059300B819F5576E004526DC /* PNTUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNTUtility.m; sourceTree = "<group>"; };
+		059300BE19F55DF5004526DC /* LGGamingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGGamingViewController.swift; sourceTree = "<group>"; };
+		0593019319F590CA004526DC /* LGTrainingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGTrainingViewController.swift; sourceTree = "<group>"; };
+		0593019819F5A23E004526DC /* LGProgressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGProgressBar.h; sourceTree = "<group>"; };
+		0593019919F5A23E004526DC /* LGProgressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGProgressBar.m; sourceTree = "<group>"; };
+		05FB9A7419F9393500FBD772 /* LGLoginClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGLoginClient.h; sourceTree = "<group>"; };
+		05FB9A7519F9393500FBD772 /* LGLoginClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGLoginClient.m; sourceTree = "<group>"; };
+		05FB9A7719F939A900FBD772 /* LGCoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGCoreDataManager.h; sourceTree = "<group>"; };
+		05FB9A7819F939A900FBD772 /* LGCoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGCoreDataManager.m; sourceTree = "<group>"; };
+		05FB9A7A19F94A2E00FBD772 /* LGClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGClient.h; path = BusinessLogic/LGClient.h; sourceTree = "<group>"; };
+		05FB9A7B19F94A2E00FBD772 /* LGClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LGClient.m; path = BusinessLogic/LGClient.m; sourceTree = "<group>"; };
+		05FB9A7E19F975C900FBD772 /* LGFacebookClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGFacebookClient.h; path = BusinessLogic/LGFacebookClient.h; sourceTree = "<group>"; };
+		05FB9A7F19F975C900FBD772 /* LGFacebookClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LGFacebookClient.m; path = BusinessLogic/LGFacebookClient.m; sourceTree = "<group>"; };
+		05FB9A8119F97EA200FBD772 /* LGProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LGProfileViewController.swift; path = UI/LGProfileViewController.swift; sourceTree = "<group>"; };
+		05FB9A8319F9920000FBD772 /* LGRegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LGRegistrationViewController.swift; path = UI/LGRegistrationViewController.swift; sourceTree = "<group>"; };
+		4CCF9536C539C4E903C538C5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		78A1DBED9B8503ADC4578BA9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		C62C723800CCDC4C71B44BF5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0593006D19F53CBD004526DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D85B55CAF1C58C7672A8E72 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0593008519F53CBD004526DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0593006719F53CBC004526DC = {
+			isa = PBXGroup;
+			children = (
+				0593007219F53CBD004526DC /* lanGuruSwift */,
+				0593008B19F53CBD004526DC /* lanGuruSwiftTests */,
+				0593007119F53CBD004526DC /* Products */,
+				A159276B8B3D7ED70020B1B5 /* Pods */,
+				6FDEB49FA8BE8EAE0319D58F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		0593007119F53CBD004526DC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0593007019F53CBD004526DC /* lanGuruSwift.app */,
+				0593008819F53CBD004526DC /* lanGuruSwiftTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0593007219F53CBD004526DC /* lanGuruSwift */ = {
+			isa = PBXGroup;
+			children = (
+				059300C419F57154004526DC /* UI */,
+				05FB9A7D19F973F300FBD772 /* Unused */,
+				059300C219F57130004526DC /* CoreData */,
+				059300BD19F55989004526DC /* objC */,
+				0593007519F53CBD004526DC /* AppDelegate.swift */,
+				0593009E19F53CF4004526DC /* Main.storyboard */,
+				0593008119F53CBD004526DC /* LaunchScreen.xib */,
+				0593007319F53CBD004526DC /* Supporting Files */,
+			);
+			path = lanGuruSwift;
+			sourceTree = "<group>";
+		};
+		0593007319F53CBD004526DC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0593007F19F53CBD004526DC /* Images.xcassets */,
+				0593007419F53CBD004526DC /* Info.plist */,
+				059300A619F53DC2004526DC /* lanGuruSwift-Bridging-Header.h */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0593008B19F53CBD004526DC /* lanGuruSwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				0593008E19F53CBD004526DC /* lanGuruSwiftTests.swift */,
+				0593008C19F53CBD004526DC /* Supporting Files */,
+			);
+			path = lanGuruSwiftTests;
+			sourceTree = "<group>";
+		};
+		0593008C19F53CBD004526DC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0593008D19F53CBD004526DC /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		059300BD19F55989004526DC /* objC */ = {
+			isa = PBXGroup;
+			children = (
+				05FB9A7319F9390F00FBD772 /* NetworkLogic */,
+				059300B519F5576E004526DC /* PNTButton.h */,
+				059300B619F5576E004526DC /* PNTButton.m */,
+				059300B719F5576E004526DC /* PNTUtility.h */,
+				059300B819F5576E004526DC /* PNTUtility.m */,
+				0593019819F5A23E004526DC /* LGProgressBar.h */,
+				0593019919F5A23E004526DC /* LGProgressBar.m */,
+			);
+			name = objC;
+			sourceTree = "<group>";
+		};
+		059300C219F57130004526DC /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				0593007719F53CBD004526DC /* lanGuruSwift.xcdatamodeld */,
+				059300A419F53D66004526DC /* Word.swift */,
+				059300A219F53D65004526DC /* User.swift */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		059300C419F57154004526DC /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				059300A919F546C2004526DC /* LGVocabularyTableViewController.swift */,
+				059300AB19F552FB004526DC /* LGVocabularyTableViewCell.swift */,
+				059300BE19F55DF5004526DC /* LGGamingViewController.swift */,
+				0593019319F590CA004526DC /* LGTrainingViewController.swift */,
+				0581056F19F7FE7F000FB82A /* LGLoginViewController.swift */,
+				05FB9A8119F97EA200FBD772 /* LGProfileViewController.swift */,
+				05FB9A8319F9920000FBD772 /* LGRegistrationViewController.swift */,
+				0542FA0E19F9A6F5004207EA /* LGRootViewController.swift */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		05FB9A7319F9390F00FBD772 /* NetworkLogic */ = {
+			isa = PBXGroup;
+			children = (
+				05FB9A7419F9393500FBD772 /* LGLoginClient.h */,
+				05FB9A7519F9393500FBD772 /* LGLoginClient.m */,
+				05FB9A7E19F975C900FBD772 /* LGFacebookClient.h */,
+				05FB9A7F19F975C900FBD772 /* LGFacebookClient.m */,
+				0542FA0B19F99F4B004207EA /* LGVocabularyClient.h */,
+				0542FA0C19F99F4B004207EA /* LGVocabularyClient.m */,
+				05FB9A7A19F94A2E00FBD772 /* LGClient.h */,
+				05FB9A7B19F94A2E00FBD772 /* LGClient.m */,
+				05FB9A7719F939A900FBD772 /* LGCoreDataManager.h */,
+				05FB9A7819F939A900FBD772 /* LGCoreDataManager.m */,
+			);
+			name = NetworkLogic;
+			sourceTree = "<group>";
+		};
+		05FB9A7D19F973F300FBD772 /* Unused */ = {
+			isa = PBXGroup;
+			children = (
+				059300A019F53CFD004526DC /* CoreDataManager.swift */,
+				0593009819F53CD9004526DC /* WebServiceClient.swift */,
+			);
+			name = Unused;
+			sourceTree = "<group>";
+		};
+		6FDEB49FA8BE8EAE0319D58F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C62C723800CCDC4C71B44BF5 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A159276B8B3D7ED70020B1B5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4CCF9536C539C4E903C538C5 /* Pods.debug.xcconfig */,
+				78A1DBED9B8503ADC4578BA9 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0593006F19F53CBD004526DC /* lanGuruSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0593009219F53CBD004526DC /* Build configuration list for PBXNativeTarget "lanGuruSwift" */;
+			buildPhases = (
+				D0764F274258FBD8D5E184A2 /* Check Pods Manifest.lock */,
+				0593006C19F53CBD004526DC /* Sources */,
+				0593006D19F53CBD004526DC /* Frameworks */,
+				0593006E19F53CBD004526DC /* Resources */,
+				77C01A897DAB92E10623D4B6 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = lanGuruSwift;
+			productName = lanGuruSwift;
+			productReference = 0593007019F53CBD004526DC /* lanGuruSwift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0593008719F53CBD004526DC /* lanGuruSwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0593009519F53CBD004526DC /* Build configuration list for PBXNativeTarget "lanGuruSwiftTests" */;
+			buildPhases = (
+				0593008419F53CBD004526DC /* Sources */,
+				0593008519F53CBD004526DC /* Frameworks */,
+				0593008619F53CBD004526DC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0593008A19F53CBD004526DC /* PBXTargetDependency */,
+			);
+			name = lanGuruSwiftTests;
+			productName = lanGuruSwiftTests;
+			productReference = 0593008819F53CBD004526DC /* lanGuruSwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0593006819F53CBD004526DC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Felix Belau";
+				TargetAttributes = {
+					0593006F19F53CBD004526DC = {
+						CreatedOnToolsVersion = 6.0.1;
+					};
+					0593008719F53CBD004526DC = {
+						CreatedOnToolsVersion = 6.0.1;
+						TestTargetID = 0593006F19F53CBD004526DC;
+					};
+				};
+			};
+			buildConfigurationList = 0593006B19F53CBD004526DC /* Build configuration list for PBXProject "lanGuruSwift" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0593006719F53CBC004526DC;
+			productRefGroup = 0593007119F53CBD004526DC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0593006F19F53CBD004526DC /* lanGuruSwift */,
+				0593008719F53CBD004526DC /* lanGuruSwiftTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0593006E19F53CBD004526DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0593009F19F53CF4004526DC /* Main.storyboard in Resources */,
+				0593008319F53CBD004526DC /* LaunchScreen.xib in Resources */,
+				0593008019F53CBD004526DC /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0593008619F53CBD004526DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		77C01A897DAB92E10623D4B6 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D0764F274258FBD8D5E184A2 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0593006C19F53CBD004526DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				059300A519F53D66004526DC /* Word.swift in Sources */,
+				0542FA0D19F99F4B004207EA /* LGVocabularyClient.m in Sources */,
+				05FB9A7C19F94A2E00FBD772 /* LGClient.m in Sources */,
+				0593019A19F5A23E004526DC /* LGProgressBar.m in Sources */,
+				05FB9A8019F975C900FBD772 /* LGFacebookClient.m in Sources */,
+				0593007919F53CBD004526DC /* lanGuruSwift.xcdatamodeld in Sources */,
+				059300BA19F5576E004526DC /* PNTUtility.m in Sources */,
+				05FB9A7619F9393500FBD772 /* LGLoginClient.m in Sources */,
+				05FB9A8219F97EA200FBD772 /* LGProfileViewController.swift in Sources */,
+				0542FA0F19F9A6F5004207EA /* LGRootViewController.swift in Sources */,
+				059300A319F53D65004526DC /* User.swift in Sources */,
+				0581057019F7FE7F000FB82A /* LGLoginViewController.swift in Sources */,
+				059300B919F5576E004526DC /* PNTButton.m in Sources */,
+				059300BF19F55DF5004526DC /* LGGamingViewController.swift in Sources */,
+				05FB9A7919F939A900FBD772 /* LGCoreDataManager.m in Sources */,
+				0593019419F590CA004526DC /* LGTrainingViewController.swift in Sources */,
+				05FB9A8419F9920000FBD772 /* LGRegistrationViewController.swift in Sources */,
+				0593007619F53CBD004526DC /* AppDelegate.swift in Sources */,
+				059300AC19F552FB004526DC /* LGVocabularyTableViewCell.swift in Sources */,
+				059300AA19F546C2004526DC /* LGVocabularyTableViewController.swift in Sources */,
+				059300A119F53CFD004526DC /* CoreDataManager.swift in Sources */,
+				0593009919F53CD9004526DC /* WebServiceClient.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0593008419F53CBD004526DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0593008F19F53CBD004526DC /* lanGuruSwiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0593008A19F53CBD004526DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0593006F19F53CBD004526DC /* lanGuruSwift */;
+			targetProxy = 0593008919F53CBD004526DC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0593008119F53CBD004526DC /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0593008219F53CBD004526DC /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0593009019F53CBD004526DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0593009119F53CBD004526DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0593009319F53CBD004526DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4CCF9536C539C4E903C538C5 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = lanGuruSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "lanGuruSwift/lanGuruSwift-Bridging-Header.h";
+			};
+			name = Debug;
+		};
+		0593009419F53CBD004526DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78A1DBED9B8503ADC4578BA9 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = lanGuruSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "lanGuruSwift/lanGuruSwift-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		0593009619F53CBD004526DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = lanGuruSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/lanGuruSwift.app/lanGuruSwift";
+			};
+			name = Debug;
+		};
+		0593009719F53CBD004526DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = lanGuruSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/lanGuruSwift.app/lanGuruSwift";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0593006B19F53CBD004526DC /* Build configuration list for PBXProject "lanGuruSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0593009019F53CBD004526DC /* Debug */,
+				0593009119F53CBD004526DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0593009219F53CBD004526DC /* Build configuration list for PBXNativeTarget "lanGuruSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0593009319F53CBD004526DC /* Debug */,
+				0593009419F53CBD004526DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0593009519F53CBD004526DC /* Build configuration list for PBXNativeTarget "lanGuruSwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0593009619F53CBD004526DC /* Debug */,
+				0593009719F53CBD004526DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0593007719F53CBD004526DC /* lanGuruSwift.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0593007819F53CBD004526DC /* lanGuruSwift.xcdatamodel */,
+			);
+			currentVersion = 0593007819F53CBD004526DC /* lanGuruSwift.xcdatamodel */;
+			path = lanGuruSwift.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 0593006819F53CBD004526DC /* Project object */;
+}
