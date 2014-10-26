@@ -29,6 +29,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             vocabularyClient.downloadVocabularyWithCompletion(nil)
         }
         
+        //appearance
+        UITabBar.appearance().barTintColor = UIColor(red: 44/255.0, green: 64/255.0, blue: 84/255.0, alpha: 1)
+        
+        UINavigationBar.appearance().barTintColor = UIColor(red: 44/255.0, green: 64/255.0, blue: 84/255.0, alpha: 1)
+        
+        UITabBar.appearance().tintColor = UIColor(red: 0, green: 0.816, blue: 0.68, alpha: 1)
+        
         return true
     }
     

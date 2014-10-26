@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0503313919FD1FBB0089E7F1 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 0503313819FD1FBB0089E7F1 /* background.png */; };
+		0503313B19FD210D0089E7F1 /* LGChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0503313A19FD210D0089E7F1 /* LGChallengeViewController.swift */; };
+		0503313D19FD226F0089E7F1 /* LGRepeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0503313C19FD226F0089E7F1 /* LGRepeatViewController.swift */; };
+		0503314319FD27470089E7F1 /* ghost-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0503314219FD27470089E7F1 /* ghost-button.png */; };
+		0503314519FD2EC10089E7F1 /* LGFriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0503314419FD2EC10089E7F1 /* LGFriendTableViewCell.swift */; };
 		0542FA0D19F99F4B004207EA /* LGVocabularyClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0542FA0C19F99F4B004207EA /* LGVocabularyClient.m */; };
 		0542FA0F19F9A6F5004207EA /* LGRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0542FA0E19F9A6F5004207EA /* LGRootViewController.swift */; };
 		0581057019F7FE7F000FB82A /* LGLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0581056F19F7FE7F000FB82A /* LGLoginViewController.swift */; };
@@ -20,8 +25,6 @@
 		059300A119F53CFD004526DC /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059300A019F53CFD004526DC /* CoreDataManager.swift */; };
 		059300A319F53D65004526DC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059300A219F53D65004526DC /* User.swift */; };
 		059300A519F53D66004526DC /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059300A419F53D66004526DC /* Word.swift */; };
-		059300AA19F546C2004526DC /* LGVocabularyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059300A919F546C2004526DC /* LGVocabularyTableViewController.swift */; };
-		059300AC19F552FB004526DC /* LGVocabularyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059300AB19F552FB004526DC /* LGVocabularyTableViewCell.swift */; };
 		059300B919F5576E004526DC /* PNTButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 059300B619F5576E004526DC /* PNTButton.m */; };
 		059300BA19F5576E004526DC /* PNTUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 059300B819F5576E004526DC /* PNTUtility.m */; };
 		059300BF19F55DF5004526DC /* LGGamingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059300BE19F55DF5004526DC /* LGGamingViewController.swift */; };
@@ -47,6 +50,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0503313819FD1FBB0089E7F1 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		0503313A19FD210D0089E7F1 /* LGChallengeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LGChallengeViewController.swift; path = UI/LGChallengeViewController.swift; sourceTree = "<group>"; };
+		0503313C19FD226F0089E7F1 /* LGRepeatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LGRepeatViewController.swift; path = UI/LGRepeatViewController.swift; sourceTree = "<group>"; };
+		0503314219FD27470089E7F1 /* ghost-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ghost-button.png"; sourceTree = "<group>"; };
+		0503314419FD2EC10089E7F1 /* LGFriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LGFriendTableViewCell.swift; path = UI/LGFriendTableViewCell.swift; sourceTree = "<group>"; };
 		0542FA0B19F99F4B004207EA /* LGVocabularyClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGVocabularyClient.h; path = BusinessLogic/LGVocabularyClient.h; sourceTree = "<group>"; };
 		0542FA0C19F99F4B004207EA /* LGVocabularyClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LGVocabularyClient.m; path = BusinessLogic/LGVocabularyClient.m; sourceTree = "<group>"; };
 		0542FA0E19F9A6F5004207EA /* LGRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LGRootViewController.swift; path = UI/LGRootViewController.swift; sourceTree = "<group>"; };
@@ -66,8 +74,6 @@
 		059300A219F53D65004526DC /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		059300A419F53D66004526DC /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		059300A619F53DC2004526DC /* lanGuruSwift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "lanGuruSwift-Bridging-Header.h"; sourceTree = "<group>"; };
-		059300A919F546C2004526DC /* LGVocabularyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGVocabularyTableViewController.swift; sourceTree = "<group>"; };
-		059300AB19F552FB004526DC /* LGVocabularyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGVocabularyTableViewCell.swift; sourceTree = "<group>"; };
 		059300B519F5576E004526DC /* PNTButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNTButton.h; sourceTree = "<group>"; };
 		059300B619F5576E004526DC /* PNTButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNTButton.m; sourceTree = "<group>"; };
 		059300B719F5576E004526DC /* PNTUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNTUtility.h; sourceTree = "<group>"; };
@@ -149,6 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				0593007F19F53CBD004526DC /* Images.xcassets */,
+				0503314219FD27470089E7F1 /* ghost-button.png */,
+				0503313819FD1FBB0089E7F1 /* background.png */,
 				0593007419F53CBD004526DC /* Info.plist */,
 				059300A619F53DC2004526DC /* lanGuruSwift-Bridging-Header.h */,
 			);
@@ -199,14 +207,15 @@
 		059300C419F57154004526DC /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				059300A919F546C2004526DC /* LGVocabularyTableViewController.swift */,
-				059300AB19F552FB004526DC /* LGVocabularyTableViewCell.swift */,
 				059300BE19F55DF5004526DC /* LGGamingViewController.swift */,
 				0593019319F590CA004526DC /* LGTrainingViewController.swift */,
 				0581056F19F7FE7F000FB82A /* LGLoginViewController.swift */,
 				05FB9A8119F97EA200FBD772 /* LGProfileViewController.swift */,
 				05FB9A8319F9920000FBD772 /* LGRegistrationViewController.swift */,
+				0503313A19FD210D0089E7F1 /* LGChallengeViewController.swift */,
+				0503313C19FD226F0089E7F1 /* LGRepeatViewController.swift */,
 				0542FA0E19F9A6F5004207EA /* LGRootViewController.swift */,
+				0503314419FD2EC10089E7F1 /* LGFriendTableViewCell.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -337,6 +346,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0593009F19F53CF4004526DC /* Main.storyboard in Resources */,
+				0503313919FD1FBB0089E7F1 /* background.png in Resources */,
+				0503314319FD27470089E7F1 /* ghost-button.png in Resources */,
 				0593008319F53CBD004526DC /* LaunchScreen.xib in Resources */,
 				0593008019F53CBD004526DC /* Images.xcassets in Resources */,
 			);
@@ -401,14 +412,15 @@
 				0542FA0F19F9A6F5004207EA /* LGRootViewController.swift in Sources */,
 				059300A319F53D65004526DC /* User.swift in Sources */,
 				0581057019F7FE7F000FB82A /* LGLoginViewController.swift in Sources */,
+				0503313D19FD226F0089E7F1 /* LGRepeatViewController.swift in Sources */,
 				059300B919F5576E004526DC /* PNTButton.m in Sources */,
 				059300BF19F55DF5004526DC /* LGGamingViewController.swift in Sources */,
 				05FB9A7919F939A900FBD772 /* LGCoreDataManager.m in Sources */,
 				0593019419F590CA004526DC /* LGTrainingViewController.swift in Sources */,
+				0503314519FD2EC10089E7F1 /* LGFriendTableViewCell.swift in Sources */,
+				0503313B19FD210D0089E7F1 /* LGChallengeViewController.swift in Sources */,
 				05FB9A8419F9920000FBD772 /* LGRegistrationViewController.swift in Sources */,
 				0593007619F53CBD004526DC /* AppDelegate.swift in Sources */,
-				059300AC19F552FB004526DC /* LGVocabularyTableViewCell.swift in Sources */,
-				059300AA19F546C2004526DC /* LGVocabularyTableViewController.swift in Sources */,
 				059300A119F53CFD004526DC /* CoreDataManager.swift in Sources */,
 				0593009919F53CD9004526DC /* WebServiceClient.swift in Sources */,
 			);
