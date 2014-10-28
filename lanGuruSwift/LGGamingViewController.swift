@@ -34,7 +34,10 @@ class LGGamingViewController: UIViewController {
     
     var model = []
     var roundCounter : Int = 0
-
+    var localUserScore : Int = 0
+    
+    let matchClient : LGMatchClient = LGMatchClient.self()
+    let localUser : User = User.getLocalUser()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,8 +86,12 @@ class LGGamingViewController: UIViewController {
     {
         time -= 1
         progressBar.percent = time / 60.0;
+        //@Felix : todo timestamp + result mitgeben
+        let matchDictionary : [String : AnyObject] = ["id": self.match!.identity , "opponent": (self.localUser.username == self.match!.opponent1 ? "opponent1" : "opponent2"), "score" : self.localUserScore, "result" : "", "timestamp" : ""]
+        
+        matchClient.updateMatchScore(matchDictionary)
     }
-    
+
     @IBAction func answerButtonPressed(sender: PNTButton) {
         
         //for setting color in triangle buttons
@@ -94,7 +101,12 @@ class LGGamingViewController: UIViewController {
         
         touchedAnswerButton = sender
         
+        localUserScore = (sender.tag == 1) ? localUserScore+1 : localUserScore
+        
         updateSearchFieldViews()
+        
+        self.performSegueWithIdentifier("showPostScreen", sender: nil)
+
     }
     
     func updateAnswerButtons()
@@ -141,7 +153,6 @@ class LGGamingViewController: UIViewController {
             self.hiddenSearchField.frame = newFrame
             
             }, completion: { finished in
-                println("Basket doors opened!")
                 self.roundCounter++;
                 self.updateSearchFieldFrames()
                 self.updateAnswerButtons()
@@ -167,14 +178,19 @@ class LGGamingViewController: UIViewController {
 
 
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "showPostScreen"{
+            var destinationViewController : LGPostGameViewController = segue.destinationViewController as LGPostGameViewController
+            destinationViewController.match = self.match
+            destinationViewController.hidesBottomBarWhenPushed = true;
+        }
     }
-    */
+    
 
 }
