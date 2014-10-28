@@ -12,6 +12,7 @@
 		0503314519FD2EC10089E7F1 /* LGFriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0503314419FD2EC10089E7F1 /* LGFriendTableViewCell.swift */; };
 		0542FA0D19F99F4B004207EA /* LGVocabularyClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0542FA0C19F99F4B004207EA /* LGVocabularyClient.m */; };
 		0542FA0F19F9A6F5004207EA /* LGRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0542FA0E19F9A6F5004207EA /* LGRootViewController.swift */; };
+		0555FE261A005769009AA6EC /* lieutnant-rank.png in Resources */ = {isa = PBXBuildFile; fileRef = 0555FE251A005769009AA6EC /* lieutnant-rank.png */; };
 		057C81251A004174004C63AA /* LGMatchClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 057C81241A004174004C63AA /* LGMatchClient.m */; };
 		057C81311A004BA9004C63AA /* white-check.png in Resources */ = {isa = PBXBuildFile; fileRef = 057C81301A004BA9004C63AA /* white-check.png */; };
 		057C81331A004D04004C63AA /* circle-transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 057C81321A004D04004C63AA /* circle-transparent.png */; };
@@ -63,6 +64,7 @@
 		0542FA0B19F99F4B004207EA /* LGVocabularyClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGVocabularyClient.h; path = BusinessLogic/LGVocabularyClient.h; sourceTree = "<group>"; };
 		0542FA0C19F99F4B004207EA /* LGVocabularyClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LGVocabularyClient.m; path = BusinessLogic/LGVocabularyClient.m; sourceTree = "<group>"; };
 		0542FA0E19F9A6F5004207EA /* LGRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LGRootViewController.swift; path = UI/LGRootViewController.swift; sourceTree = "<group>"; };
+		0555FE251A005769009AA6EC /* lieutnant-rank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lieutnant-rank.png"; sourceTree = "<group>"; };
 		057C81231A004174004C63AA /* LGMatchClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGMatchClient.h; path = BusinessLogic/LGMatchClient.h; sourceTree = "<group>"; };
 		057C81241A004174004C63AA /* LGMatchClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LGMatchClient.m; path = BusinessLogic/LGMatchClient.m; sourceTree = "<group>"; };
 		057C81301A004BA9004C63AA /* white-check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "white-check.png"; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				057C81301A004BA9004C63AA /* white-check.png */,
+				0555FE251A005769009AA6EC /* lieutnant-rank.png */,
 				057C81341A004D6F004C63AA /* table-cross.png */,
 				057C81321A004D04004C63AA /* circle-transparent.png */,
 				0593007F19F53CBD004526DC /* Images.xcassets */,
@@ -394,6 +397,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0555FE261A005769009AA6EC /* lieutnant-rank.png in Resources */,
 				057C81331A004D04004C63AA /* circle-transparent.png in Resources */,
 				057C81351A004D6F004C63AA /* table-cross.png in Resources */,
 				0593009F19F53CF4004526DC /* Main.storyboard in Resources */,

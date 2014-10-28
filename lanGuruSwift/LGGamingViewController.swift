@@ -28,9 +28,10 @@ class LGGamingViewController: UIViewController {
     var touchedAnswerButton : PNTButton!
     
     var timer : NSTimer!
-    var time : Float = 60
+    var time : Float = 30
     
     var match : Match?
+    var matchResult : Match?
     
     var model = []
     var roundCounter : Int = 0
@@ -85,12 +86,42 @@ class LGGamingViewController: UIViewController {
     func timerDidFire(timer:NSTimer!)
     {
         time -= 1
-        progressBar.percent = time / 60.0;
-        //@Felix : todo timestamp + result mitgeben
-        let matchDictionary : [String : AnyObject] = ["id": self.match!.identity , "opponent": (self.localUser.username == self.match!.opponent1 ? "opponent1" : "opponent2"), "score" : self.localUserScore, "result" : "", "timestamp" : ""]
+        progressBar.percent = time / 30.0;
         
-        matchClient.updateMatchScore(matchDictionary)
+        if time <= 0
+        {
+            timer.invalidate()
+            endMatch()
+        }
+        else
+        {
+            //@Felix : todo timestamp + result mitgeben
+            let matchDictionary : [String : AnyObject] = ["id": self.match!.identity , "opponent": (self.localUser.username == self.match!.opponent1 ? "opponent1" : "opponent2"), "score" : self.localUserScore, "result" : "", "timestamp" : ""]
+            
+            matchClient.updateMatchScore(matchDictionary)
+        }
     }
+    
+    func endMatch()
+    {
+        let matchDictionary : [String : AnyObject] = ["id": self.match!.identity , "opponent": (self.localUser.username == self.match!.opponent1 ? "opponent1" : "opponent2"), "result" : "11", "username" : self.localUser.username]
+        matchClient.sendFinalMatchResults(matchDictionary){ (match) -> Void in
+            
+            if match != nil
+            {
+                self.matchResult = match as? Match
+                NSLog("beste match %@", match as Match)
+                NSLog("success");
+                self.performSegueWithIdentifier("showPostScreen", sender: nil)
+            }
+            else
+            {
+                //Felix : to do: make weakself
+                self.endMatch()
+            }
+        }
+    }
+
 
     @IBAction func answerButtonPressed(sender: PNTButton) {
         
@@ -104,9 +135,6 @@ class LGGamingViewController: UIViewController {
         localUserScore = (sender.tag == 1) ? localUserScore+1 : localUserScore
         
         updateSearchFieldViews()
-        
-        self.performSegueWithIdentifier("showPostScreen", sender: nil)
-
     }
     
     func updateAnswerButtons()
@@ -182,12 +210,13 @@ class LGGamingViewController: UIViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if segue.identifier == "showPostScreen"{
             var destinationViewController : LGPostGameViewController = segue.destinationViewController as LGPostGameViewController
             destinationViewController.match = self.match
+            destinationViewController.matchResult = self.matchResult
             destinationViewController.hidesBottomBarWhenPushed = true;
         }
     }

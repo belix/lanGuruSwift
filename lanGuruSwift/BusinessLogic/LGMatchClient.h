@@ -12,4 +12,6 @@
 
 -(void)updateMatchScore:(NSDictionary*) matchDictionary;
 
+-(void)sendFinalMatchResults:(NSDictionary*)matchResults withCompletion:(void (^)(id Match))returnMatch;
+
 @end
