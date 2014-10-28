@@ -7,11 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LGClient.h"
 
-@interface LGFacebookClient : NSObject
+@interface LGFacebookClient : LGClient
 
 -(void)downloadProfilePicture;
 
 -(void)uploadProfileAndCoverPicture;
+
+-(void)loadFriendsDetails;
 
 @end

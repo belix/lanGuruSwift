@@ -14,6 +14,7 @@
 #import "LGLoginClient.h"
 #import "LGFacebookClient.h"
 #import "LGVocabularyClient.h"
+#import "LGMatchmakingClient.h"
 #import "RKManagedObjectRequestOperation.h"
 #import "PNTButton.h"
 #import "PNTUtility.h"

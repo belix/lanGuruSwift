@@ -22,30 +22,47 @@ class LGGamingViewController: UIViewController {
     
     @IBOutlet weak var progressBar: LGProgressBar!
     
+    @IBOutlet weak var localUserProfilePictureView: UIImageView!
+    @IBOutlet weak var opponentProfilePictureImageView: UIImageView!
+
     var touchedAnswerButton : PNTButton!
     
     var timer : NSTimer!
     var time : Float = 60
     
-    var model : NSMutableArray = []
+    var match : Match?
+    
+    var model = []
     var roundCounter : Int = 0
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        model = match!.content
+        
+        //setup statusbar
+        var profilePictureImageData = NSData(base64EncodedString: match!.opponentProfilePic, options: .allZeros)
+        self.opponentProfilePictureImageView.image = UIImage(data:profilePictureImageData!)
+        self.opponentProfilePictureImageView.layer.cornerRadius = self.opponentProfilePictureImageView.frame.size.height/2
+        self.opponentProfilePictureImageView.clipsToBounds = true
+
+        profilePictureImageData = NSData(base64EncodedString: User.getLocalUser().profilePicture, options: .allZeros)
+        self.localUserProfilePictureView.image = UIImage(data:profilePictureImageData!)
+        self.localUserProfilePictureView.layer.cornerRadius = self.localUserProfilePictureView.frame.size.height/2
+        self.localUserProfilePictureView.clipsToBounds = true
+        
         //setup triangle buttons
         let buttons : NSArray = [upperButton,rightButton,leftButton,lowerButton]
         let utility : PNTUtility = PNTUtility.sharedUtility()
         utility.buttons = buttons;
         
-        model = Word.getWords(0, lesson: 0, nativeLanguage: "", foreignLanguage: "")
         roundCounter = 0
         
         //set searchWordFields for the first time
-        self.centralSearchField.text = (model[roundCounter][0] as Word).en
-        self.rightSearchField.text = (model[roundCounter+1][0] as Word).en
-        
+        self.centralSearchField.text = Word.getWordTranslation("EN", wordID: model[roundCounter][0].integerValue)
+        self.rightSearchField.text = Word.getWordTranslation("EN", wordID: model[roundCounter+1][0].integerValue)
+
         updateAnswerButtons()
     
         progressBar.percent = 1;
@@ -86,13 +103,15 @@ class LGGamingViewController: UIViewController {
         indices = [0,1,2,3]
         indices = shuffle(indices)
         
-        upperButton.setTitle((model[roundCounter][indices[0]] as Word).de, forState: UIControlState.Normal)
+        
+        
+        upperButton.setTitle(Word.getWordTranslation("DE", wordID: model[roundCounter][indices[0]].integerValue), forState: UIControlState.Normal)
         upperButton.tag = (indices[0] == 0 ? 1 : 0)
-        leftButton.setTitle((model[roundCounter][indices[1]] as Word).de, forState: UIControlState.Normal)
+        leftButton.setTitle(Word.getWordTranslation("DE", wordID: model[roundCounter][indices[1]].integerValue), forState: UIControlState.Normal)
         leftButton.tag = (indices[1] == 0 ? 1 : 0)
-        rightButton.setTitle((model[roundCounter][indices[2]] as Word).de, forState: UIControlState.Normal)
+        rightButton.setTitle(Word.getWordTranslation("DE", wordID: model[roundCounter][indices[2]].integerValue), forState: UIControlState.Normal)
         rightButton.tag = (indices[2] == 0 ? 1 : 0)
-        lowerButton.setTitle((model[roundCounter][indices[3]] as Word).de, forState: UIControlState.Normal)
+        lowerButton.setTitle(Word.getWordTranslation("DE", wordID: model[roundCounter][indices[3]].integerValue), forState: UIControlState.Normal)
         lowerButton.tag = (indices[3] == 0 ? 1 : 0)
     }
     
@@ -106,7 +125,7 @@ class LGGamingViewController: UIViewController {
     
     func updateSearchFieldViews()
     {
-        self.hiddenSearchField.text = (model[roundCounter+2][0] as Word).en
+        self.hiddenSearchField.text = Word.getWordTranslation("EN", wordID: model[roundCounter+2][0].integerValue)
         
         UIView.animateWithDuration(0.7, delay: 1.0, options: .CurveEaseIn, animations: {
             var newFrame = CGRectMake(self.leftSearchField.frame.origin.x - self.leftSearchField.frame.size.width/2, self.leftSearchField.frame.origin.y, self.leftSearchField.frame.size.width, self.leftSearchField.frame.size.height)
@@ -139,7 +158,7 @@ class LGGamingViewController: UIViewController {
         self.rightSearchField.text = self.hiddenSearchField.text;
         self.rightSearchField.frame = self.hiddenSearchField.frame;
         self.rightSearchField.textColor = self.hiddenSearchField.textColor;
-        self.hiddenSearchField.frame = CGRectMake(self.hiddenSearchField.frame.size.width, 0, self.hiddenSearchField.frame.size.width, self.hiddenSearchField.frame.size.height);
+        self.hiddenSearchField.frame = CGRectMake(self.hiddenSearchField.frame.size.width*1.5, 0, self.hiddenSearchField.frame.size.width, self.hiddenSearchField.frame.size.height);
     
         //unset color of touched button
         touchedAnswerButton.willAnimate = false;

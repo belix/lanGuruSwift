@@ -61,9 +61,18 @@ import CoreData
     
     class var responseDescriptor: RKResponseDescriptor {
         
-    var teamMemberMapper = User.userEntityMapper()
+        var teamMemberMapper = User.userEntityMapper()
         var teamMemberResponseDescriptor = RKResponseDescriptor(mapping: userEntityMapper(),
             method: RKRequestMethod.POST , pathPattern: nil, keyPath: "user", statusCodes:nil)
+        
+        return teamMemberResponseDescriptor
+    }
+    
+    class var responseDescriptorForUserDetails: RKResponseDescriptor {
+        
+        var teamMemberMapper = User.userEntityMapper()
+        var teamMemberResponseDescriptor = RKResponseDescriptor(mapping: userEntityMapper(),
+            method: RKRequestMethod.POST , pathPattern: nil, keyPath: "userdetails", statusCodes:nil)
         
         return teamMemberResponseDescriptor
     }

@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0503313919FD1FBB0089E7F1 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 0503313819FD1FBB0089E7F1 /* background.png */; };
 		0503313B19FD210D0089E7F1 /* LGChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0503313A19FD210D0089E7F1 /* LGChallengeViewController.swift */; };
 		0503313D19FD226F0089E7F1 /* LGRepeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0503313C19FD226F0089E7F1 /* LGRepeatViewController.swift */; };
-		0503314319FD27470089E7F1 /* ghost-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0503314219FD27470089E7F1 /* ghost-button.png */; };
 		0503314519FD2EC10089E7F1 /* LGFriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0503314419FD2EC10089E7F1 /* LGFriendTableViewCell.swift */; };
 		0542FA0D19F99F4B004207EA /* LGVocabularyClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0542FA0C19F99F4B004207EA /* LGVocabularyClient.m */; };
 		0542FA0F19F9A6F5004207EA /* LGRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0542FA0E19F9A6F5004207EA /* LGRootViewController.swift */; };
+		057C811D1A00278C004C63AA /* overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 057C811C1A00278C004C63AA /* overlay.png */; };
+		057C811F1A002A80004C63AA /* middle-line.png in Resources */ = {isa = PBXBuildFile; fileRef = 057C811E1A002A80004C63AA /* middle-line.png */; };
 		0581057019F7FE7F000FB82A /* LGLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0581056F19F7FE7F000FB82A /* LGLoginViewController.swift */; };
 		0593007619F53CBD004526DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0593007519F53CBD004526DC /* AppDelegate.swift */; };
 		0593007919F53CBD004526DC /* lanGuruSwift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0593007719F53CBD004526DC /* lanGuruSwift.xcdatamodeld */; };
@@ -30,6 +30,12 @@
 		059300BF19F55DF5004526DC /* LGGamingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059300BE19F55DF5004526DC /* LGGamingViewController.swift */; };
 		0593019419F590CA004526DC /* LGTrainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0593019319F590CA004526DC /* LGTrainingViewController.swift */; };
 		0593019A19F5A23E004526DC /* LGProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0593019919F5A23E004526DC /* LGProgressBar.m */; };
+		05C254BE19FFFD3300AA05FD /* LGMatchmakingClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 05C254BD19FFFD3300AA05FD /* LGMatchmakingClient.m */; };
+		05C254C019FFFD5700AA05FD /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C254BF19FFFD5700AA05FD /* Match.swift */; };
+		05C254C21A0002ED00AA05FD /* LGMatchmakingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C254C11A0002ED00AA05FD /* LGMatchmakingViewController.swift */; };
+		05C254C51A001D3500AA05FD /* lupe.png in Resources */ = {isa = PBXBuildFile; fileRef = 05C254C31A001D3500AA05FD /* lupe.png */; };
+		05C254C61A001D3500AA05FD /* white-dot.png in Resources */ = {isa = PBXBuildFile; fileRef = 05C254C41A001D3500AA05FD /* white-dot.png */; };
+		05C254C81A001E5F00AA05FD /* LGMatchmakingAnimatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C254C71A001E5F00AA05FD /* LGMatchmakingAnimatingView.swift */; };
 		05FB9A7619F9393500FBD772 /* LGLoginClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FB9A7519F9393500FBD772 /* LGLoginClient.m */; };
 		05FB9A7919F939A900FBD772 /* LGCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FB9A7819F939A900FBD772 /* LGCoreDataManager.m */; };
 		05FB9A7C19F94A2E00FBD772 /* LGClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FB9A7B19F94A2E00FBD772 /* LGClient.m */; };
@@ -50,14 +56,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0503313819FD1FBB0089E7F1 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		0503313A19FD210D0089E7F1 /* LGChallengeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LGChallengeViewController.swift; path = UI/LGChallengeViewController.swift; sourceTree = "<group>"; };
 		0503313C19FD226F0089E7F1 /* LGRepeatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LGRepeatViewController.swift; path = UI/LGRepeatViewController.swift; sourceTree = "<group>"; };
-		0503314219FD27470089E7F1 /* ghost-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ghost-button.png"; sourceTree = "<group>"; };
 		0503314419FD2EC10089E7F1 /* LGFriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LGFriendTableViewCell.swift; path = UI/LGFriendTableViewCell.swift; sourceTree = "<group>"; };
 		0542FA0B19F99F4B004207EA /* LGVocabularyClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGVocabularyClient.h; path = BusinessLogic/LGVocabularyClient.h; sourceTree = "<group>"; };
 		0542FA0C19F99F4B004207EA /* LGVocabularyClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LGVocabularyClient.m; path = BusinessLogic/LGVocabularyClient.m; sourceTree = "<group>"; };
 		0542FA0E19F9A6F5004207EA /* LGRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LGRootViewController.swift; path = UI/LGRootViewController.swift; sourceTree = "<group>"; };
+		057C811C1A00278C004C63AA /* overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlay.png; sourceTree = "<group>"; };
+		057C811E1A002A80004C63AA /* middle-line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "middle-line.png"; sourceTree = "<group>"; };
 		0581056F19F7FE7F000FB82A /* LGLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LGLoginViewController.swift; path = UI/LGLoginViewController.swift; sourceTree = "<group>"; };
 		0593007019F53CBD004526DC /* lanGuruSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lanGuruSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0593007419F53CBD004526DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -82,6 +88,13 @@
 		0593019319F590CA004526DC /* LGTrainingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGTrainingViewController.swift; sourceTree = "<group>"; };
 		0593019819F5A23E004526DC /* LGProgressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGProgressBar.h; sourceTree = "<group>"; };
 		0593019919F5A23E004526DC /* LGProgressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGProgressBar.m; sourceTree = "<group>"; };
+		05C254BC19FFFD3300AA05FD /* LGMatchmakingClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGMatchmakingClient.h; path = BusinessLogic/LGMatchmakingClient.h; sourceTree = "<group>"; };
+		05C254BD19FFFD3300AA05FD /* LGMatchmakingClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LGMatchmakingClient.m; path = BusinessLogic/LGMatchmakingClient.m; sourceTree = "<group>"; };
+		05C254BF19FFFD5700AA05FD /* Match.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Match.swift; path = BusinessLogic/Match.swift; sourceTree = "<group>"; };
+		05C254C11A0002ED00AA05FD /* LGMatchmakingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LGMatchmakingViewController.swift; path = UI/LGMatchmakingViewController.swift; sourceTree = "<group>"; };
+		05C254C31A001D3500AA05FD /* lupe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lupe.png; sourceTree = "<group>"; };
+		05C254C41A001D3500AA05FD /* white-dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "white-dot.png"; sourceTree = "<group>"; };
+		05C254C71A001E5F00AA05FD /* LGMatchmakingAnimatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGMatchmakingAnimatingView.swift; sourceTree = "<group>"; };
 		05FB9A7419F9393500FBD772 /* LGLoginClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGLoginClient.h; sourceTree = "<group>"; };
 		05FB9A7519F9393500FBD772 /* LGLoginClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGLoginClient.m; sourceTree = "<group>"; };
 		05FB9A7719F939A900FBD772 /* LGCoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGCoreDataManager.h; sourceTree = "<group>"; };
@@ -116,6 +129,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		057C81201A002AE0004C63AA /* Gaming */ = {
+			isa = PBXGroup;
+			children = (
+				059300BE19F55DF5004526DC /* LGGamingViewController.swift */,
+			);
+			name = Gaming;
+			sourceTree = "<group>";
+		};
+		057C81211A002AE8004C63AA /* Matchmaking */ = {
+			isa = PBXGroup;
+			children = (
+				05C254C11A0002ED00AA05FD /* LGMatchmakingViewController.swift */,
+				05C254C71A001E5F00AA05FD /* LGMatchmakingAnimatingView.swift */,
+			);
+			name = Matchmaking;
+			sourceTree = "<group>";
+		};
+		057C81221A002AFA004C63AA /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				05FB9A8119F97EA200FBD772 /* LGProfileViewController.swift */,
+				0503313A19FD210D0089E7F1 /* LGChallengeViewController.swift */,
+				0503314419FD2EC10089E7F1 /* LGFriendTableViewCell.swift */,
+				0503313C19FD226F0089E7F1 /* LGRepeatViewController.swift */,
+			);
+			name = TabBar;
+			sourceTree = "<group>";
+		};
 		0593006719F53CBC004526DC = {
 			isa = PBXGroup;
 			children = (
@@ -154,9 +195,11 @@
 		0593007319F53CBD004526DC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				05C254C31A001D3500AA05FD /* lupe.png */,
+				05C254C41A001D3500AA05FD /* white-dot.png */,
+				057C811C1A00278C004C63AA /* overlay.png */,
 				0593007F19F53CBD004526DC /* Images.xcassets */,
-				0503314219FD27470089E7F1 /* ghost-button.png */,
-				0503313819FD1FBB0089E7F1 /* background.png */,
+				057C811E1A002A80004C63AA /* middle-line.png */,
 				0593007419F53CBD004526DC /* Info.plist */,
 				059300A619F53DC2004526DC /* lanGuruSwift-Bridging-Header.h */,
 			);
@@ -200,6 +243,7 @@
 				0593007719F53CBD004526DC /* lanGuruSwift.xcdatamodeld */,
 				059300A419F53D66004526DC /* Word.swift */,
 				059300A219F53D65004526DC /* User.swift */,
+				05C254BF19FFFD5700AA05FD /* Match.swift */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -207,15 +251,13 @@
 		059300C419F57154004526DC /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				059300BE19F55DF5004526DC /* LGGamingViewController.swift */,
+				057C81221A002AFA004C63AA /* TabBar */,
+				057C81211A002AE8004C63AA /* Matchmaking */,
+				057C81201A002AE0004C63AA /* Gaming */,
 				0593019319F590CA004526DC /* LGTrainingViewController.swift */,
 				0581056F19F7FE7F000FB82A /* LGLoginViewController.swift */,
-				05FB9A8119F97EA200FBD772 /* LGProfileViewController.swift */,
 				05FB9A8319F9920000FBD772 /* LGRegistrationViewController.swift */,
-				0503313A19FD210D0089E7F1 /* LGChallengeViewController.swift */,
-				0503313C19FD226F0089E7F1 /* LGRepeatViewController.swift */,
 				0542FA0E19F9A6F5004207EA /* LGRootViewController.swift */,
-				0503314419FD2EC10089E7F1 /* LGFriendTableViewCell.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -229,6 +271,8 @@
 				05FB9A7F19F975C900FBD772 /* LGFacebookClient.m */,
 				0542FA0B19F99F4B004207EA /* LGVocabularyClient.h */,
 				0542FA0C19F99F4B004207EA /* LGVocabularyClient.m */,
+				05C254BC19FFFD3300AA05FD /* LGMatchmakingClient.h */,
+				05C254BD19FFFD3300AA05FD /* LGMatchmakingClient.m */,
 				05FB9A7A19F94A2E00FBD772 /* LGClient.h */,
 				05FB9A7B19F94A2E00FBD772 /* LGClient.m */,
 				05FB9A7719F939A900FBD772 /* LGCoreDataManager.h */,
@@ -345,11 +389,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				057C811D1A00278C004C63AA /* overlay.png in Resources */,
 				0593009F19F53CF4004526DC /* Main.storyboard in Resources */,
-				0503313919FD1FBB0089E7F1 /* background.png in Resources */,
-				0503314319FD27470089E7F1 /* ghost-button.png in Resources */,
+				05C254C51A001D3500AA05FD /* lupe.png in Resources */,
 				0593008319F53CBD004526DC /* LaunchScreen.xib in Resources */,
+				05C254C61A001D3500AA05FD /* white-dot.png in Resources */,
 				0593008019F53CBD004526DC /* Images.xcassets in Resources */,
+				057C811F1A002A80004C63AA /* middle-line.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,6 +450,7 @@
 				0542FA0D19F99F4B004207EA /* LGVocabularyClient.m in Sources */,
 				05FB9A7C19F94A2E00FBD772 /* LGClient.m in Sources */,
 				0593019A19F5A23E004526DC /* LGProgressBar.m in Sources */,
+				05C254C81A001E5F00AA05FD /* LGMatchmakingAnimatingView.swift in Sources */,
 				05FB9A8019F975C900FBD772 /* LGFacebookClient.m in Sources */,
 				0593007919F53CBD004526DC /* lanGuruSwift.xcdatamodeld in Sources */,
 				059300BA19F5576E004526DC /* PNTUtility.m in Sources */,
@@ -412,16 +459,19 @@
 				0542FA0F19F9A6F5004207EA /* LGRootViewController.swift in Sources */,
 				059300A319F53D65004526DC /* User.swift in Sources */,
 				0581057019F7FE7F000FB82A /* LGLoginViewController.swift in Sources */,
+				05C254C21A0002ED00AA05FD /* LGMatchmakingViewController.swift in Sources */,
 				0503313D19FD226F0089E7F1 /* LGRepeatViewController.swift in Sources */,
 				059300B919F5576E004526DC /* PNTButton.m in Sources */,
 				059300BF19F55DF5004526DC /* LGGamingViewController.swift in Sources */,
 				05FB9A7919F939A900FBD772 /* LGCoreDataManager.m in Sources */,
 				0593019419F590CA004526DC /* LGTrainingViewController.swift in Sources */,
 				0503314519FD2EC10089E7F1 /* LGFriendTableViewCell.swift in Sources */,
+				05C254C019FFFD5700AA05FD /* Match.swift in Sources */,
 				0503313B19FD210D0089E7F1 /* LGChallengeViewController.swift in Sources */,
 				05FB9A8419F9920000FBD772 /* LGRegistrationViewController.swift in Sources */,
 				0593007619F53CBD004526DC /* AppDelegate.swift in Sources */,
 				059300A119F53CFD004526DC /* CoreDataManager.swift in Sources */,
+				05C254BE19FFFD3300AA05FD /* LGMatchmakingClient.m in Sources */,
 				0593009919F53CD9004526DC /* WebServiceClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

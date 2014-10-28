@@ -43,6 +43,7 @@ class LGLoginViewController: UIViewController,FBLoginViewDelegate{
                 
                 var facebookClient : LGFacebookClient = LGFacebookClient()
                 facebookClient.downloadProfilePicture()
+                facebookClient.loadFriendsDetails()
                 NSLog("success")
                 
                 self.performSegueWithIdentifier("loginFinished", sender: nil)

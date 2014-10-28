@@ -62,7 +62,30 @@ class Word: NSManagedObject {
         NSLog("wordModel %@", wordModel)
         return wordModel;
     }
-
+    
+    class func getWordTranslation(language : String, wordID : Int) -> String
+    {
+        let managedObjectContext : NSManagedObjectContext = CoreDataManager.sharedInstance.managedObjectContext
+        var error : NSError? = nil
+        var fetchRequest : NSFetchRequest = NSFetchRequest(entityName: "Word")
+        fetchRequest.predicate = NSPredicate(format: "wordID=%i",wordID)
+        var words = managedObjectContext.executeFetchRequest(fetchRequest, error:&error) as [Word]
+        var word : Word = words[0]
+        if language == "DE"
+        {
+            return word.de
+        }
+        else if language == "EN"
+        {
+            return word.en
+        }
+        else
+        {
+            return word.de
+        }
+    
+    }
+    
     class var mappingDictionary: NSDictionary {
         get {
             return [

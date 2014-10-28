@@ -11,14 +11,13 @@ import UIKit
 class LGFriendTableViewCell: UITableViewCell {
 
     @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var userTitleLabel: UILabel!
     
+    @IBOutlet weak var userRankingLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        let localUser : User = User.getLocalUser()
-        
-        let profilePictureImageData = NSData(base64EncodedString: localUser.profilePicture, options: .allZeros)
-        self.profileImageView.image = UIImage(data: profilePictureImageData!)
         self.profileImageView.layer.cornerRadius = 30
         self.profileImageView.clipsToBounds = true
         
