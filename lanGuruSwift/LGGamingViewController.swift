@@ -25,6 +25,11 @@ class LGGamingViewController: UIViewController {
     @IBOutlet weak var localUserProfilePictureView: UIImageView!
     @IBOutlet weak var opponentProfilePictureImageView: UIImageView!
 
+    @IBOutlet weak var localPlayerUsernameLabel: UILabel!
+    @IBOutlet weak var localPlayerScoreLabel: UILabel!
+    @IBOutlet weak var opponentUsernameLabel: UILabel!
+    @IBOutlet weak var opponentPlayerScoreLabel: UILabel!
+    
     var touchedAnswerButton : PNTButton!
     
     var timer : NSTimer!
@@ -55,6 +60,9 @@ class LGGamingViewController: UIViewController {
         self.localUserProfilePictureView.image = UIImage(data:profilePictureImageData!)
         self.localUserProfilePictureView.layer.cornerRadius = self.localUserProfilePictureView.frame.size.height/2
         self.localUserProfilePictureView.clipsToBounds = true
+        
+        self.localPlayerUsernameLabel.text = User.getLocalUser().username;
+        self.opponentUsernameLabel.text = (match!.opponent1 == User.getLocalUser().username ? match!.opponent2 : match!.opponent1)
         
         //setup triangle buttons
         let buttons : NSArray = [upperButton,rightButton,leftButton,lowerButton]
@@ -98,13 +106,16 @@ class LGGamingViewController: UIViewController {
             //@Felix : todo timestamp + result mitgeben
             let matchDictionary : [String : AnyObject] = ["id": self.match!.identity , "opponent": (self.localUser.username == self.match!.opponent1 ? "opponent1" : "opponent2"), "score" : self.localUserScore, "result" : "", "timestamp" : ""]
             
-            matchClient.updateMatchScore(matchDictionary)
+            matchClient.updateMatchScore(matchDictionary){ (opponentScore) -> Void in
+            
+                self.opponentPlayerScoreLabel.text = "\(opponentScore)";
+            }
         }
     }
     
     func endMatch()
     {
-        let matchDictionary : [String : AnyObject] = ["id": self.match!.identity , "opponent": (self.localUser.username == self.match!.opponent1 ? "opponent1" : "opponent2"), "result" : "11", "username" : self.localUser.username]
+        var matchDictionary : [String : AnyObject] = ["id": self.match!.identity , "opponent": (self.localUser.username == self.match!.opponent1 ? "opponent1" : "opponent2"), "result" : "11", "username" : self.localUser.username]
         matchClient.sendFinalMatchResults(matchDictionary){ (match) -> Void in
             
             if match != nil
@@ -132,7 +143,8 @@ class LGGamingViewController: UIViewController {
         
         touchedAnswerButton = sender
         
-        localUserScore = (sender.tag == 1) ? localUserScore+1 : localUserScore
+        self.localUserScore = (sender.tag == 1) ? localUserScore+1 : localUserScore
+        self.localPlayerScoreLabel.text = "\(self.localUserScore)";
         
         updateSearchFieldViews()
     }

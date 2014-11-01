@@ -10,7 +10,7 @@
 
 @interface LGMatchClient : LGClient
 
--(void)updateMatchScore:(NSDictionary*) matchDictionary;
+-(void)updateMatchScore:(NSDictionary*) matchDictionary withCompletion:(void (^)(NSInteger opponentScore))returnOpponentScore;
 
 -(void)sendFinalMatchResults:(NSDictionary*)matchResults withCompletion:(void (^)(id Match))returnMatch;
 

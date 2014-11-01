@@ -11,16 +11,38 @@
 
 @implementation LGMatchClient
 
--(void)updateMatchScore:(NSDictionary*) matchDictionary{
+- (NSString*) timeStamp {
+    NSString *temp = [NSString stringWithFormat:@"%f",[[NSDate date] timeIntervalSince1970] * 1000];
+    return [temp substringWithRange:NSMakeRange(0, [temp rangeOfString:@"."].location)] ;
+}
 
+-(void)updateMatchScore:(NSDictionary*) matchDictionary withCompletion:(void (^)(NSInteger opponentScore))returnOpponentScore{
+
+    
+    NSMutableDictionary *mutableMatchDictionary = [NSMutableDictionary dictionaryWithDictionary:matchDictionary];
+    mutableMatchDictionary[@"timestamp"] = [self timeStamp];
+    
     //get responseDescripter from Words Class
     RKResponseDescriptor *responseDescriptor = [Match responseDescriptor];
     [self.objectManager addResponseDescriptor:responseDescriptor];
     
+    
     // POST to create
-    [self.objectManager postObject:nil path:@"/matchmaking/ping-server" parameters:matchDictionary success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
-        NSLog(@"SCHLUUUUND %@",operation.HTTPRequestOperation.responseString);
-        NSLog(@"UPDAAATE %@",[[mappingResult dictionary] valueForKey:@"match"]);
+    [self.objectManager postObject:nil path:@"/matchmaking/ping-server" parameters:mutableMatchDictionary success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
+        
+        NSLog(@"schlund %@",operation.HTTPRequestOperation.responseString);
+        Match *match = [[mappingResult dictionary] valueForKey:@"match"];
+        if ([[User getLocalUser].username isEqualToString:match.opponent1])
+        {
+            NSLog(@"match.score2 %li",(long)match.score2);
+            returnOpponentScore(match.score2);
+            
+        }
+        else
+        {
+            NSLog(@"match.score1 %ld",(long)match.score1);
+            returnOpponentScore(match.score1);
+        }
         
     } failure:^(RKObjectRequestOperation *operation, NSError *error){
         

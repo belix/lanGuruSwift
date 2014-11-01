@@ -45,7 +45,8 @@ class LGMatchmakingViewController: UIViewController {
                 NSLog("beste match %@", match as Match)
                 NSLog("success");
                 self.setupOpponentInterface()
-                self.performSegueWithIdentifier("showGame", sender: nil)
+                
+                var timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("pushToGame"), userInfo: nil, repeats: false)
             }
             else
             {
@@ -53,6 +54,12 @@ class LGMatchmakingViewController: UIViewController {
                 self.startSearchingForOpponent()
             }
         }
+    }
+    
+    func pushToGame()
+    {
+        self.performSegueWithIdentifier("showGame", sender: nil)
+
     }
     
     func setupOpponentInterface()
@@ -63,8 +70,6 @@ class LGMatchmakingViewController: UIViewController {
         
         NSLog("content %@", self.currentMatch!.content)
     }
-    
-    
     
     
     // MARK: - Navigation

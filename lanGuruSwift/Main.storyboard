@@ -118,15 +118,47 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2bt-2K-xBZ">
                                         <rect key="frame" x="510" y="14" width="60" height="60"/>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DL4-sZ-5L9">
+                                        <rect key="frame" x="100" y="14" width="55.5" height="19"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7m-IB-j3X">
+                                        <rect key="frame" x="100" y="56.5" width="8" height="17"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <color key="textColor" red="0.019607843137254902" green="0.69019607843137254" blue="0.57647058823529407" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player2" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YEt-4N-kLx">
+                                        <rect key="frame" x="449" y="14" width="51" height="19"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JA4-JS-7EJ">
+                                        <rect key="frame" x="492" y="56.5" width="8" height="17"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <color key="textColor" red="0.019607843140000001" green="0.69019607839999997" blue="0.57647058819999997" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="YEt-4N-kLx" firstAttribute="top" secondItem="2bt-2K-xBZ" secondAttribute="top" id="2mN-KH-IOT"/>
+                                    <constraint firstItem="DL4-sZ-5L9" firstAttribute="leading" secondItem="k7m-IB-j3X" secondAttribute="leading" id="3K3-cm-LEk"/>
                                     <constraint firstAttribute="height" constant="80" id="Ekn-6B-ROD"/>
                                     <constraint firstItem="YzT-89-kKg" firstAttribute="width" secondItem="2bt-2K-xBZ" secondAttribute="width" id="Hhb-kK-247"/>
+                                    <constraint firstItem="2bt-2K-xBZ" firstAttribute="leading" secondItem="YEt-4N-kLx" secondAttribute="trailing" constant="10" id="QHO-62-QXH"/>
                                     <constraint firstItem="YzT-89-kKg" firstAttribute="leading" secondItem="LM5-4Q-4z1" secondAttribute="leading" constant="30" id="Qfy-vR-00X"/>
                                     <constraint firstAttribute="centerY" secondItem="2bt-2K-xBZ" secondAttribute="centerY" id="Zpf-D1-1Ka"/>
                                     <constraint firstItem="YzT-89-kKg" firstAttribute="height" secondItem="2bt-2K-xBZ" secondAttribute="height" id="Zqk-85-F4R"/>
+                                    <constraint firstItem="k7m-IB-j3X" firstAttribute="bottom" secondItem="YzT-89-kKg" secondAttribute="bottom" id="dfp-XS-d3f"/>
                                     <constraint firstAttribute="centerY" secondItem="YzT-89-kKg" secondAttribute="centerY" id="e29-Sb-ecO"/>
+                                    <constraint firstItem="DL4-sZ-5L9" firstAttribute="leading" secondItem="YzT-89-kKg" secondAttribute="trailing" constant="10" id="pi9-Ot-1WD"/>
+                                    <constraint firstItem="JA4-JS-7EJ" firstAttribute="bottom" secondItem="2bt-2K-xBZ" secondAttribute="bottom" id="rcg-ej-YPW"/>
+                                    <constraint firstItem="DL4-sZ-5L9" firstAttribute="top" secondItem="YzT-89-kKg" secondAttribute="top" id="uMZ-7T-3Uf"/>
+                                    <constraint firstItem="JA4-JS-7EJ" firstAttribute="trailing" secondItem="YEt-4N-kLx" secondAttribute="trailing" id="w93-A9-LoI"/>
                                     <constraint firstAttribute="trailing" secondItem="2bt-2K-xBZ" secondAttribute="trailing" constant="30" id="zd3-xM-FFM"/>
                                 </constraints>
                                 <variation key="default">
@@ -347,9 +379,13 @@
                         <outlet property="hiddenSearchField" destination="CmI-vX-nuc" id="lvU-25-pwY"/>
                         <outlet property="leftButton" destination="Hyn-qh-Sut" id="1Il-G7-zHW"/>
                         <outlet property="leftSearchField" destination="dA4-w2-uVW" id="nwb-lP-g0q"/>
+                        <outlet property="localPlayerScoreLabel" destination="k7m-IB-j3X" id="3Be-ir-Bh2"/>
+                        <outlet property="localPlayerUsernameLabel" destination="DL4-sZ-5L9" id="vng-c6-iP5"/>
                         <outlet property="localUserProfilePictureView" destination="YzT-89-kKg" id="18T-b4-0dz"/>
                         <outlet property="lowerButton" destination="ib7-zA-4oA" id="sac-ZT-NqP"/>
+                        <outlet property="opponentPlayerScoreLabel" destination="JA4-JS-7EJ" id="7Cb-Qa-Lc6"/>
                         <outlet property="opponentProfilePictureImageView" destination="2bt-2K-xBZ" id="FQS-9E-M8B"/>
+                        <outlet property="opponentUsernameLabel" destination="YEt-4N-kLx" id="bqH-Yh-033"/>
                         <outlet property="progressBar" destination="drX-yv-yyD" id="Wb9-VF-D7Q"/>
                         <outlet property="rightButton" destination="EMJ-ll-heG" id="0xd-gd-8gF"/>
                         <outlet property="rightSearchField" destination="ZXg-ss-cSS" id="j0Y-9k-Phu"/>
@@ -359,7 +395,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lNS-aH-V2I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3623" y="1822"/>
+            <point key="canvasLocation" x="3623" y="1790"/>
         </scene>
         <!--Post Game View Controller-->
         <scene sceneID="eEE-1G-pzp">
