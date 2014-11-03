@@ -732,6 +732,9 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6yg-ez-mbl">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="297"/>
                                     </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="overlay" translatesAutoresizingMaskIntoConstraints="NO" id="0QJ-kb-MUt" userLabel="overlay">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="297"/>
+                                    </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fMy-6q-RQM">
                                         <rect key="frame" x="179" y="70.5" width="242.5" height="155.5"/>
                                         <subviews>
@@ -774,9 +777,6 @@
                                             <constraint firstAttribute="trailing" secondItem="rYK-v3-dH9" secondAttribute="trailing" constant="50" id="jVI-aj-Wte"/>
                                         </constraints>
                                     </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="overlay" translatesAutoresizingMaskIntoConstraints="NO" id="0QJ-kb-MUt" userLabel="overlay">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="297"/>
-                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -905,10 +905,13 @@
                                     <constraint firstItem="9uV-hK-r11" firstAttribute="centerX" secondItem="qKU-dz-rFg" secondAttribute="centerX" id="sJ8-FK-2I8"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mdD-Id-607">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mdD-Id-607">
                                 <rect key="frame" x="0.0" y="303" width="600" height="297"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0AZ-id-ofB">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="297"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="overlay" translatesAutoresizingMaskIntoConstraints="NO" id="rRM-EK-rgz" userLabel="overlay">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="297"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V3x-Fz-FIS">
@@ -953,9 +956,6 @@
                                             <constraint firstItem="2bT-wE-bDQ" firstAttribute="top" secondItem="PZf-9R-Whb" secondAttribute="top" id="zuM-08-ghs"/>
                                         </constraints>
                                     </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="overlay" translatesAutoresizingMaskIntoConstraints="NO" id="rRM-EK-rgz" userLabel="overlay">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="297"/>
-                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>

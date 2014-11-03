@@ -15,6 +15,5 @@
 
 + (instancetype)sharedUtility;
 - (UIBezierPath *)bezierPathForButton:(UIButton *)button;
-- (UIColor *)colorForButton:(UIButton *)button;
 
 @end

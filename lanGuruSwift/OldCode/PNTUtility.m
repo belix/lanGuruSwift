@@ -39,27 +39,4 @@ CGPoint points3[4] = {{160, 150}, {160, 310}, {0, 310}, {310, 160}};
     return bezierPath;
 }
 
-- (UIColor *)colorForButton:(UIButton *)button {
-    return [UIColor clearColor];
-    
-    NSInteger index = [self.buttons indexOfObject:button];
-    if (index == 0) {
-        return [UIColor redColor];
-    } else if (index == 1) {
-        return [UIColor blackColor];
-    } else if (index == 2) {
-        return [UIColor yellowColor];
-    } else if(index == 3) {
-        return [UIColor greenColor];
-    } else if (index == 4) {
-        return [UIColor grayColor];
-    } else if (index == 5) {
-        return [UIColor cyanColor];
-    } else if (index == 6) {
-        return [UIColor blueColor];
-    } else {
-        return [UIColor magentaColor];
-    }
-}
-
 @end
