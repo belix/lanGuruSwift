@@ -30,19 +30,8 @@
     // POST to create
     [self.objectManager postObject:nil path:@"/matchmaking/ping-server" parameters:mutableMatchDictionary success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
         
-        NSLog(@"schlund %@",operation.HTTPRequestOperation.responseString);
         Match *match = [[mappingResult dictionary] valueForKey:@"match"];
-        if ([[User getLocalUser].username isEqualToString:match.opponent1])
-        {
-            NSLog(@"match.score2 %li",(long)match.score2);
-            returnOpponentScore(match.score2);
-            
-        }
-        else
-        {
-            NSLog(@"match.score1 %ld",(long)match.score1);
-            returnOpponentScore(match.score1);
-        }
+        returnOpponentScore(match.opponentScore);
         
     } failure:^(RKObjectRequestOperation *operation, NSError *error){
         
@@ -57,6 +46,7 @@
     
     // POST to create
     [self.objectManager postObject:nil path:@"/matchmaking/finish-match" parameters:matchResults success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
+        NSLog(@"responste %@",operation.HTTPRequestOperation.responseString);
         NSLog(@"FINIIISH %@",[[mappingResult dictionary] valueForKey:@"match"]);
         Match *match = [[mappingResult dictionary] valueForKey:@"match"];
 
@@ -69,6 +59,29 @@
         returnMatch(nil);
     }];
     
+}
+
+-(void)closeMatch:(NSDictionary *)matchDictionary{
+    
+    NSError *error;
+    NSData* postData = [NSJSONSerialization dataWithJSONObject:matchDictionary options:kNilOptions error:&error];
+    
+    NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString: @"http://chaoshennen.de/matchmaking/close-match"]];
+    
+    [request setHTTPMethod:@"POST"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:[NSString stringWithFormat:@"%lu", (unsigned long)[postData length]] forHTTPHeaderField:@"Content-Length"];
+    [request setHTTPBody: postData];
+    
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    
+    [NSURLConnection sendAsynchronousRequest:request
+                                       queue:queue
+                           completionHandler:^( NSURLResponse * response, NSData * data, NSError * error )
+     {
+     }
+     ];
 }
 
 

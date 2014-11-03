@@ -30,6 +30,8 @@ class LGGamingViewController: UIViewController {
     @IBOutlet weak var opponentUsernameLabel: UILabel!
     @IBOutlet weak var opponentPlayerScoreLabel: UILabel!
     
+    var gameResultString = ""
+    
     var touchedAnswerButton : PNTButton!
     
     var timer : NSTimer!
@@ -104,7 +106,7 @@ class LGGamingViewController: UIViewController {
         else
         {
             //@Felix : todo timestamp + result mitgeben
-            let matchDictionary : [String : AnyObject] = ["id": self.match!.identity , "opponent": (self.localUser.username == self.match!.opponent1 ? "opponent1" : "opponent2"), "score" : self.localUserScore, "result" : "", "timestamp" : ""]
+            let matchDictionary : [String : AnyObject] = ["id": self.match!.identity , "opponent": (self.localUser.username == self.match!.opponent1 ? "opponent1" : "opponent2"), "score" : self.localUserScore, "result" : self.gameResultString, "timestamp" : ""]
             
             matchClient.updateMatchScore(matchDictionary){ (opponentScore) -> Void in
             
@@ -115,7 +117,7 @@ class LGGamingViewController: UIViewController {
     
     func endMatch()
     {
-        var matchDictionary : [String : AnyObject] = ["id": self.match!.identity , "opponent": (self.localUser.username == self.match!.opponent1 ? "opponent1" : "opponent2"), "result" : "11", "username" : self.localUser.username]
+        let matchDictionary : [String : AnyObject] = ["id": self.match!.identity , "opponent": (self.localUser.username == self.match!.opponent1 ? "opponent1" : "opponent2"), "result" : self.gameResultString, "username" : self.localUser.username]
         matchClient.sendFinalMatchResults(matchDictionary){ (match) -> Void in
             
             if match != nil
@@ -146,6 +148,9 @@ class LGGamingViewController: UIViewController {
         self.localUserScore = (sender.tag == 1) ? localUserScore+1 : localUserScore
         self.localPlayerScoreLabel.text = "\(self.localUserScore)";
         
+        self.gameResultString = self.gameResultString + (sender.tag == 1 ? "\(1)" : "\(0)")
+
+            
         updateSearchFieldViews()
     }
     
