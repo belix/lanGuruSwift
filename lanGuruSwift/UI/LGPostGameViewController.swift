@@ -52,18 +52,28 @@ class LGPostGameViewController: UIViewController {
         self.localUserProfilePictureView.clipsToBounds = true
         self.localUserNameLabel.text = self.localUser.username
         
-        self.localUserScoreLabel.text = (self.localUser.username == self.matchResult!.opponent1 ? "\(self.matchResult!.score1)" : "\(self.matchResult!.score2)")
-        self.opponentScoreLabel.text = (self.localUser.username == self.matchResult!.opponent1 ? "\(self.matchResult!.score2)" : "\(self.matchResult!.score1)")
+        let localUserScore : Int = (self.localUser.username == self.matchResult!.opponent1 ? self.matchResult!.score1 : self.matchResult!.score2)
+        let opponentUserScore : Int = (self.localUser.username == self.matchResult!.opponent1 ? self.matchResult!.score2 : self.matchResult!.score1)
+        self.localUserScoreLabel.text =  "\(localUserScore)"
+        self.opponentScoreLabel.text =  "\(opponentUserScore)"
         
-
-        let minusScoreLocalUser : Int = (self.localUser.username == self.matchResult!.opponent1 ? self.matchResult!.result1.componentsSeparatedByString("0").count : self.matchResult!.result2.componentsSeparatedByString("0").count)
-        let minusScoreOpponent : Int = (self.localUser.username == self.matchResult!.opponent1 ? self.matchResult!.result2.componentsSeparatedByString("0").count : self.matchResult!.result1.componentsSeparatedByString("0").count)
-        self.localUserMinusScoreLabel.text = "\(minusScoreLocalUser-1)"
-        self.opponentMinusScoreLabel.text = "\(minusScoreOpponent-1)"
+        let minusScoreLocalUser : Int = (self.localUser.username == self.matchResult!.opponent1 ? self.matchResult!.result1.componentsSeparatedByString("0").count-1 : self.matchResult!.result2.componentsSeparatedByString("0").count-1)
+        let minusScoreOpponent : Int = (self.localUser.username == self.matchResult!.opponent1 ? self.matchResult!.result2.componentsSeparatedByString("0").count-1 : self.matchResult!.result1.componentsSeparatedByString("0").count-1)
+        self.localUserMinusScoreLabel.text = "\(minusScoreLocalUser)"
+        self.opponentMinusScoreLabel.text = "\(minusScoreOpponent)"
         
-        let localPlayerHasWon = (self.localUser.username == self.matchResult!.opponent1 && self.matchResult!.score1 > self.matchResult!.score2) || (self.localUser.username == self.matchResult!.opponent2 && self.matchResult!.score2 > self.matchResult!.score1)
+        let localUserPercentage : Float = Float(localUserScore) / Float(minusScoreLocalUser+localUserScore)
+        let opponentPercentage : Float = Float(opponentUserScore) / Float(minusScoreOpponent+opponentUserScore)
+        self.localUserScorePercentLabel.text = NSString(format:"%.f%%", localUserPercentage*100.0)
+        self.opponentUserScorePercentLabel.text = NSString(format:"%.f%%", opponentPercentage*100.0)
+        
+        let localPlayerHasWon = localUserScore > opponentUserScore
         self.gameStatusLabel.text = localPlayerHasWon ? "Gewonnen" : "Verloren"
         self.gameStatusLabel.textColor = localPlayerHasWon ? UIColor(red: 5/255.0, green: 176/255.0, blue: 147/255.0, alpha: 1.0) : UIColor(red: 219/255.0, green: 100/255.0, blue: 100/255.0, alpha: 1.0)
+        
+        self.localUserScoreLabel.textColor = localPlayerHasWon ? UIColor(red: 5/255.0, green: 176/255.0, blue: 147/255.0, alpha: 1.0) : UIColor(red: 219/255.0, green: 100/255.0, blue: 100/255.0, alpha: 1.0)
+        self.opponentScoreLabel.textColor = !localPlayerHasWon ? UIColor(red: 5/255.0, green: 176/255.0, blue: 147/255.0, alpha: 1.0) : UIColor(red: 219/255.0, green: 100/255.0, blue: 100/255.0, alpha: 1.0)
+        
         
         self.localPlayerRankingLabel.text = (self.localUser.username == self.matchResult!.opponent1 ? "\(self.matchResult!.ranking1)" : "\(self.matchResult!.ranking2)")
     }

@@ -27,7 +27,7 @@ CGPoint points3[4] = {{160, 150}, {160, 310}, {0, 310}, {310, 160}};
 
 - (UIBezierPath *)bezierPathForButton:(UIButton *)button {
     
-    int index = [self.buttons indexOfObject:button];
+    NSInteger index = [self.buttons indexOfObject:button];
     CGPoint point1  = points1[index % 4];
     CGPoint point2 = points2[(index) % 4];
     CGPoint point3  = points3[index % 4];
@@ -42,7 +42,7 @@ CGPoint points3[4] = {{160, 150}, {160, 310}, {0, 310}, {310, 160}};
 - (UIColor *)colorForButton:(UIButton *)button {
     return [UIColor clearColor];
     
-    int index = [self.buttons indexOfObject:button];
+    NSInteger index = [self.buttons indexOfObject:button];
     if (index == 0) {
         return [UIColor redColor];
     } else if (index == 1) {

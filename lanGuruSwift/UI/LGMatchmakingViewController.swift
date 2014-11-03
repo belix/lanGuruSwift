@@ -11,8 +11,19 @@ import UIKit
 class LGMatchmakingViewController: UIViewController {
 
     @IBOutlet weak var matchmakingAnimatingView: LGMatchmakingAnimatingView!
+    
     @IBOutlet weak var localUserCoverPictureImageView: UIImageView!
     @IBOutlet weak var opponentCoverPictureImageView: UIImageView!
+    
+    @IBOutlet weak var localUserProfilePictureImageView: UIImageView!
+    @IBOutlet weak var opponentProfilePictureImageView: UIImageView!
+    
+    @IBOutlet weak var opponentView: UIView!
+    
+    @IBOutlet weak var localUserNameLabel: UILabel!
+    @IBOutlet weak var opponentNameLabel: UILabel!
+    
+    
     let localUser : User = User.getLocalUser()
     let matchmakingClient : LGMatchmakingClient = LGMatchmakingClient.self()
     var currentMatch : Match?
@@ -22,6 +33,14 @@ class LGMatchmakingViewController: UIViewController {
         
         let coverImageData = NSData(base64EncodedString: localUser.coverPicture, options: .allZeros)
         self.localUserCoverPictureImageView.image = UIImage(data:coverImageData!)
+
+        let profilePictureImageData = NSData(base64EncodedString: localUser.profilePicture, options: .allZeros)
+        self.localUserProfilePictureImageView.image = UIImage(data:profilePictureImageData!)
+        self.localUserProfilePictureImageView.layer.cornerRadius = self.localUserProfilePictureImageView.frame.size.height/2
+        self.localUserProfilePictureImageView.clipsToBounds = true
+
+        
+        self.localUserNameLabel.text = localUser.username;
         
         self.startSearchingForOpponent()
         
@@ -46,7 +65,7 @@ class LGMatchmakingViewController: UIViewController {
                 NSLog("success");
                 self.setupOpponentInterface()
                 
-                var timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("pushToGame"), userInfo: nil, repeats: false)
+//                var timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("pushToGame"), userInfo: nil, repeats: false)
             }
             else
             {
@@ -67,6 +86,16 @@ class LGMatchmakingViewController: UIViewController {
         let coverImageData = NSData(base64EncodedString: self.currentMatch!.opponentCoverPic, options: .allZeros)
         self.opponentCoverPictureImageView.image = UIImage(data:coverImageData!)
         self.opponentCoverPictureImageView.hidden = false
+
+        let profilePictureImageData = NSData(base64EncodedString: self.currentMatch!.opponentProfilePic, options: .allZeros)
+        self.opponentProfilePictureImageView.image = UIImage(data:profilePictureImageData!)
+        self.opponentProfilePictureImageView.layer.cornerRadius = self.opponentProfilePictureImageView.frame.size.height/2
+        self.opponentProfilePictureImageView.clipsToBounds = true
+        
+        self.opponentNameLabel.text = (self.localUser.username == self.currentMatch!.opponent1 ? self.currentMatch!.opponent2 : self.currentMatch!.opponent1)
+        
+        self.opponentView.hidden = false
+        
         
         NSLog("content %@", self.currentMatch!.content)
     }
