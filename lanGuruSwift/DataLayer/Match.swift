@@ -26,6 +26,7 @@ class Match: NSObject {
     var level : Int = 0
     var score1 : Int = 0
     var score2 : Int = 0
+    var opponentScore : Int = 0
     
     var rankdiff1 : Int = 0
     var rankdiff2 : Int = 0
@@ -53,7 +54,8 @@ class Match: NSObject {
             "rankdiff1"     : "rankdiff1",
             "rankdiff2"     : "rankdiff2",
             "coverpic"      : "opponentCoverPic",
-            "profilepic"    : "opponentProfilePic"
+            "profilepic"    : "opponentProfilePic",
+            "opponentScore" : "opponentScore"
             ]
         }
     }

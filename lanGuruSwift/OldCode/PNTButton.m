@@ -29,7 +29,7 @@
     }
     else{
         UIBezierPath *path = [[PNTUtility sharedUtility] bezierPathForButton:self];
-        [[[PNTUtility sharedUtility] colorForButton:self] setFill];
+        [[UIColor clearColor] setFill];
         [path fill];
     }
 }

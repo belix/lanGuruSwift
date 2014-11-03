@@ -25,16 +25,27 @@ class LGGamingViewController: UIViewController {
     @IBOutlet weak var localUserProfilePictureView: UIImageView!
     @IBOutlet weak var opponentProfilePictureImageView: UIImageView!
 
+    @IBOutlet weak var localPlayerUsernameLabel: UILabel!
+    @IBOutlet weak var localPlayerScoreLabel: UILabel!
+    @IBOutlet weak var opponentUsernameLabel: UILabel!
+    @IBOutlet weak var opponentPlayerScoreLabel: UILabel!
+    
+    var gameResultString = ""
+    
     var touchedAnswerButton : PNTButton!
     
     var timer : NSTimer!
-    var time : Float = 60
+    var time : Float = 30
     
     var match : Match?
+    var matchResult : Match?
     
     var model = []
     var roundCounter : Int = 0
-
+    var localUserScore : Int = 0
+    
+    let matchClient : LGMatchClient = LGMatchClient.self()
+    let localUser : User = User.getLocalUser()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +62,9 @@ class LGGamingViewController: UIViewController {
         self.localUserProfilePictureView.image = UIImage(data:profilePictureImageData!)
         self.localUserProfilePictureView.layer.cornerRadius = self.localUserProfilePictureView.frame.size.height/2
         self.localUserProfilePictureView.clipsToBounds = true
+        
+        self.localPlayerUsernameLabel.text = User.getLocalUser().username;
+        self.opponentUsernameLabel.text = (match!.opponent1 == User.getLocalUser().username ? match!.opponent2 : match!.opponent1)
         
         //setup triangle buttons
         let buttons : NSArray = [upperButton,rightButton,leftButton,lowerButton]
@@ -82,9 +96,46 @@ class LGGamingViewController: UIViewController {
     func timerDidFire(timer:NSTimer!)
     {
         time -= 1
-        progressBar.percent = time / 60.0;
+        progressBar.percent = time / 30.0;
+        
+        if time <= 0
+        {
+            timer.invalidate()
+            endMatch()
+        }
+        else
+        {
+            //@Felix : todo timestamp + result mitgeben
+            let matchDictionary : [String : AnyObject] = ["id": self.match!.identity , "opponent": (self.localUser.username == self.match!.opponent1 ? "opponent1" : "opponent2"), "score" : self.localUserScore, "result" : self.gameResultString, "timestamp" : ""]
+            
+            matchClient.updateMatchScore(matchDictionary){ (opponentScore) -> Void in
+            
+                self.opponentPlayerScoreLabel.text = "\(opponentScore)";
+            }
+        }
     }
     
+    func endMatch()
+    {
+        let matchDictionary : [String : AnyObject] = ["id": self.match!.identity , "opponent": (self.localUser.username == self.match!.opponent1 ? "opponent1" : "opponent2"), "result" : self.gameResultString, "username" : self.localUser.username]
+        matchClient.sendFinalMatchResults(matchDictionary){ (match) -> Void in
+            
+            if match != nil
+            {
+                self.matchResult = match as? Match
+                NSLog("beste match %@", match as Match)
+                NSLog("success");
+                self.performSegueWithIdentifier("showPostScreen", sender: nil)
+            }
+            else
+            {
+                //Felix : to do: make weakself
+                self.endMatch()
+            }
+        }
+    }
+
+
     @IBAction func answerButtonPressed(sender: PNTButton) {
         
         //for setting color in triangle buttons
@@ -94,6 +145,12 @@ class LGGamingViewController: UIViewController {
         
         touchedAnswerButton = sender
         
+        self.localUserScore = (sender.tag == 1) ? localUserScore+1 : localUserScore
+        self.localPlayerScoreLabel.text = "\(self.localUserScore)";
+        
+        self.gameResultString = self.gameResultString + (sender.tag == 1 ? "\(1)" : "\(0)")
+
+            
         updateSearchFieldViews()
     }
     
@@ -141,7 +198,6 @@ class LGGamingViewController: UIViewController {
             self.hiddenSearchField.frame = newFrame
             
             }, completion: { finished in
-                println("Basket doors opened!")
                 self.roundCounter++;
                 self.updateSearchFieldFrames()
                 self.updateAnswerButtons()
@@ -167,14 +223,20 @@ class LGGamingViewController: UIViewController {
 
 
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "showPostScreen"{
+            var destinationViewController : LGPostGameViewController = segue.destinationViewController as LGPostGameViewController
+            destinationViewController.match = self.match
+            destinationViewController.matchResult = self.matchResult
+            destinationViewController.hidesBottomBarWhenPushed = true;
+        }
     }
-    */
+    
 
 }

@@ -51,6 +51,7 @@
                     if (!error) {
                         [User getLocalUser].coverPicture = [data base64EncodedStringWithOptions:kNilOptions];;
                         [[LGCoreDataManager sharedInstance] saveContext];
+                        [self uploadProfileAndCoverPicture];
                     }
                     
                 }] resume];

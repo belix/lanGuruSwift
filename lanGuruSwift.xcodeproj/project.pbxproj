@@ -10,36 +10,33 @@
 		0503313B19FD210D0089E7F1 /* LGChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0503313A19FD210D0089E7F1 /* LGChallengeViewController.swift */; };
 		0503313D19FD226F0089E7F1 /* LGRepeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0503313C19FD226F0089E7F1 /* LGRepeatViewController.swift */; };
 		0503314519FD2EC10089E7F1 /* LGFriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0503314419FD2EC10089E7F1 /* LGFriendTableViewCell.swift */; };
-		0542FA0D19F99F4B004207EA /* LGVocabularyClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0542FA0C19F99F4B004207EA /* LGVocabularyClient.m */; };
 		0542FA0F19F9A6F5004207EA /* LGRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0542FA0E19F9A6F5004207EA /* LGRootViewController.swift */; };
-		057C811D1A00278C004C63AA /* overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 057C811C1A00278C004C63AA /* overlay.png */; };
-		057C811F1A002A80004C63AA /* middle-line.png in Resources */ = {isa = PBXBuildFile; fileRef = 057C811E1A002A80004C63AA /* middle-line.png */; };
+		055942151A07C1030005A09D /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0559420D1A07C1030005A09D /* Match.swift */; };
+		055942161A07C1030005A09D /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0559420E1A07C1030005A09D /* Word.swift */; };
+		055942171A07C1030005A09D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0559420F1A07C1030005A09D /* User.swift */; };
+		055942191A07C1030005A09D /* LGCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 055942121A07C1030005A09D /* LGCoreDataManager.m */; };
+		0559421A1A07C1030005A09D /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055942131A07C1030005A09D /* CoreDataManager.swift */; };
+		0559421C1A07C14E0005A09D /* WebServiceClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0559421B1A07C14E0005A09D /* WebServiceClient.swift */; };
+		055942201A07C1720005A09D /* LGGamingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0559421D1A07C1720005A09D /* LGGamingViewController.swift */; };
+		055942211A07C1720005A09D /* LGMatchmakingAnimatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0559421E1A07C1720005A09D /* LGMatchmakingAnimatingView.swift */; };
+		055942311A07C1CC0005A09D /* LGMatchClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 055942251A07C1CC0005A09D /* LGMatchClient.m */; };
+		055942321A07C1CC0005A09D /* LGFacebookClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 055942271A07C1CC0005A09D /* LGFacebookClient.m */; };
+		055942331A07C1CC0005A09D /* LGMatchmakingClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 055942281A07C1CC0005A09D /* LGMatchmakingClient.m */; };
+		055942341A07C1CC0005A09D /* LGLoginClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0559422B1A07C1CC0005A09D /* LGLoginClient.m */; };
+		055942351A07C1CC0005A09D /* LGClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0559422E1A07C1CC0005A09D /* LGClient.m */; };
+		055942361A07C1CC0005A09D /* LGVocabularyClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 055942301A07C1CC0005A09D /* LGVocabularyClient.m */; };
+		055942411A07C24F0005A09D /* PNTUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 0559423B1A07C24E0005A09D /* PNTUtility.m */; };
+		055942421A07C24F0005A09D /* PNTButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0559423D1A07C24F0005A09D /* PNTButton.m */; };
+		055942431A07C24F0005A09D /* LGProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0559423F1A07C24F0005A09D /* LGProgressBar.m */; };
+		055942461A07C28B0005A09D /* lanGuruSwift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 055942441A07C28B0005A09D /* lanGuruSwift.xcdatamodeld */; };
+		057C81371A005131004C63AA /* LGPostGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057C81361A005131004C63AA /* LGPostGameViewController.swift */; };
 		0581057019F7FE7F000FB82A /* LGLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0581056F19F7FE7F000FB82A /* LGLoginViewController.swift */; };
 		0593007619F53CBD004526DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0593007519F53CBD004526DC /* AppDelegate.swift */; };
-		0593007919F53CBD004526DC /* lanGuruSwift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0593007719F53CBD004526DC /* lanGuruSwift.xcdatamodeld */; };
 		0593008019F53CBD004526DC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0593007F19F53CBD004526DC /* Images.xcassets */; };
 		0593008319F53CBD004526DC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0593008119F53CBD004526DC /* LaunchScreen.xib */; };
 		0593008F19F53CBD004526DC /* lanGuruSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0593008E19F53CBD004526DC /* lanGuruSwiftTests.swift */; };
-		0593009919F53CD9004526DC /* WebServiceClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0593009819F53CD9004526DC /* WebServiceClient.swift */; };
 		0593009F19F53CF4004526DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0593009E19F53CF4004526DC /* Main.storyboard */; };
-		059300A119F53CFD004526DC /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059300A019F53CFD004526DC /* CoreDataManager.swift */; };
-		059300A319F53D65004526DC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059300A219F53D65004526DC /* User.swift */; };
-		059300A519F53D66004526DC /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059300A419F53D66004526DC /* Word.swift */; };
-		059300B919F5576E004526DC /* PNTButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 059300B619F5576E004526DC /* PNTButton.m */; };
-		059300BA19F5576E004526DC /* PNTUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 059300B819F5576E004526DC /* PNTUtility.m */; };
-		059300BF19F55DF5004526DC /* LGGamingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059300BE19F55DF5004526DC /* LGGamingViewController.swift */; };
-		0593019419F590CA004526DC /* LGTrainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0593019319F590CA004526DC /* LGTrainingViewController.swift */; };
-		0593019A19F5A23E004526DC /* LGProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0593019919F5A23E004526DC /* LGProgressBar.m */; };
-		05C254BE19FFFD3300AA05FD /* LGMatchmakingClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 05C254BD19FFFD3300AA05FD /* LGMatchmakingClient.m */; };
-		05C254C019FFFD5700AA05FD /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C254BF19FFFD5700AA05FD /* Match.swift */; };
 		05C254C21A0002ED00AA05FD /* LGMatchmakingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C254C11A0002ED00AA05FD /* LGMatchmakingViewController.swift */; };
-		05C254C51A001D3500AA05FD /* lupe.png in Resources */ = {isa = PBXBuildFile; fileRef = 05C254C31A001D3500AA05FD /* lupe.png */; };
-		05C254C61A001D3500AA05FD /* white-dot.png in Resources */ = {isa = PBXBuildFile; fileRef = 05C254C41A001D3500AA05FD /* white-dot.png */; };
-		05C254C81A001E5F00AA05FD /* LGMatchmakingAnimatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C254C71A001E5F00AA05FD /* LGMatchmakingAnimatingView.swift */; };
-		05FB9A7619F9393500FBD772 /* LGLoginClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FB9A7519F9393500FBD772 /* LGLoginClient.m */; };
-		05FB9A7919F939A900FBD772 /* LGCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FB9A7819F939A900FBD772 /* LGCoreDataManager.m */; };
-		05FB9A7C19F94A2E00FBD772 /* LGClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FB9A7B19F94A2E00FBD772 /* LGClient.m */; };
-		05FB9A8019F975C900FBD772 /* LGFacebookClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FB9A7F19F975C900FBD772 /* LGFacebookClient.m */; };
 		05FB9A8219F97EA200FBD772 /* LGProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FB9A8119F97EA200FBD772 /* LGProfileViewController.swift */; };
 		05FB9A8419F9920000FBD772 /* LGRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FB9A8319F9920000FBD772 /* LGRegistrationViewController.swift */; };
 		1D85B55CAF1C58C7672A8E72 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C62C723800CCDC4C71B44BF5 /* libPods.a */; };
@@ -59,50 +56,48 @@
 		0503313A19FD210D0089E7F1 /* LGChallengeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LGChallengeViewController.swift; path = UI/LGChallengeViewController.swift; sourceTree = "<group>"; };
 		0503313C19FD226F0089E7F1 /* LGRepeatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LGRepeatViewController.swift; path = UI/LGRepeatViewController.swift; sourceTree = "<group>"; };
 		0503314419FD2EC10089E7F1 /* LGFriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LGFriendTableViewCell.swift; path = UI/LGFriendTableViewCell.swift; sourceTree = "<group>"; };
-		0542FA0B19F99F4B004207EA /* LGVocabularyClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGVocabularyClient.h; path = BusinessLogic/LGVocabularyClient.h; sourceTree = "<group>"; };
-		0542FA0C19F99F4B004207EA /* LGVocabularyClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LGVocabularyClient.m; path = BusinessLogic/LGVocabularyClient.m; sourceTree = "<group>"; };
 		0542FA0E19F9A6F5004207EA /* LGRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LGRootViewController.swift; path = UI/LGRootViewController.swift; sourceTree = "<group>"; };
-		057C811C1A00278C004C63AA /* overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlay.png; sourceTree = "<group>"; };
-		057C811E1A002A80004C63AA /* middle-line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "middle-line.png"; sourceTree = "<group>"; };
+		0559420D1A07C1030005A09D /* Match.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Match.swift; path = DataLayer/Match.swift; sourceTree = "<group>"; };
+		0559420E1A07C1030005A09D /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Word.swift; path = DataLayer/Word.swift; sourceTree = "<group>"; };
+		0559420F1A07C1030005A09D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = DataLayer/User.swift; sourceTree = "<group>"; };
+		055942121A07C1030005A09D /* LGCoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LGCoreDataManager.m; path = DataLayer/LGCoreDataManager.m; sourceTree = "<group>"; };
+		055942131A07C1030005A09D /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataManager.swift; path = DataLayer/CoreDataManager.swift; sourceTree = "<group>"; };
+		055942141A07C1030005A09D /* LGCoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGCoreDataManager.h; path = DataLayer/LGCoreDataManager.h; sourceTree = "<group>"; };
+		0559421B1A07C14E0005A09D /* WebServiceClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebServiceClient.swift; path = NetworkLayer/WebServiceClient.swift; sourceTree = "<group>"; };
+		0559421D1A07C1720005A09D /* LGGamingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LGGamingViewController.swift; path = UI/LGGamingViewController.swift; sourceTree = "<group>"; };
+		0559421E1A07C1720005A09D /* LGMatchmakingAnimatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LGMatchmakingAnimatingView.swift; path = UI/LGMatchmakingAnimatingView.swift; sourceTree = "<group>"; };
+		055942251A07C1CC0005A09D /* LGMatchClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LGMatchClient.m; path = NetworkLayer/LGMatchClient.m; sourceTree = "<group>"; };
+		055942261A07C1CC0005A09D /* LGMatchClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGMatchClient.h; path = NetworkLayer/LGMatchClient.h; sourceTree = "<group>"; };
+		055942271A07C1CC0005A09D /* LGFacebookClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LGFacebookClient.m; path = NetworkLayer/LGFacebookClient.m; sourceTree = "<group>"; };
+		055942281A07C1CC0005A09D /* LGMatchmakingClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LGMatchmakingClient.m; path = NetworkLayer/LGMatchmakingClient.m; sourceTree = "<group>"; };
+		055942291A07C1CC0005A09D /* LGLoginClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGLoginClient.h; path = NetworkLayer/LGLoginClient.h; sourceTree = "<group>"; };
+		0559422A1A07C1CC0005A09D /* LGMatchmakingClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGMatchmakingClient.h; path = NetworkLayer/LGMatchmakingClient.h; sourceTree = "<group>"; };
+		0559422B1A07C1CC0005A09D /* LGLoginClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LGLoginClient.m; path = NetworkLayer/LGLoginClient.m; sourceTree = "<group>"; };
+		0559422C1A07C1CC0005A09D /* LGFacebookClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGFacebookClient.h; path = NetworkLayer/LGFacebookClient.h; sourceTree = "<group>"; };
+		0559422D1A07C1CC0005A09D /* LGClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGClient.h; path = NetworkLayer/LGClient.h; sourceTree = "<group>"; };
+		0559422E1A07C1CC0005A09D /* LGClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LGClient.m; path = NetworkLayer/LGClient.m; sourceTree = "<group>"; };
+		0559422F1A07C1CC0005A09D /* LGVocabularyClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGVocabularyClient.h; path = NetworkLayer/LGVocabularyClient.h; sourceTree = "<group>"; };
+		055942301A07C1CC0005A09D /* LGVocabularyClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LGVocabularyClient.m; path = NetworkLayer/LGVocabularyClient.m; sourceTree = "<group>"; };
+		0559423B1A07C24E0005A09D /* PNTUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PNTUtility.m; path = OldCode/PNTUtility.m; sourceTree = "<group>"; };
+		0559423C1A07C24E0005A09D /* PNTUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PNTUtility.h; path = OldCode/PNTUtility.h; sourceTree = "<group>"; };
+		0559423D1A07C24F0005A09D /* PNTButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PNTButton.m; path = OldCode/PNTButton.m; sourceTree = "<group>"; };
+		0559423E1A07C24F0005A09D /* LGProgressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGProgressBar.h; path = OldCode/LGProgressBar.h; sourceTree = "<group>"; };
+		0559423F1A07C24F0005A09D /* LGProgressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LGProgressBar.m; path = OldCode/LGProgressBar.m; sourceTree = "<group>"; };
+		055942401A07C24F0005A09D /* PNTButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PNTButton.h; path = OldCode/PNTButton.h; sourceTree = "<group>"; };
+		055942451A07C28B0005A09D /* lanGuruSwift.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = lanGuruSwift.xcdatamodel; sourceTree = "<group>"; };
+		057C81361A005131004C63AA /* LGPostGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LGPostGameViewController.swift; path = UI/LGPostGameViewController.swift; sourceTree = "<group>"; };
 		0581056F19F7FE7F000FB82A /* LGLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LGLoginViewController.swift; path = UI/LGLoginViewController.swift; sourceTree = "<group>"; };
 		0593007019F53CBD004526DC /* lanGuruSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lanGuruSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0593007419F53CBD004526DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0593007519F53CBD004526DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0593007819F53CBD004526DC /* lanGuruSwift.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = lanGuruSwift.xcdatamodel; sourceTree = "<group>"; };
 		0593007F19F53CBD004526DC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0593008219F53CBD004526DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		0593008819F53CBD004526DC /* lanGuruSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lanGuruSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0593008D19F53CBD004526DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0593008E19F53CBD004526DC /* lanGuruSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lanGuruSwiftTests.swift; sourceTree = "<group>"; };
-		0593009819F53CD9004526DC /* WebServiceClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceClient.swift; sourceTree = "<group>"; };
 		0593009E19F53CF4004526DC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		059300A019F53CFD004526DC /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		059300A219F53D65004526DC /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		059300A419F53D66004526DC /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		059300A619F53DC2004526DC /* lanGuruSwift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "lanGuruSwift-Bridging-Header.h"; sourceTree = "<group>"; };
-		059300B519F5576E004526DC /* PNTButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNTButton.h; sourceTree = "<group>"; };
-		059300B619F5576E004526DC /* PNTButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNTButton.m; sourceTree = "<group>"; };
-		059300B719F5576E004526DC /* PNTUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNTUtility.h; sourceTree = "<group>"; };
-		059300B819F5576E004526DC /* PNTUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNTUtility.m; sourceTree = "<group>"; };
-		059300BE19F55DF5004526DC /* LGGamingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGGamingViewController.swift; sourceTree = "<group>"; };
-		0593019319F590CA004526DC /* LGTrainingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGTrainingViewController.swift; sourceTree = "<group>"; };
-		0593019819F5A23E004526DC /* LGProgressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGProgressBar.h; sourceTree = "<group>"; };
-		0593019919F5A23E004526DC /* LGProgressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGProgressBar.m; sourceTree = "<group>"; };
-		05C254BC19FFFD3300AA05FD /* LGMatchmakingClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGMatchmakingClient.h; path = BusinessLogic/LGMatchmakingClient.h; sourceTree = "<group>"; };
-		05C254BD19FFFD3300AA05FD /* LGMatchmakingClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LGMatchmakingClient.m; path = BusinessLogic/LGMatchmakingClient.m; sourceTree = "<group>"; };
-		05C254BF19FFFD5700AA05FD /* Match.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Match.swift; path = BusinessLogic/Match.swift; sourceTree = "<group>"; };
 		05C254C11A0002ED00AA05FD /* LGMatchmakingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LGMatchmakingViewController.swift; path = UI/LGMatchmakingViewController.swift; sourceTree = "<group>"; };
-		05C254C31A001D3500AA05FD /* lupe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lupe.png; sourceTree = "<group>"; };
-		05C254C41A001D3500AA05FD /* white-dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "white-dot.png"; sourceTree = "<group>"; };
-		05C254C71A001E5F00AA05FD /* LGMatchmakingAnimatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGMatchmakingAnimatingView.swift; sourceTree = "<group>"; };
-		05FB9A7419F9393500FBD772 /* LGLoginClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGLoginClient.h; sourceTree = "<group>"; };
-		05FB9A7519F9393500FBD772 /* LGLoginClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGLoginClient.m; sourceTree = "<group>"; };
-		05FB9A7719F939A900FBD772 /* LGCoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGCoreDataManager.h; sourceTree = "<group>"; };
-		05FB9A7819F939A900FBD772 /* LGCoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGCoreDataManager.m; sourceTree = "<group>"; };
-		05FB9A7A19F94A2E00FBD772 /* LGClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGClient.h; path = BusinessLogic/LGClient.h; sourceTree = "<group>"; };
-		05FB9A7B19F94A2E00FBD772 /* LGClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LGClient.m; path = BusinessLogic/LGClient.m; sourceTree = "<group>"; };
-		05FB9A7E19F975C900FBD772 /* LGFacebookClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGFacebookClient.h; path = BusinessLogic/LGFacebookClient.h; sourceTree = "<group>"; };
-		05FB9A7F19F975C900FBD772 /* LGFacebookClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LGFacebookClient.m; path = BusinessLogic/LGFacebookClient.m; sourceTree = "<group>"; };
 		05FB9A8119F97EA200FBD772 /* LGProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LGProfileViewController.swift; path = UI/LGProfileViewController.swift; sourceTree = "<group>"; };
 		05FB9A8319F9920000FBD772 /* LGRegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LGRegistrationViewController.swift; path = UI/LGRegistrationViewController.swift; sourceTree = "<group>"; };
 		4CCF9536C539C4E903C538C5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -129,10 +124,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		055942231A07C19B0005A09D /* Login/Registration */ = {
+			isa = PBXGroup;
+			children = (
+				0581056F19F7FE7F000FB82A /* LGLoginViewController.swift */,
+				05FB9A8319F9920000FBD772 /* LGRegistrationViewController.swift */,
+				0542FA0E19F9A6F5004207EA /* LGRootViewController.swift */,
+			);
+			name = Login/Registration;
+			sourceTree = "<group>";
+		};
+		055942241A07C1BE0005A09D /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				055942251A07C1CC0005A09D /* LGMatchClient.m */,
+				055942261A07C1CC0005A09D /* LGMatchClient.h */,
+				0559422C1A07C1CC0005A09D /* LGFacebookClient.h */,
+				055942271A07C1CC0005A09D /* LGFacebookClient.m */,
+				055942291A07C1CC0005A09D /* LGLoginClient.h */,
+				0559422B1A07C1CC0005A09D /* LGLoginClient.m */,
+				0559422A1A07C1CC0005A09D /* LGMatchmakingClient.h */,
+				055942281A07C1CC0005A09D /* LGMatchmakingClient.m */,
+				0559422D1A07C1CC0005A09D /* LGClient.h */,
+				0559422E1A07C1CC0005A09D /* LGClient.m */,
+				0559422F1A07C1CC0005A09D /* LGVocabularyClient.h */,
+				055942301A07C1CC0005A09D /* LGVocabularyClient.m */,
+			);
+			name = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		0559423A1A07C2390005A09D /* oldCode */ = {
+			isa = PBXGroup;
+			children = (
+				0559423B1A07C24E0005A09D /* PNTUtility.m */,
+				0559423C1A07C24E0005A09D /* PNTUtility.h */,
+				0559423D1A07C24F0005A09D /* PNTButton.m */,
+				0559423E1A07C24F0005A09D /* LGProgressBar.h */,
+				0559423F1A07C24F0005A09D /* LGProgressBar.m */,
+				055942401A07C24F0005A09D /* PNTButton.h */,
+			);
+			name = oldCode;
+			sourceTree = "<group>";
+		};
 		057C81201A002AE0004C63AA /* Gaming */ = {
 			isa = PBXGroup;
 			children = (
-				059300BE19F55DF5004526DC /* LGGamingViewController.swift */,
+				0559421D1A07C1720005A09D /* LGGamingViewController.swift */,
+				057C81361A005131004C63AA /* LGPostGameViewController.swift */,
 			);
 			name = Gaming;
 			sourceTree = "<group>";
@@ -141,7 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				05C254C11A0002ED00AA05FD /* LGMatchmakingViewController.swift */,
-				05C254C71A001E5F00AA05FD /* LGMatchmakingAnimatingView.swift */,
+				0559421E1A07C1720005A09D /* LGMatchmakingAnimatingView.swift */,
 			);
 			name = Matchmaking;
 			sourceTree = "<group>";
@@ -180,10 +218,11 @@
 		0593007219F53CBD004526DC /* lanGuruSwift */ = {
 			isa = PBXGroup;
 			children = (
-				059300C419F57154004526DC /* UI */,
+				055942241A07C1BE0005A09D /* NetworkLayer */,
+				059300C419F57154004526DC /* UserInterface */,
+				059300C219F57130004526DC /* DataLayer */,
 				05FB9A7D19F973F300FBD772 /* Unused */,
-				059300C219F57130004526DC /* CoreData */,
-				059300BD19F55989004526DC /* objC */,
+				0559423A1A07C2390005A09D /* oldCode */,
 				0593007519F53CBD004526DC /* AppDelegate.swift */,
 				0593009E19F53CF4004526DC /* Main.storyboard */,
 				0593008119F53CBD004526DC /* LaunchScreen.xib */,
@@ -195,11 +234,7 @@
 		0593007319F53CBD004526DC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				05C254C31A001D3500AA05FD /* lupe.png */,
-				05C254C41A001D3500AA05FD /* white-dot.png */,
-				057C811C1A00278C004C63AA /* overlay.png */,
 				0593007F19F53CBD004526DC /* Images.xcassets */,
-				057C811E1A002A80004C63AA /* middle-line.png */,
 				0593007419F53CBD004526DC /* Info.plist */,
 				059300A619F53DC2004526DC /* lanGuruSwift-Bridging-Header.h */,
 			);
@@ -223,69 +258,35 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		059300BD19F55989004526DC /* objC */ = {
+		059300C219F57130004526DC /* DataLayer */ = {
 			isa = PBXGroup;
 			children = (
-				05FB9A7319F9390F00FBD772 /* NetworkLogic */,
-				059300B519F5576E004526DC /* PNTButton.h */,
-				059300B619F5576E004526DC /* PNTButton.m */,
-				059300B719F5576E004526DC /* PNTUtility.h */,
-				059300B819F5576E004526DC /* PNTUtility.m */,
-				0593019819F5A23E004526DC /* LGProgressBar.h */,
-				0593019919F5A23E004526DC /* LGProgressBar.m */,
+				055942441A07C28B0005A09D /* lanGuruSwift.xcdatamodeld */,
+				0559420D1A07C1030005A09D /* Match.swift */,
+				0559420E1A07C1030005A09D /* Word.swift */,
+				0559420F1A07C1030005A09D /* User.swift */,
+				055942141A07C1030005A09D /* LGCoreDataManager.h */,
+				055942121A07C1030005A09D /* LGCoreDataManager.m */,
 			);
-			name = objC;
+			name = DataLayer;
 			sourceTree = "<group>";
 		};
-		059300C219F57130004526DC /* CoreData */ = {
+		059300C419F57154004526DC /* UserInterface */ = {
 			isa = PBXGroup;
 			children = (
-				0593007719F53CBD004526DC /* lanGuruSwift.xcdatamodeld */,
-				059300A419F53D66004526DC /* Word.swift */,
-				059300A219F53D65004526DC /* User.swift */,
-				05C254BF19FFFD5700AA05FD /* Match.swift */,
-			);
-			name = CoreData;
-			sourceTree = "<group>";
-		};
-		059300C419F57154004526DC /* UI */ = {
-			isa = PBXGroup;
-			children = (
+				055942231A07C19B0005A09D /* Login/Registration */,
 				057C81221A002AFA004C63AA /* TabBar */,
 				057C81211A002AE8004C63AA /* Matchmaking */,
 				057C81201A002AE0004C63AA /* Gaming */,
-				0593019319F590CA004526DC /* LGTrainingViewController.swift */,
-				0581056F19F7FE7F000FB82A /* LGLoginViewController.swift */,
-				05FB9A8319F9920000FBD772 /* LGRegistrationViewController.swift */,
-				0542FA0E19F9A6F5004207EA /* LGRootViewController.swift */,
 			);
-			name = UI;
-			sourceTree = "<group>";
-		};
-		05FB9A7319F9390F00FBD772 /* NetworkLogic */ = {
-			isa = PBXGroup;
-			children = (
-				05FB9A7419F9393500FBD772 /* LGLoginClient.h */,
-				05FB9A7519F9393500FBD772 /* LGLoginClient.m */,
-				05FB9A7E19F975C900FBD772 /* LGFacebookClient.h */,
-				05FB9A7F19F975C900FBD772 /* LGFacebookClient.m */,
-				0542FA0B19F99F4B004207EA /* LGVocabularyClient.h */,
-				0542FA0C19F99F4B004207EA /* LGVocabularyClient.m */,
-				05C254BC19FFFD3300AA05FD /* LGMatchmakingClient.h */,
-				05C254BD19FFFD3300AA05FD /* LGMatchmakingClient.m */,
-				05FB9A7A19F94A2E00FBD772 /* LGClient.h */,
-				05FB9A7B19F94A2E00FBD772 /* LGClient.m */,
-				05FB9A7719F939A900FBD772 /* LGCoreDataManager.h */,
-				05FB9A7819F939A900FBD772 /* LGCoreDataManager.m */,
-			);
-			name = NetworkLogic;
+			name = UserInterface;
 			sourceTree = "<group>";
 		};
 		05FB9A7D19F973F300FBD772 /* Unused */ = {
 			isa = PBXGroup;
 			children = (
-				059300A019F53CFD004526DC /* CoreDataManager.swift */,
-				0593009819F53CD9004526DC /* WebServiceClient.swift */,
+				0559421B1A07C14E0005A09D /* WebServiceClient.swift */,
+				055942131A07C1030005A09D /* CoreDataManager.swift */,
 			);
 			name = Unused;
 			sourceTree = "<group>";
@@ -389,13 +390,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				057C811D1A00278C004C63AA /* overlay.png in Resources */,
 				0593009F19F53CF4004526DC /* Main.storyboard in Resources */,
-				05C254C51A001D3500AA05FD /* lupe.png in Resources */,
 				0593008319F53CBD004526DC /* LaunchScreen.xib in Resources */,
-				05C254C61A001D3500AA05FD /* white-dot.png in Resources */,
 				0593008019F53CBD004526DC /* Images.xcassets in Resources */,
-				057C811F1A002A80004C63AA /* middle-line.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,33 +443,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				059300A519F53D66004526DC /* Word.swift in Sources */,
-				0542FA0D19F99F4B004207EA /* LGVocabularyClient.m in Sources */,
-				05FB9A7C19F94A2E00FBD772 /* LGClient.m in Sources */,
-				0593019A19F5A23E004526DC /* LGProgressBar.m in Sources */,
-				05C254C81A001E5F00AA05FD /* LGMatchmakingAnimatingView.swift in Sources */,
-				05FB9A8019F975C900FBD772 /* LGFacebookClient.m in Sources */,
-				0593007919F53CBD004526DC /* lanGuruSwift.xcdatamodeld in Sources */,
-				059300BA19F5576E004526DC /* PNTUtility.m in Sources */,
-				05FB9A7619F9393500FBD772 /* LGLoginClient.m in Sources */,
+				055942151A07C1030005A09D /* Match.swift in Sources */,
 				05FB9A8219F97EA200FBD772 /* LGProfileViewController.swift in Sources */,
 				0542FA0F19F9A6F5004207EA /* LGRootViewController.swift in Sources */,
-				059300A319F53D65004526DC /* User.swift in Sources */,
 				0581057019F7FE7F000FB82A /* LGLoginViewController.swift in Sources */,
+				055942331A07C1CC0005A09D /* LGMatchmakingClient.m in Sources */,
+				055942161A07C1030005A09D /* Word.swift in Sources */,
+				055942311A07C1CC0005A09D /* LGMatchClient.m in Sources */,
+				055942321A07C1CC0005A09D /* LGFacebookClient.m in Sources */,
 				05C254C21A0002ED00AA05FD /* LGMatchmakingViewController.swift in Sources */,
+				0559421C1A07C14E0005A09D /* WebServiceClient.swift in Sources */,
+				055942431A07C24F0005A09D /* LGProgressBar.m in Sources */,
+				055942341A07C1CC0005A09D /* LGLoginClient.m in Sources */,
+				055942171A07C1030005A09D /* User.swift in Sources */,
+				055942421A07C24F0005A09D /* PNTButton.m in Sources */,
 				0503313D19FD226F0089E7F1 /* LGRepeatViewController.swift in Sources */,
-				059300B919F5576E004526DC /* PNTButton.m in Sources */,
-				059300BF19F55DF5004526DC /* LGGamingViewController.swift in Sources */,
-				05FB9A7919F939A900FBD772 /* LGCoreDataManager.m in Sources */,
-				0593019419F590CA004526DC /* LGTrainingViewController.swift in Sources */,
 				0503314519FD2EC10089E7F1 /* LGFriendTableViewCell.swift in Sources */,
-				05C254C019FFFD5700AA05FD /* Match.swift in Sources */,
 				0503313B19FD210D0089E7F1 /* LGChallengeViewController.swift in Sources */,
 				05FB9A8419F9920000FBD772 /* LGRegistrationViewController.swift in Sources */,
+				0559421A1A07C1030005A09D /* CoreDataManager.swift in Sources */,
+				055942211A07C1720005A09D /* LGMatchmakingAnimatingView.swift in Sources */,
 				0593007619F53CBD004526DC /* AppDelegate.swift in Sources */,
-				059300A119F53CFD004526DC /* CoreDataManager.swift in Sources */,
-				05C254BE19FFFD3300AA05FD /* LGMatchmakingClient.m in Sources */,
-				0593009919F53CD9004526DC /* WebServiceClient.swift in Sources */,
+				057C81371A005131004C63AA /* LGPostGameViewController.swift in Sources */,
+				055942201A07C1720005A09D /* LGGamingViewController.swift in Sources */,
+				055942191A07C1030005A09D /* LGCoreDataManager.m in Sources */,
+				055942461A07C28B0005A09D /* lanGuruSwift.xcdatamodeld in Sources */,
+				055942411A07C24F0005A09D /* PNTUtility.m in Sources */,
+				055942361A07C1CC0005A09D /* LGVocabularyClient.m in Sources */,
+				055942351A07C1CC0005A09D /* LGClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -676,12 +674,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		0593007719F53CBD004526DC /* lanGuruSwift.xcdatamodeld */ = {
+		055942441A07C28B0005A09D /* lanGuruSwift.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				0593007819F53CBD004526DC /* lanGuruSwift.xcdatamodel */,
+				055942451A07C28B0005A09D /* lanGuruSwift.xcdatamodel */,
 			);
-			currentVersion = 0593007819F53CBD004526DC /* lanGuruSwift.xcdatamodel */;
+			currentVersion = 055942451A07C28B0005A09D /* lanGuruSwift.xcdatamodel */;
 			path = lanGuruSwift.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

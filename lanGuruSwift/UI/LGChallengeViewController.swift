@@ -21,12 +21,13 @@ class LGChallengeViewController: UIViewController, UITableViewDelegate, UITableV
         
         model = LGCoreDataManager.sharedInstance().managedObjectStore.mainQueueManagedObjectContext.executeFetchRequest(fReq, error:&error)!
         
-        // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationItem.setHidesBackButton(true, animated: false)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     // MARK: - Table view data source
