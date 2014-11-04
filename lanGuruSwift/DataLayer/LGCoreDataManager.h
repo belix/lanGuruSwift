@@ -13,8 +13,10 @@
 
 @property(strong,nonatomic) RKManagedObjectStore *managedObjectStore;
 
-+ (LGCoreDataManager *)sharedInstance;
++(LGCoreDataManager *)sharedInstance;
+
 -(void)setupStoreManager;
+
 -(void)saveContext;
 
 @end

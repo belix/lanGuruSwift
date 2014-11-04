@@ -41,7 +41,8 @@ class Word: NSManagedObject {
         let length = words2.count
         let numberOfRandomSamples : Int = 90
         var wrongWords : NSMutableArray = []
-        for var sampleIndex : Int = 0; sampleIndex < numberOfRandomSamples; ++sampleIndex{
+        for var sampleIndex : Int = 0; sampleIndex < numberOfRandomSamples; ++sampleIndex
+        {
             var randomIndex = Int(arc4random_uniform(UInt32(length)))
             wrongWords.addObject(words2[randomIndex])
         }
@@ -50,7 +51,8 @@ class Word: NSManagedObject {
         var wordModel : NSMutableArray = []
         
         
-        for var i = 0; i < words.count; ++i{
+        for var i = 0; i < words.count; ++i
+        {
             var innerWordsModel : NSMutableArray = []
             innerWordsModel.addObject(words[i])
             for var j = 0; j < 3; ++j{
@@ -86,7 +88,8 @@ class Word: NSManagedObject {
     
     }
     
-    class var mappingDictionary: NSDictionary {
+    class var mappingDictionary: NSDictionary
+    {
         get {
             return [
                 "id": "wordID",
@@ -104,16 +107,17 @@ class Word: NSManagedObject {
         }
     }
     
-    class func wordEntityMapper() -> RKEntityMapping {
+    class func wordEntityMapper() -> RKEntityMapping
+    {
         var wordMapper: RKEntityMapping = RKEntityMapping(forEntityForName: "Word", inManagedObjectStore: LGCoreDataManager.sharedInstance().managedObjectStore)
         wordMapper.addAttributeMappingsFromDictionary(self.mappingDictionary)
         wordMapper.identificationAttributes = ["wordID"]
         return wordMapper
     }
     
-    class var responseDescriptor: RKResponseDescriptor {
-        
-    var wordMapper = Word.wordEntityMapper()
+    class var responseDescriptor: RKResponseDescriptor
+    {
+        var wordMapper = Word.wordEntityMapper()
         var wordResponseDescriptor = RKResponseDescriptor(mapping: wordEntityMapper(),
             method: .Any, pathPattern: nil, keyPath: "response", statusCodes:nil)
         return wordResponseDescriptor

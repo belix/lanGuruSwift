@@ -11,11 +11,66 @@
 
 @implementation LGFacebookClient
 
-#pragma mark - download pictures from facebook
+
+#pragma mark internal
+
+-(void)processFriendDetails:(FBGraphObject*)friendDetail{
+    NSMutableArray *facebookFriendsIDs = [[NSUserDefaults standardUserDefaults] objectForKey:@"facebookFriends"];
+    if (!facebookFriendsIDs) {
+        facebookFriendsIDs = [[NSMutableArray alloc] init];
+    }
+    for (FBGraphObject* set in [friendDetail objectForKey:@"data"]) {
+        
+        if (![facebookFriendsIDs containsObject:[[set objectForKey:@"user"] objectForKey:@"id"]]) {
+            [facebookFriendsIDs addObject:[[set objectForKey:@"user"] objectForKey:@"id"]];
+        }
+        
+    }
+    
+    NSLog(@"facebookFriendsArray %@",facebookFriendsIDs);
+    [[NSUserDefaults standardUserDefaults] setObject:facebookFriendsIDs forKey:@"facebookFriends"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    [self downloadFriendsDetails];
+}
+
+
+- (void) downloadFriendsDetails
+{
+    //get responseDescripter from UserClass
+    RKResponseDescriptor *responseDescriptor = [User responseDescriptorForUserDetails];
+    [self.objectManager addResponseDescriptor:responseDescriptor];
+    
+    NSMutableArray *facebookFriendsIDs = [[NSUserDefaults standardUserDefaults] objectForKey:@"facebookFriends"];
+    NSDictionary *userDict = @{@"fbids" : facebookFriendsIDs};
+    
+    // POST to create
+    [self.objectManager postObject:nil path:@"/multimatchmaking/friend-details" parameters:userDict success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
+        
+        [[LGCoreDataManager sharedInstance] saveContext];
+        
+    } failure:^(RKObjectRequestOperation *operation, NSError *error){
+        NSLog(@"Request Operation failed': %@", error);
+    }];
+}
+
+
+#pragma mark public
+
+-(void)loadFriendsDetails
+{
+    NSString *scorePath = [[[NSBundle mainBundle] objectForInfoDictionaryKey:@"FacebookAppID"] stringByAppendingString:@"/scores"];
+    [FBRequestConnection startWithGraphPath:scorePath
+                                 parameters:nil
+                                 HTTPMethod:@"GET"
+                          completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                              if(!error){
+                                  [self processFriendDetails:result];
+                              }
+                          }];
+}
 
 -(void)downloadProfilePicture
 {
-    
     NSString *urlString = [NSString stringWithFormat:@"http://graph.facebook.com/%@/picture?width=82&height=82", [User getLocalUser].facebookID];
     NSURLSession *session = [NSURLSession sharedSession];
     [[session dataTaskWithURL:[NSURL URLWithString:urlString]
@@ -59,10 +114,8 @@
 }
 
 
-#pragma mark - picture server upload
-
-
--(void)uploadProfileAndCoverPicture{
+-(void)uploadProfileAndCoverPicture
+{
     User *user = [User getLocalUser];
     
     NSDictionary *userDict = @{@"userid" : user.userID,
@@ -91,64 +144,5 @@
      }
      ];
 }
-
-
-#pragma mark friend detail
-
--(void)loadFriendsDetails{
-    NSString *scorePath = [[[NSBundle mainBundle] objectForInfoDictionaryKey:@"FacebookAppID"] stringByAppendingString:@"/scores"];
-    [FBRequestConnection startWithGraphPath:scorePath
-                                 parameters:nil
-                                 HTTPMethod:@"GET"
-                          completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-                              if(!error){
-                                  [self processFriendDetails:result];
-                              } else {
-                              }
-                          }];
-}
-
--(void)processFriendDetails:(FBGraphObject*)friendDetail{
-    NSMutableArray *facebookFriendsIDs = [[NSUserDefaults standardUserDefaults] objectForKey:@"facebookFriends"];
-    if (!facebookFriendsIDs) {
-        facebookFriendsIDs = [[NSMutableArray alloc] init];
-    }
-    for (FBGraphObject* set in [friendDetail objectForKey:@"data"]) {
-        
-        if (![facebookFriendsIDs containsObject:[[set objectForKey:@"user"] objectForKey:@"id"]]) {
-            [facebookFriendsIDs addObject:[[set objectForKey:@"user"] objectForKey:@"id"]];
-        }
-        
-    }
-    
-    NSLog(@"facebookFriendsArray %@",facebookFriendsIDs);
-    [[NSUserDefaults standardUserDefaults] setObject:facebookFriendsIDs forKey:@"facebookFriends"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    [self downloadFriendsDetails];
-}
-
-
-- (void) downloadFriendsDetails{
-    
-    //get responseDescripter from UserClass
-    RKResponseDescriptor *responseDescriptor = [User responseDescriptorForUserDetails];
-    [self.objectManager addResponseDescriptor:responseDescriptor];
-    
-    NSMutableArray *facebookFriendsIDs = [[NSUserDefaults standardUserDefaults] objectForKey:@"facebookFriends"];
-    NSDictionary *userDict = @{@"fbids" : facebookFriendsIDs};
-    
-    // POST to create
-    [self.objectManager postObject:nil path:@"/multimatchmaking/friend-details" parameters:userDict success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
-        
-        [[LGCoreDataManager sharedInstance] saveContext];
-
-    } failure:^(RKObjectRequestOperation *operation, NSError *error){
-        NSLog(@"Request Operation failed': %@", error);
-    }];
-    
-    
-}
-
-
 
 @end

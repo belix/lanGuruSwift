@@ -24,15 +24,9 @@ class LGProfileViewController: UIViewController {
         
         let profilePictureImageData = NSData(base64EncodedString: localUser.profilePicture, options: .allZeros)
         self.profilePictureImageView.image = UIImage(data: profilePictureImageData!)
-        self.profilePictureImageView.layer.cornerRadius = 49
+        self.profilePictureImageView.layer.cornerRadius = self.profilePictureImageView.frame.size.height/2
         self.profilePictureImageView.clipsToBounds = true
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
     /*
     // MARK: - Navigation

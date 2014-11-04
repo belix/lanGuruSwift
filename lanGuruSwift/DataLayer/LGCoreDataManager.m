@@ -12,7 +12,8 @@
 
 @implementation LGCoreDataManager
 
-+ (LGCoreDataManager *)sharedInstance {
++ (LGCoreDataManager *)sharedInstance
+{
     static LGCoreDataManager *sharedMyManager = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -22,7 +23,8 @@
 }
 
 // this method is called in the AppDelegate to initialize the store manager
--(void)setupStoreManager{
+-(void)setupStoreManager
+{
     
     NSManagedObjectModel *managedObjectModel = [NSManagedObjectModel mergedModelFromBundles:nil];
     self.managedObjectStore = [[RKManagedObjectStore alloc] initWithManagedObjectModel:managedObjectModel];

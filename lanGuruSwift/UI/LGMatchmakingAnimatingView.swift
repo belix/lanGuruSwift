@@ -14,12 +14,14 @@ class LGMatchmakingAnimatingView: UIView {
     var currentTag : Int = 1
     var stopAnimating : Bool = false
     
-    func startAnimatingDots() {
+    func startAnimatingDots()
+    {
         stopAnimating = false
         self.animatingDot()
     }
     
-    func animatingDot(){
+    func animatingDot()
+    {
         var currentDot : UIView = self.viewWithTag(currentTag)!
         currentDot.layer.transform = CATransform3DMakeScale(0.1,0.1,1)
 
@@ -35,7 +37,8 @@ class LGMatchmakingAnimatingView: UIView {
         })
     }
     
-    func endAnimatingDots() {
+    func endAnimatingDots()
+    {
         stopAnimating = true
     }
 
