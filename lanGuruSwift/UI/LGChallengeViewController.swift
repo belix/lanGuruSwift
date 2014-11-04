@@ -13,6 +13,14 @@ class LGChallengeViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var friendListTableView: UITableView!
     var model = []
     
+    let matchMakingClient : LGMatchmakingClient = LGMatchmakingClient.self()
+    let activeMatchesClient : LGActiveMatchesClient = LGActiveMatchesClient.self()
+    
+    let localUser : User = User.getLocalUser()
+    
+    var searchingForFriend : Bool = false
+    var searchingFriendMatchID : NSInteger = 0
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -21,6 +29,8 @@ class LGChallengeViewController: UIViewController, UITableViewDelegate, UITableV
         var fReq: NSFetchRequest = NSFetchRequest(entityName: "User")
         
         model = LGCoreDataManager.sharedInstance().managedObjectStore.mainQueueManagedObjectContext.executeFetchRequest(fReq, error:&error)!
+        
+        self.activeMatchesClient.getActiveMatchesForUserID(localUser.userID, withCompletion: nil)
     }
     
     override func viewWillAppear(animated: Bool)
@@ -58,10 +68,51 @@ class LGChallengeViewController: UIViewController, UITableViewDelegate, UITableV
         return cell
     }
     
+    func tableView(tableView: UITableView,
+        didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        var friend : User = model[indexPath.row] as User
+        
+        var alert = UIAlertController(title: "Challenge", message: String(format: "Willst du %@ zu einem Match herausfordern", friend.username), preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { action in
+            switch action.style{
+            case .Default:
+            self.matchMakingClient.checkForFriendChallenge(friend,fromUser:self.localUser){
+                    (matchID) -> Void in
+                
+                    if(matchID != 0)
+                    {
+                        self.searchingForFriend = true
+                        self.searchingFriendMatchID = matchID
+                        self.performSegueWithIdentifier("showMatchmaking", sender: nil)
+       
+                    }
+                
+                }
+                println("default")
+                
+            case .Cancel:
+                println("cancel")
+                
+            case .Destructive:
+                println("destructive")
+            }
+        }))
+        self.presentViewController(alert, animated: true, completion: nil)
+    
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!)
     {
         if segue.identifier == "showMatchmaking"{
             var destinationViewController : LGMatchmakingViewController = segue.destinationViewController as LGMatchmakingViewController
+            
+            if self.searchingForFriend
+            {
+                destinationViewController.searchingForFriend = true
+                destinationViewController.searchingFriendMatchID = self.searchingFriendMatchID
+            }
+            
             destinationViewController.hidesBottomBarWhenPushed = true;
         }
     }

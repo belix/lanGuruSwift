@@ -12,4 +12,8 @@
 
 -(void)searchForOpponentForUser:(id)user withCompletion:(void (^)(id Match))returnMatch;
 
+-(void)checkForFriendChallenge:(id)friend fromUser:(id)user withCompletion:(void (^)(NSInteger matchID))returnMatchID;
+
+-(void)challengeFriendForMatch:(NSInteger)matchID andStatus:(NSInteger)status withCompletion:(void (^)(id Match))returnMatch;
+
 @end

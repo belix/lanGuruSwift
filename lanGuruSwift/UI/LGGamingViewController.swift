@@ -140,7 +140,6 @@ class LGGamingViewController: UIViewController {
 
     @IBAction func answerButtonPressed(sender: PNTButton)
     {
-        
         //for setting color in triangle buttons
         sender.isCorrectClick = sender.tag == 1
         sender.willAnimate = true
@@ -153,7 +152,6 @@ class LGGamingViewController: UIViewController {
         
         self.gameResultString = self.gameResultString + (sender.tag == 1 ? "\(1)" : "\(0)")
 
-            
         updateSearchFieldViews()
     }
     
@@ -162,8 +160,6 @@ class LGGamingViewController: UIViewController {
         var indices : Array = [Int]()
         indices = [0,1,2,3]
         indices = shuffle(indices)
-        
-        
         
         upperButton.setTitle(Word.getWordTranslation("DE", wordID: model[roundCounter][indices[0]].integerValue), forState: UIControlState.Normal)
         upperButton.tag = (indices[0] == 0 ? 1 : 0)

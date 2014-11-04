@@ -871,6 +871,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="registerButtonPressed:" destination="Pkl-Qp-uVM" eventType="touchUpInside" id="23d-xs-pf2"/>
+                                                    <action selector="startGameButtonPressed:" destination="MGt-FM-b1P" eventType="touchUpInside" id="zaC-8n-bVy"/>
                                                 </connections>
                                             </button>
                                         </subviews>
