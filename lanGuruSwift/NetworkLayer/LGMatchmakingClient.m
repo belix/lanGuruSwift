@@ -19,6 +19,7 @@
     RKResponseDescriptor *responseDescriptor = [Match responseDescriptor];
     [self.objectManager addResponseDescriptor:responseDescriptor];
     
+    //TODO: dynamic foreign/native lang
     NSDictionary *userDict = @{@"user" : @{@"username" : ((User*)user).username,
                                            @"nativelang" : @"de",
                                            @"foreignlang" : @"en"}};
