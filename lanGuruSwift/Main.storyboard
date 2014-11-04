@@ -1019,7 +1019,7 @@
         <scene sceneID="oh1-JZ-sOr">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9pj-6g-8tD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Challenge" image="Chart_Up" id="FHC-jY-nrK"/>
+                    <tabBarItem key="tabBarItem" title="Challenge" image="Fencing" id="FHC-jY-nrK"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6ZV-87-RLc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1436,7 +1436,7 @@
         <scene sceneID="Tp5-LY-8T4">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lpz-Rs-cFz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="Happy_Face" selectedImage="Happy_Face" id="Zpo-b5-BQz"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="Contact" id="Zpo-b5-BQz"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="MWj-es-xOE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1455,7 +1455,7 @@
         <scene sceneID="qnr-RA-pIB">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="14C-29-5Zf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Repeat" image="Headset" selectedImage="Headset" id="P2h-vs-bif"/>
+                    <tabBarItem key="tabBarItem" title="Repeat" image="Reset" id="P2h-vs-bif"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kmm-Jb-ytY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1472,10 +1472,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Chart_Up" width="25" height="21"/>
-        <image name="Happy_Face" width="24" height="24"/>
-        <image name="Headset" width="26" height="28"/>
+        <image name="Contact" width="25" height="25"/>
+        <image name="Fencing" width="35" height="29"/>
         <image name="Kreuz_blau" width="186" height="187"/>
+        <image name="Reset" width="28" height="24"/>
         <image name="background" width="375" height="667"/>
         <image name="circle-transparent" width="62" height="62"/>
         <image name="ghost-button" width="300" height="50"/>
