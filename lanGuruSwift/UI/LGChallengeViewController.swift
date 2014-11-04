@@ -13,17 +13,18 @@ class LGChallengeViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var friendListTableView: UITableView!
     var model = []
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
      
         var error: NSError? = nil
         var fReq: NSFetchRequest = NSFetchRequest(entityName: "User")
         
         model = LGCoreDataManager.sharedInstance().managedObjectStore.mainQueueManagedObjectContext.executeFetchRequest(fReq, error:&error)!
-        
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(animated: Bool)
+    {
         super.viewWillAppear(animated)
         
         self.navigationItem.setHidesBackButton(true, animated: false)
@@ -31,18 +32,19 @@ class LGChallengeViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     // MARK: - Table view data source
-    
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
+
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int
+    {
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
         return model.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    {
         
         let cell: LGFriendTableViewCell = tableView.dequeueReusableCellWithIdentifier("friendCell", forIndexPath: indexPath) as LGFriendTableViewCell
         
@@ -56,14 +58,11 @@ class LGChallengeViewController: UIViewController, UITableViewDelegate, UITableV
         return cell
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!)
+    {
         if segue.identifier == "showMatchmaking"{
             var destinationViewController : LGMatchmakingViewController = segue.destinationViewController as LGMatchmakingViewController
             destinationViewController.hidesBottomBarWhenPushed = true;
         }
-        
     }
-
 }

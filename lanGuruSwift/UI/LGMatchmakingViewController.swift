@@ -28,7 +28,8 @@ class LGMatchmakingViewController: UIViewController {
     let matchmakingClient : LGMatchmakingClient = LGMatchmakingClient.self()
     var currentMatch : Match?
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         
         let coverImageData = NSData(base64EncodedString: localUser.coverPicture, options: .allZeros)
@@ -47,7 +48,8 @@ class LGMatchmakingViewController: UIViewController {
         matchmakingAnimatingView.startAnimatingDots()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(animated: Bool)
+    {
         super.viewWillAppear(animated)
         
         self.navigationItem.setHidesBackButton(true, animated: false)
@@ -61,11 +63,9 @@ class LGMatchmakingViewController: UIViewController {
             if match != nil
             {
                 self.currentMatch = match as? Match
-                NSLog("beste match %@", match as Match)
-                NSLog("success");
                 self.setupOpponentInterface()
                 
-//                var timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("pushToGame"), userInfo: nil, repeats: false)
+                var timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("pushToGame"), userInfo: nil, repeats: false)
             }
             else
             {
@@ -95,24 +95,18 @@ class LGMatchmakingViewController: UIViewController {
         self.opponentNameLabel.text = (self.localUser.username == self.currentMatch!.opponent1 ? self.currentMatch!.opponent2 : self.currentMatch!.opponent1)
         
         self.opponentView.hidden = false
-        
-        
-        NSLog("content %@", self.currentMatch!.content)
     }
     
     
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
         if segue.identifier == "showGame"{
             var destinationViewController : LGGamingViewController = segue.destinationViewController as LGGamingViewController
             destinationViewController.match = self.currentMatch
             destinationViewController.hidesBottomBarWhenPushed = true;
         }
     }
-    
-
 }

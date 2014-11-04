@@ -16,13 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+
+        //initialize facebookLogin
         FBLoginView.self()
         
+        //initialize core data manager
         LGCoreDataManager.sharedInstance().setupStoreManager()
-       
-        logUser()
         
+        
+        //load vocabulary once
         if self.vabularyAlreadDownloaded() == false
         {
             let vocabularyClient : LGVocabularyClient = LGVocabularyClient()

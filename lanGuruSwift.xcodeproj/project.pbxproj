@@ -137,6 +137,8 @@
 		055942241A07C1BE0005A09D /* NetworkLayer */ = {
 			isa = PBXGroup;
 			children = (
+				0559422D1A07C1CC0005A09D /* LGClient.h */,
+				0559422E1A07C1CC0005A09D /* LGClient.m */,
 				055942251A07C1CC0005A09D /* LGMatchClient.m */,
 				055942261A07C1CC0005A09D /* LGMatchClient.h */,
 				0559422C1A07C1CC0005A09D /* LGFacebookClient.h */,
@@ -145,8 +147,6 @@
 				0559422B1A07C1CC0005A09D /* LGLoginClient.m */,
 				0559422A1A07C1CC0005A09D /* LGMatchmakingClient.h */,
 				055942281A07C1CC0005A09D /* LGMatchmakingClient.m */,
-				0559422D1A07C1CC0005A09D /* LGClient.h */,
-				0559422E1A07C1CC0005A09D /* LGClient.m */,
 				0559422F1A07C1CC0005A09D /* LGVocabularyClient.h */,
 				055942301A07C1CC0005A09D /* LGVocabularyClient.m */,
 			);

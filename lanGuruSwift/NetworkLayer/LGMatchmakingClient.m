@@ -11,7 +11,8 @@
 
 @implementation LGMatchmakingClient
 
-//rest kit method for searching
+#pragma mark public
+
 -(void)searchForOpponentForUser:(id)user withCompletion:(void (^)(id Match))returnMatch{
 
     //get responseDescripter from Words Class

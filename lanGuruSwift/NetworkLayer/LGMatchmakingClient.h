@@ -12,5 +12,4 @@
 
 -(void)searchForOpponentForUser:(id)user withCompletion:(void (^)(id Match))returnMatch;
 
-
 @end

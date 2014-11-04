@@ -10,7 +10,8 @@ import UIKit
 
 class LGRootViewController: UIViewController {
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         
         if NSUserDefaults.standardUserDefaults().objectForKey("localUserID") != nil
@@ -18,12 +19,6 @@ class LGRootViewController: UIViewController {
             performSegueWithIdentifier("skipLogin", sender: nil)
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
     /*
     // MARK: - Navigation

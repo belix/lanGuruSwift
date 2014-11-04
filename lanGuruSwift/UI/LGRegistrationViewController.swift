@@ -21,32 +21,28 @@ class LGRegistrationViewController: UIViewController, FBLoginViewDelegate{
     var facebookID : String?
     var loginClient : LGLoginClient = LGLoginClient()
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
 
         self.facebookLoginView.readPermissions = ["public_profile", "email", "user_friends"];
         self.facebookLoginView.delegate = self;
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    func loginViewShowingLoggedInUser(loginView: FBLoginView) {
-        
+    func loginViewShowingLoggedInUser(loginView: FBLoginView)
+    {
         NSLog("logged in")
     }
     
-    func loginViewFetchedUserInfo(loginView: FBLoginView?, user: FBGraphUser){
-        
+    func loginViewFetchedUserInfo(loginView: FBLoginView?, user: FBGraphUser)
+    {
         NSLog("graph User %@", user.last_name)
         self.profilePictureView.profileID =  user.objectID
         self.facebookID = user.objectID
     }
     
-    func loginViewShowingLoggedOutUser(loginView: FBLoginView?) {
-        
+    func loginViewShowingLoggedOutUser(loginView: FBLoginView?)
+    {
         NSLog("logged out")
     }
     

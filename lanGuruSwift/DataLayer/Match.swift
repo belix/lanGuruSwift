@@ -34,7 +34,8 @@ class Match: NSObject {
     var opponentCoverPic : String = ""
     var opponentProfilePic : String = ""
     
-    class var mappingDictionary: NSDictionary {
+    class var mappingDictionary: NSDictionary
+    {
         get {
             return [
             "id"            : "identity",
@@ -60,16 +61,16 @@ class Match: NSObject {
         }
     }
     
-    class func matchEntityMapper() -> RKObjectMapping {
-        
+    class func matchEntityMapper() -> RKObjectMapping
+    {
         var matchMapper : RKObjectMapping = RKObjectMapping(forClass: self)
         matchMapper.addAttributeMappingsFromDictionary(self.mappingDictionary)
         
         return matchMapper
     }
     
-    class var responseDescriptor: RKResponseDescriptor {
-        
+    class var responseDescriptor: RKResponseDescriptor
+    {
         var matchResponseDescriptor = RKResponseDescriptor(mapping: matchEntityMapper(),
             method: RKRequestMethod.Any , pathPattern: nil, keyPath: "match", statusCodes:nil)
         

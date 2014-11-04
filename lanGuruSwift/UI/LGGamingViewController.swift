@@ -47,7 +47,8 @@ class LGGamingViewController: UIViewController {
     let matchClient : LGMatchClient = LGMatchClient.self()
     let localUser : User = User.getLocalUser()
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         
         model = match!.content
@@ -85,7 +86,8 @@ class LGGamingViewController: UIViewController {
         NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(animated: Bool)
+    {
         super.viewWillAppear(animated)
         
         self.navigationItem.setHidesBackButton(true, animated: false)
@@ -136,7 +138,8 @@ class LGGamingViewController: UIViewController {
     }
 
 
-    @IBAction func answerButtonPressed(sender: PNTButton) {
+    @IBAction func answerButtonPressed(sender: PNTButton)
+    {
         
         //for setting color in triangle buttons
         sender.isCorrectClick = sender.tag == 1

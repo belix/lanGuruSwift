@@ -11,18 +11,22 @@
 
 @implementation LGMatchClient
 
-- (NSString*) timeStamp {
+#pragma mark internal
+
+- (NSString*) timeStamp
+{
     NSString *temp = [NSString stringWithFormat:@"%f",[[NSDate date] timeIntervalSince1970] * 1000];
     return [temp substringWithRange:NSMakeRange(0, [temp rangeOfString:@"."].location)] ;
 }
 
--(void)updateMatchScore:(NSDictionary*) matchDictionary withCompletion:(void (^)(NSInteger opponentScore))returnOpponentScore{
+#pragma mark public
 
-    
+-(void)updateMatchScore:(NSDictionary*) matchDictionary withCompletion:(void (^)(NSInteger opponentScore))returnOpponentScore
+{
     NSMutableDictionary *mutableMatchDictionary = [NSMutableDictionary dictionaryWithDictionary:matchDictionary];
     mutableMatchDictionary[@"timestamp"] = [self timeStamp];
     
-    //get responseDescripter from Words Class
+    //get responseDescripter from Match Class
     RKResponseDescriptor *responseDescriptor = [Match responseDescriptor];
     [self.objectManager addResponseDescriptor:responseDescriptor];
     
@@ -38,9 +42,9 @@
     }];
 }
 
--(void)sendFinalMatchResults:(NSDictionary*)matchResults withCompletion:(void (^)(id Match))returnMatch{
-    
-    //get responseDescripter from Words Class
+-(void)sendFinalMatchResults:(NSDictionary*)matchResults withCompletion:(void (^)(id Match))returnMatch
+{
+    //get responseDescripter from Match Class
     RKResponseDescriptor *responseDescriptor = [Match responseDescriptor];
     [self.objectManager addResponseDescriptor:responseDescriptor];
     
@@ -58,11 +62,10 @@
         
         returnMatch(nil);
     }];
-    
 }
 
--(void)closeMatch:(NSDictionary *)matchDictionary{
-    
+-(void)closeMatch:(NSDictionary *)matchDictionary
+{    
     NSError *error;
     NSData* postData = [NSJSONSerialization dataWithJSONObject:matchDictionary options:kNilOptions error:&error];
     

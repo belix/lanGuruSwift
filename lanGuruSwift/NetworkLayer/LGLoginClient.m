@@ -13,7 +13,7 @@
 
 @implementation LGLoginClient
 
-#pragma mark restkit login methods
+#pragma mark public
 
 -(void)loginForUser:(NSDictionary*)userDict isFacebookLogin:(BOOL)isFacebookLogin completion:(void (^)(BOOL success))success
 {

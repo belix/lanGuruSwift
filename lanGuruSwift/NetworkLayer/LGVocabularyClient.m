@@ -12,6 +12,8 @@
 @implementation LGVocabularyClient
 
 
+#pragma mark public
+
 -(void)downloadVocabularyWithCompletion:(void (^)(BOOL success))success
 {
     //get responseDescripter from Words Class
