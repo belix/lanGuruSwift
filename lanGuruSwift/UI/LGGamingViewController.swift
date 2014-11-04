@@ -187,7 +187,7 @@ class LGGamingViewController: UIViewController {
     {
         self.hiddenSearchField.text = Word.getWordTranslation("EN", wordID: model[roundCounter+2][0].integerValue)
         
-        UIView.animateWithDuration(0.4, delay: 0.2, options: .CurveEaseIn, animations: {
+        UIView.animateWithDuration(0.3, delay: 0.0, options: .CurveEaseIn, animations: {
             var newFrame = CGRectMake(self.leftSearchField.frame.origin.x - self.leftSearchField.frame.size.width/2, self.leftSearchField.frame.origin.y, self.leftSearchField.frame.size.width, self.leftSearchField.frame.size.height)
             self.leftSearchField.frame = newFrame
 
