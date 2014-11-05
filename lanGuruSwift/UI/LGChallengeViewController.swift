@@ -107,7 +107,14 @@ class LGChallengeViewController: UIViewController, UITableViewDelegate, UITableV
         {
             if (match.opponent1 == user.username && match.opponent1 != localUser.username) && (match.status == 0 || match.status == 2)
             {
-                cell.matchRequestID = match.identity
+                cell.cellType = CellType.matchRequestOpen
+                cell.currentMatch = match;
+                cell.matchRequestImageView.hidden = false
+            }
+            else if (match.opponent1 == localUser.username && match.opponent2 == user.username) && (match.status == 4)
+            {
+                cell.cellType = CellType.matchRequestFinished
+                cell.currentMatch = match;
                 cell.matchRequestImageView.hidden = false
             }
         }
@@ -122,7 +129,7 @@ class LGChallengeViewController: UIViewController, UITableViewDelegate, UITableV
         let cell : LGFriendTableViewCell = tableView.cellForRowAtIndexPath(indexPath) as LGFriendTableViewCell
         
         //accept match request
-        if !cell.matchRequestImageView.hidden
+        if cell.cellType == CellType.matchRequestOpen
         {
             var friend : User = model[indexPath.row] as User
             
@@ -144,12 +151,28 @@ class LGChallengeViewController: UIViewController, UITableViewDelegate, UITableV
             popover.opponentProfilePicture.layer.cornerRadius = popover.opponentProfilePicture.frame.size.height/2
             popover.opponentProfilePicture.clipsToBounds = true
             
-            popover.matchRequestID = cell.matchRequestID
+            popover.matchRequestID = cell.currentMatch!.identity
             popover.layoutIfNeeded()
 
             self.view.addSubview(popover)
             
-        }//create match request
+        }
+        // match finished - show matchResults
+        if cell.cellType == CellType.matchRequestFinished
+        {
+            
+            var opponent : User = model[indexPath.row] as User
+            
+            let popover : LGMatchFinishedPopoverView = NSBundle.mainBundle().loadNibNamed("LGMatchRequestPopoverView", owner: self, options: nil)[2] as LGMatchFinishedPopoverView
+            popover.frame = CGRectMake(self.view.frame.size.width/2 - popover.frame.size.width/2, self.view.frame.size.height/2 - popover.frame.size.height/2, popover.frame.size.width, popover.frame.size.height)
+            popover.delegate = self
+            popover.setupViewsForMatchLocalUserAndOpponent(cell.currentMatch!, localUser: self.localUser, opponent: opponent)
+            
+            popover.layoutIfNeeded()
+            self.view.addSubview(popover)
+            NSLog("show matchResults");
+        }
+        //create match request
         else
         {
             var friend : User = model[indexPath.row] as User

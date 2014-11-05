@@ -124,7 +124,7 @@ class LGGamingViewController: UIViewController {
     {
         if self.isAsynchronousGame
         {
-            let matchDictionary : [String : AnyObject] = ["id": self.match!.identity , "opponent": (self.localUser.userID == self.match!.opponent1UserID ? "opponent1" : "opponent2"), "result" : self.gameResultString, "score" : self.localUserScore]
+            let matchDictionary : [String : AnyObject] = ["id": self.match!.identity , "opponent": (self.localUser.userID == self.match!.opponent1UserID ? "opponent1" : "opponent2"), "result" : self.gameResultString, "score" : self.localUserScore, "username" : self.localUser.username, "finished" : 1]
             
             matchClient.sendFinalMatchResultsForAsynchronousGame(matchDictionary){ (match) -> Void in
                 

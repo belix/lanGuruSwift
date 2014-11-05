@@ -76,7 +76,6 @@ class LGPostGameViewController: UIViewController {
         self.localUserScoreLabel.textColor = localPlayerHasWon ? UIColor(red: 5/255.0, green: 176/255.0, blue: 147/255.0, alpha: 1.0) : UIColor(red: 219/255.0, green: 100/255.0, blue: 100/255.0, alpha: 1.0)
         self.opponentScoreLabel.textColor = !localPlayerHasWon ? UIColor(red: 5/255.0, green: 176/255.0, blue: 147/255.0, alpha: 1.0) : UIColor(red: 219/255.0, green: 100/255.0, blue: 100/255.0, alpha: 1.0)
         
-        
         self.localPlayerRankingLabel.text = (self.localUser.username == self.matchResult!.opponent1 ? "\(self.matchResult!.ranking1)" : "\(self.matchResult!.ranking2)")
     }
 
@@ -87,7 +86,6 @@ class LGPostGameViewController: UIViewController {
         self.navigationItem.setHidesBackButton(true, animated: false)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
-    
     
     //@Felix: to do: make sure match is closed if there is no internet connection
     @IBAction func backButtonPressed(sender: AnyObject)
@@ -101,15 +99,4 @@ class LGPostGameViewController: UIViewController {
         let previousViewController : UIViewController = self.navigationController!.viewControllers[0] as UIViewController
         self.navigationController!.popToViewController(previousViewController, animated: true)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

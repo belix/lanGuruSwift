@@ -28,6 +28,7 @@ class LGMatchAcceptPopoverView: UIView {
    
     @IBAction func acceptMatchRequest(sender: AnyObject)
     {
+        self.removeFromSuperview()
         self.delegate.acceptMatchRequest(matchRequestID)
     }
   

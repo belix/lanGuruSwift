@@ -10,13 +10,6 @@ import UIKit
 
 class LGMatchRequestPopoverView: UIView {
 
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
-    }
-    */
     @IBOutlet weak var localUserProfilePicture: UIImageView!
     @IBOutlet weak var opponentProfilePicture: UIImageView!
     
@@ -37,6 +30,7 @@ class LGMatchRequestPopoverView: UIView {
     
     @IBAction func enterGameButtonPressed(sender: AnyObject)
     {
+        self.removeFromSuperview()
         self.delegate.startMatchRequest(self.friendToChallenge!)
     }
 }
