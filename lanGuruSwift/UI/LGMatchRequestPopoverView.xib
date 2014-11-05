@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LGMatchRequestPopoverView" customModule="lanGuruSwift" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="300"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wF2-gc-qtl">
+                    <rect key="frame" x="20" y="40" width="160" height="24"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                    <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O1j-uj-c2k">
+                    <rect key="frame" x="20" y="114" width="160" height="50"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="16"/>
+                    <state key="normal" title="Schlund" backgroundImage="ghost-button">
+                        <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="enterGameButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="7xH-M1-Ykh"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bdc-JQ-kR5">
+                    <rect key="frame" x="8" y="7" width="22" height="20"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="16"/>
+                    <state key="normal" title="X" backgroundImage="ghost-button">
+                        <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="closeButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="w7E-F4-4Rd"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.019607843140000001" green="0.69019607839999997" blue="0.57647058819999997" alpha="1" colorSpace="deviceRGB"/>
+            <constraints>
+                <constraint firstItem="wF2-gc-qtl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="4wt-Ri-Lhq"/>
+                <constraint firstAttribute="trailing" secondItem="wF2-gc-qtl" secondAttribute="trailing" constant="20" id="EcJ-LK-PJv"/>
+                <constraint firstItem="O1j-uj-c2k" firstAttribute="top" secondItem="wF2-gc-qtl" secondAttribute="bottom" constant="50" id="Kob-8a-DGN"/>
+                <constraint firstItem="wF2-gc-qtl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="40" id="UPQ-4X-CEa"/>
+                <constraint firstItem="O1j-uj-c2k" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="gtz-Ks-IUC"/>
+                <constraint firstAttribute="trailing" secondItem="O1j-uj-c2k" secondAttribute="trailing" constant="20" id="skL-UJ-7df"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="descriptionLabel" destination="wF2-gc-qtl" id="drl-Kb-K4B"/>
+            </connections>
+            <point key="canvasLocation" x="346" y="293"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ghost-button" width="300" height="50"/>
+    </resources>
+</document>

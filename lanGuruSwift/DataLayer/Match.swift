@@ -49,7 +49,7 @@ class Match: NSObject {
             "nativelang2"   : "nativelang2",
             "ranking1"      : "ranking1",
             "ranking2"      : "ranking2",
-            "active"        : "status",
+            "status"        : "status",
             "words"         : "content",
             "result1"       : "result1",
             "result2"       : "result2",

@@ -385,7 +385,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lNS-aH-V2I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3623" y="1790"/>
+            <point key="canvasLocation" x="3627" y="1813"/>
         </scene>
         <!--Post Game View Controller-->
         <scene sceneID="eEE-1G-pzp">
@@ -712,7 +712,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fNM-3X-rAb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4403" y="1822"/>
+            <point key="canvasLocation" x="4301" y="1813"/>
         </scene>
         <!--Matchmaking View Controller-->
         <scene sceneID="a94-q1-54R">

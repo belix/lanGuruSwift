@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LGChallengeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class LGChallengeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, LGMatchRequestPopoverDelegate{
 
     @IBOutlet weak var friendListTableView: UITableView!
     var model = []
@@ -18,7 +18,7 @@ class LGChallengeViewController: UIViewController, UITableViewDelegate, UITableV
     
     let localUser : User = User.getLocalUser()
     
-    var activeMatches : [Match] = []
+    var activeMatches : [Match]? = []
     
     var searchingForFriend : Bool = false
     var isAccepter : Bool = false
@@ -37,7 +37,7 @@ class LGChallengeViewController: UIViewController, UITableViewDelegate, UITableV
         self.activeMatchesClient.getActiveMatchesForUserID(localUser.userID){ (activeMatches) -> Void in
             if activeMatches != nil
             {
-                self.activeMatches = activeMatches as Array
+                self.activeMatches = activeMatches as? Array
                 self.friendListTableView .reloadData()
             }
         }
@@ -52,6 +52,20 @@ class LGChallengeViewController: UIViewController, UITableViewDelegate, UITableV
         
         self.searchingForFriend = false
         self.isAccepter = false
+    }
+    
+    override func viewDidAppear(animated: Bool)
+    {
+        super.viewDidAppear(animated)
+        
+        self.activeMatches = []
+        self.activeMatchesClient.getActiveMatchesForUserID(localUser.userID){ (activeMatches) -> Void in
+            if activeMatches != nil
+            {
+                self.activeMatches = activeMatches as? Array
+            }
+            self.friendListTableView .reloadData()
+        }
     }
     
     // MARK: - Table view data source
@@ -77,7 +91,8 @@ class LGChallengeViewController: UIViewController, UITableViewDelegate, UITableV
         cell.usernameLabel.text = user.username
         cell.userRankingLabel.text = "\(user.ranking)"
 
-        for match in self.activeMatches
+        //for active match requests
+        for match in self.activeMatches!
         {
             if (match.opponent1 == user.username && match.opponent1 != localUser.username) && (match.status == 0 || match.status == 2)
             {
@@ -98,10 +113,13 @@ class LGChallengeViewController: UIViewController, UITableViewDelegate, UITableV
         //accept match request
         if !cell.matchRequestImageView.hidden
         {
-            self.searchingForFriend = true
-            self.isAccepter = true
-            self.searchingFriendMatchID = cell.matchRequestID
-            self.performSegueWithIdentifier("showMatchmaking", sender: nil)
+            let popover : LGMatchRequestPopoverView = NSBundle.mainBundle().loadNibNamed("LGMatchRequestPopoverView", owner: self, options: nil)[0] as LGMatchRequestPopoverView
+            popover.frame = CGRectMake(self.view.frame.size.width/2 - popover.frame.size.width/2, self.view.frame.size.height/2 - popover.frame.size.height/2, popover.frame.size.width, popover.frame.size.height)
+            popover.delegate = self
+            popover.descriptionLabel.text = String(format:"%@ will die zu einem Duell herausfordern. Hast du Bock?" ,cell.usernameLabel.text!)
+            popover.matchRequestID = cell.matchRequestID
+            popover.layoutIfNeeded()
+            self.view.addSubview(popover)
             
         }//create match request
         else
@@ -130,11 +148,18 @@ class LGChallengeViewController: UIViewController, UITableViewDelegate, UITableV
 
     }
     
+    func enterGame(matchID : Int)
+    {
+        self.searchingForFriend = true
+        self.isAccepter = true
+        self.searchingFriendMatchID = matchID
+        self.performSegueWithIdentifier("showMatchmaking", sender: nil)
+    }
+    
+    
     @IBAction func playVsComputerButtonPressed(sender: AnyObject)
     {
-    
 
-    
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!)

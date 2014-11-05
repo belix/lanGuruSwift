@@ -102,6 +102,12 @@ class LGMatchmakingViewController: UIViewController {
             if match != nil
             {
                 self.currentMatch = match as? Match
+                
+                if self.currentMatch!.status == 2 || self.currentMatch!.status == 3
+                {
+                    self.isAsynchronousGame = true
+                }
+                
                 self.setupOpponentInterface()
                 
                 var timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("pushToGame"), userInfo: nil, repeats: false)
