@@ -158,7 +158,7 @@ class LGChallengeViewController: UIViewController, UITableViewDelegate, UITableV
             
         }
         // match finished - show matchResults
-        if cell.cellType == CellType.matchRequestFinished
+        else if cell.cellType == CellType.matchRequestFinished
         {
             
             var opponent : User = model[indexPath.row] as User
