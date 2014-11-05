@@ -49,6 +49,9 @@ class LGChallengeViewController: UIViewController, UITableViewDelegate, UITableV
         
         self.navigationItem.setHidesBackButton(true, animated: false)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+        
+        self.searchingForFriend = false
+        self.isAccepter = false
     }
     
     // MARK: - Table view data source
