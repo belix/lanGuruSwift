@@ -23,7 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //initialize core data manager
         LGCoreDataManager.sharedInstance().setupStoreManager()
         
-        
         //load vocabulary once
         if self.vabularyAlreadDownloaded() == false
         {

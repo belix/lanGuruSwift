@@ -29,8 +29,10 @@ class LGMatchmakingViewController: UIViewController {
     var currentMatch : Match?
     
     var searchingForFriend : Bool = false
+    var isAccepter : Bool = false
     var searchingFriendMatchID : NSInteger = 0
     var searchingStatus : Int = 0
+    
     
     override func viewDidLoad()
     {
@@ -53,6 +55,10 @@ class LGMatchmakingViewController: UIViewController {
         
         if self.searchingForFriend
         {
+            if self.isAccepter
+            {
+                self.searchingStatus = 1
+            }
             self.startSearchingForFriend()
         }
         else
@@ -95,7 +101,7 @@ class LGMatchmakingViewController: UIViewController {
             if match != nil
             {
                 self.currentMatch = match as? Match
-                //self.setupOpponentInterface()
+                self.setupOpponentInterface()
                 
                 var timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("pushToGame"), userInfo: nil, repeats: false)
             }

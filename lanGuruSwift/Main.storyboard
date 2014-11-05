@@ -1070,6 +1070,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="playVsComputerButtonPressed:" destination="5tk-3R-RVE" eventType="touchUpInside" id="kUh-yp-hMu"/>
                                     <action selector="registerButtonPressed:" destination="Pkl-Qp-uVM" eventType="touchUpInside" id="JV8-rb-Fsd"/>
                                 </connections>
                             </button>
@@ -1110,13 +1111,22 @@
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="request" translatesAutoresizingMaskIntoConstraints="NO" id="bxB-yh-Mbo">
+                                                    <rect key="frame" x="516" y="5" width="19" height="19"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="19" id="Rbh-P3-5CZ"/>
+                                                        <constraint firstAttribute="height" constant="19" id="gBJ-Dj-Akb"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="bxB-yh-Mbo" secondAttribute="trailing" constant="5" id="2IH-8o-BPi"/>
                                                 <constraint firstItem="JqI-t0-pOP" firstAttribute="top" secondItem="wNn-Xu-G3P" secondAttribute="top" id="EIT-tG-Tcr"/>
                                                 <constraint firstItem="wNn-Xu-G3P" firstAttribute="bottom" secondItem="2x1-Zy-4az" secondAttribute="bottom" id="G8U-zF-eyM"/>
                                                 <constraint firstAttribute="trailing" secondItem="bWq-dB-irr" secondAttribute="trailing" constant="30" id="IsE-yW-dS4"/>
+                                                <constraint firstItem="bxB-yh-Mbo" firstAttribute="top" secondItem="F03-qh-Qpd" secondAttribute="top" constant="5" id="Lxi-Pl-k3A"/>
                                                 <constraint firstItem="JqI-t0-pOP" firstAttribute="leading" secondItem="2x1-Zy-4az" secondAttribute="leading" id="THu-QH-NpY"/>
                                                 <constraint firstItem="wNn-Xu-G3P" firstAttribute="top" secondItem="F03-qh-Qpd" secondAttribute="top" constant="10" id="WME-iO-YSf"/>
                                                 <constraint firstItem="JqI-t0-pOP" firstAttribute="leading" secondItem="wNn-Xu-G3P" secondAttribute="trailing" constant="20" id="Yid-hE-z5t"/>
@@ -1127,6 +1137,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
+                                            <outlet property="matchRequestImageView" destination="bxB-yh-Mbo" id="OE7-AJ-1lf"/>
                                             <outlet property="profileImageView" destination="wNn-Xu-G3P" id="H7T-ED-oSk"/>
                                             <outlet property="userRankingLabel" destination="bWq-dB-irr" id="oTW-yg-ZoA"/>
                                             <outlet property="userTitleLabel" destination="2x1-Zy-4az" id="n0R-Nt-hpg"/>
@@ -1484,6 +1495,7 @@
         <image name="lupe" width="72" height="72"/>
         <image name="middle-line" width="321" height="7"/>
         <image name="overlay" width="320" height="284"/>
+        <image name="request" width="19" height="19"/>
         <image name="stationListButton" width="174" height="48"/>
         <image name="table-cross" width="254" height="98"/>
         <image name="vs-circle" width="31" height="31"/>

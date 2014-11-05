@@ -26,12 +26,12 @@
         NSArray *matches = [[mappingResult dictionary] valueForKey:@"matches"];
         
         NSLog(@"match %@",operation.HTTPRequestOperation.responseString);
-       // returnMatches(matches);
+        returnMatches(matches);
         
     } failure:^(RKObjectRequestOperation *operation, NSError *error){
-        //returnMatches(nil);
-        NSLog(@"operation %@",operation.HTTPRequestOperation.responseString);
         
+        NSLog(@"operation %@",operation.HTTPRequestOperation.responseString);
+        returnMatches(nil);
     }];
 }
 
