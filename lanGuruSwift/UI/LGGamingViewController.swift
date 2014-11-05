@@ -14,7 +14,8 @@ class LGGamingViewController: UIViewController {
     @IBOutlet weak var rightButton: PNTButton!
     @IBOutlet weak var leftButton: PNTButton!
     @IBOutlet weak var lowerButton: PNTButton!
-    
+    @IBOutlet weak var buttonContainer: UIView!
+  
     @IBOutlet weak var centralSearchField: UITextField!
     @IBOutlet weak var leftSearchField: UITextField!
     @IBOutlet weak var rightSearchField: UITextField!
@@ -104,12 +105,12 @@ class LGGamingViewController: UIViewController {
         
         if time <= 0
         {
+            self.buttonContainer.hidden = true;
             timer.invalidate()
             endMatch()
         }
         else if !self.isAsynchronousGame
         {
-            //@Felix : todo timestamp + result mitgeben
             let matchDictionary : [String : AnyObject] = ["id": self.match!.identity , "opponent": (self.localUser.userID == self.match!.opponent1UserID ? "opponent1" : "opponent2"), "score" : self.localUserScore, "result" : self.gameResultString, "timestamp" : ""]
             
             matchClient.updateMatchScore(matchDictionary){ (opponentScore) -> Void in
@@ -130,8 +131,6 @@ class LGGamingViewController: UIViewController {
                 if match != nil
                 {
                     self.matchResult = match as? Match
-                    NSLog("beste match %@", match as Match)
-                    NSLog("success");
                     self.performSegueWithIdentifier("showPostScreen", sender: nil)
                 }
                 else
@@ -144,7 +143,7 @@ class LGGamingViewController: UIViewController {
         else
         {
             let matchDictionary : [String : AnyObject] = ["id": self.match!.identity , "opponent": (self.localUser.userID == self.match!.opponent1UserID ? "opponent1" : "opponent2"), "result" : self.gameResultString,
-                "score" : self.localUserScore, "userid" : self.localUser.userID]
+                "score" : self.localUserScore, "userid" : self.localUser.userID, "finished" : 1]
             
             matchClient.sendFinalMatchResults(matchDictionary){ (match) -> Void in
                 
