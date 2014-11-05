@@ -143,7 +143,8 @@ class LGGamingViewController: UIViewController {
         }
         else
         {
-            let matchDictionary : [String : AnyObject] = ["id": self.match!.identity , "opponent": (self.localUser.userID == self.match!.opponent1UserID ? "opponent1" : "opponent2"), "result" : self.gameResultString, "username" : self.localUser.username]
+            let matchDictionary : [String : AnyObject] = ["id": self.match!.identity , "opponent": (self.localUser.userID == self.match!.opponent1UserID ? "opponent1" : "opponent2"), "result" : self.gameResultString,
+                "score" : self.localUserScore, "userid" : self.localUser.userID]
             
             matchClient.sendFinalMatchResults(matchDictionary){ (match) -> Void in
                 

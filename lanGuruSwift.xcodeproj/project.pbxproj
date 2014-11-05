@@ -14,6 +14,7 @@
 		052AE4591A0A7EAC008CDE74 /* LGMatchRequestPopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052AE4581A0A7EAC008CDE74 /* LGMatchRequestPopoverView.swift */; };
 		052AE45B1A0A7EBF008CDE74 /* LGMatchRequestPopoverView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 052AE45A1A0A7EBF008CDE74 /* LGMatchRequestPopoverView.xib */; };
 		052AE45F1A0A8487008CDE74 /* LGMatchRequestPopoverDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052AE45E1A0A8487008CDE74 /* LGMatchRequestPopoverDelegate.swift */; };
+		052AE4641A0AA0A4008CDE74 /* LGUserClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 052AE4631A0AA0A4008CDE74 /* LGUserClient.m */; };
 		0542FA0F19F9A6F5004207EA /* LGRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0542FA0E19F9A6F5004207EA /* LGRootViewController.swift */; };
 		055942151A07C1030005A09D /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0559420D1A07C1030005A09D /* Match.swift */; };
 		055942161A07C1030005A09D /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0559420E1A07C1030005A09D /* Word.swift */; };
@@ -65,6 +66,8 @@
 		052AE4581A0A7EAC008CDE74 /* LGMatchRequestPopoverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LGMatchRequestPopoverView.swift; path = UI/LGMatchRequestPopoverView.swift; sourceTree = "<group>"; };
 		052AE45A1A0A7EBF008CDE74 /* LGMatchRequestPopoverView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LGMatchRequestPopoverView.xib; path = UI/LGMatchRequestPopoverView.xib; sourceTree = "<group>"; };
 		052AE45E1A0A8487008CDE74 /* LGMatchRequestPopoverDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LGMatchRequestPopoverDelegate.swift; path = UI/LGMatchRequestPopoverDelegate.swift; sourceTree = "<group>"; };
+		052AE4621A0AA0A4008CDE74 /* LGUserClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGUserClient.h; path = NetworkLayer/LGUserClient.h; sourceTree = "<group>"; };
+		052AE4631A0AA0A4008CDE74 /* LGUserClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LGUserClient.m; path = NetworkLayer/LGUserClient.m; sourceTree = "<group>"; };
 		0542FA0E19F9A6F5004207EA /* LGRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LGRootViewController.swift; path = UI/LGRootViewController.swift; sourceTree = "<group>"; };
 		0559420D1A07C1030005A09D /* Match.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Match.swift; path = DataLayer/Match.swift; sourceTree = "<group>"; };
 		0559420E1A07C1030005A09D /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Word.swift; path = DataLayer/Word.swift; sourceTree = "<group>"; };
@@ -152,6 +155,8 @@
 				055942251A07C1CC0005A09D /* LGMatchClient.m */,
 				0559422C1A07C1CC0005A09D /* LGFacebookClient.h */,
 				055942271A07C1CC0005A09D /* LGFacebookClient.m */,
+				052AE4621A0AA0A4008CDE74 /* LGUserClient.h */,
+				052AE4631A0AA0A4008CDE74 /* LGUserClient.m */,
 				055942291A07C1CC0005A09D /* LGLoginClient.h */,
 				0559422B1A07C1CC0005A09D /* LGLoginClient.m */,
 				0559422A1A07C1CC0005A09D /* LGMatchmakingClient.h */,
@@ -484,6 +489,7 @@
 				057C81371A005131004C63AA /* LGPostGameViewController.swift in Sources */,
 				055942201A07C1720005A09D /* LGGamingViewController.swift in Sources */,
 				055942191A07C1030005A09D /* LGCoreDataManager.m in Sources */,
+				052AE4641A0AA0A4008CDE74 /* LGUserClient.m in Sources */,
 				055942461A07C28B0005A09D /* lanGuruSwift.xcdatamodeld in Sources */,
 				055942411A07C24F0005A09D /* PNTUtility.m in Sources */,
 				055942361A07C1CC0005A09D /* LGVocabularyClient.m in Sources */,

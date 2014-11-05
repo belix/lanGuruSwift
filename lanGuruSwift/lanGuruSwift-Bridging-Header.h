@@ -17,6 +17,7 @@
 #import "LGMatchmakingClient.h"
 #import "LGMatchClient.h"
 #import "LGActiveMatchesClient.h"
+#import "LGUserClient.h"
 #import "RKManagedObjectRequestOperation.h"
 #import "PNTButton.h"
 #import "PNTUtility.h"

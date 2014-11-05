@@ -44,7 +44,7 @@
     NSDictionary *userDict = @{@"fbids" : facebookFriendsIDs};
     
     // POST to create
-    [self.objectManager postObject:nil path:@"/multimatchmaking/friend-details" parameters:userDict success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
+    [self.objectManager postObject:nil path:@"/matchmaking/get-friend-details" parameters:userDict success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
         
         [[LGCoreDataManager sharedInstance] saveContext];
         

@@ -15,6 +15,7 @@ class LGChallengeViewController: UIViewController, UITableViewDelegate, UITableV
     
     let matchMakingClient : LGMatchmakingClient = LGMatchmakingClient.self()
     let activeMatchesClient : LGActiveMatchesClient = LGActiveMatchesClient.self()
+    let userCient : LGUserClient = LGUserClient.self()
     
     let localUser : User = User.getLocalUser()
     
@@ -58,6 +59,7 @@ class LGChallengeViewController: UIViewController, UITableViewDelegate, UITableV
     {
         super.viewDidAppear(animated)
         
+        //check for existing match requests
         self.activeMatches = []
         self.activeMatchesClient.getActiveMatchesForUserID(localUser.userID){ (activeMatches) -> Void in
             if activeMatches != nil
@@ -65,6 +67,14 @@ class LGChallengeViewController: UIViewController, UITableViewDelegate, UITableV
                 self.activeMatches = activeMatches as? Array
             }
             self.friendListTableView .reloadData()
+        }
+        
+        //refrehst friend details
+        self.userCient.updateFriendsDetailsWithCompletion(){(success) -> Void in
+            if success
+            {
+                self.friendListTableView .reloadData()
+            }
         }
     }
     
@@ -90,7 +100,8 @@ class LGChallengeViewController: UIViewController, UITableViewDelegate, UITableV
         cell.profileImageView.image = UIImage(data: profilePictureImageData!)
         cell.usernameLabel.text = user.username
         cell.userRankingLabel.text = "\(user.ranking)"
-
+        cell.matchRequestImageView.hidden = true
+        
         //for active match requests
         for match in self.activeMatches!
         {
