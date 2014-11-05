@@ -46,6 +46,8 @@ class LGGamingViewController: UIViewController {
     
     let matchClient : LGMatchClient = LGMatchClient.self()
     let localUser : User = User.getLocalUser()
+    
+    var isAsynchronousGame : Bool = false
 
     override func viewDidLoad()
     {
@@ -105,10 +107,10 @@ class LGGamingViewController: UIViewController {
             timer.invalidate()
             endMatch()
         }
-        else
+        else if !self.isAsynchronousGame
         {
             //@Felix : todo timestamp + result mitgeben
-            let matchDictionary : [String : AnyObject] = ["id": self.match!.identity , "opponent": (self.localUser.username == self.match!.opponent1 ? "opponent1" : "opponent2"), "score" : self.localUserScore, "result" : self.gameResultString, "timestamp" : ""]
+            let matchDictionary : [String : AnyObject] = ["id": self.match!.identity , "opponent": (self.localUser.userID == self.match!.opponent1UserID ? "opponent1" : "opponent2"), "score" : self.localUserScore, "result" : self.gameResultString, "timestamp" : ""]
             
             matchClient.updateMatchScore(matchDictionary){ (opponentScore) -> Void in
             
@@ -119,20 +121,44 @@ class LGGamingViewController: UIViewController {
     
     func endMatch()
     {
-        let matchDictionary : [String : AnyObject] = ["id": self.match!.identity , "opponent": (self.localUser.username == self.match!.opponent1 ? "opponent1" : "opponent2"), "result" : self.gameResultString, "username" : self.localUser.username]
-        matchClient.sendFinalMatchResults(matchDictionary){ (match) -> Void in
+        if self.isAsynchronousGame
+        {
+            let matchDictionary : [String : AnyObject] = ["id": self.match!.identity , "opponent": (self.localUser.userID == self.match!.opponent1UserID ? "opponent1" : "opponent2"), "result" : self.gameResultString, "score" : self.localUserScore]
             
-            if match != nil
-            {
-                self.matchResult = match as? Match
-                NSLog("beste match %@", match as Match)
-                NSLog("success");
-                self.performSegueWithIdentifier("showPostScreen", sender: nil)
+            matchClient.sendFinalMatchResultsForAsynchronousGame(matchDictionary){ (match) -> Void in
+                
+                if match != nil
+                {
+                    self.matchResult = match as? Match
+                    NSLog("beste match %@", match as Match)
+                    NSLog("success");
+                    self.performSegueWithIdentifier("showPostScreen", sender: nil)
+                }
+                else
+                {
+                    //Felix : to do: make weakself
+                    self.endMatch()
+                }
             }
-            else
-            {
-                //Felix : to do: make weakself
-                self.endMatch()
+        }
+        else
+        {
+            let matchDictionary : [String : AnyObject] = ["id": self.match!.identity , "opponent": (self.localUser.userID == self.match!.opponent1UserID ? "opponent1" : "opponent2"), "result" : self.gameResultString, "username" : self.localUser.username]
+            
+            matchClient.sendFinalMatchResults(matchDictionary){ (match) -> Void in
+                
+                if match != nil
+                {
+                    self.matchResult = match as? Match
+                    NSLog("beste match %@", match as Match)
+                    NSLog("success");
+                    self.performSegueWithIdentifier("showPostScreen", sender: nil)
+                }
+                else
+                {
+                    //Felix : to do: make weakself
+                    self.endMatch()
+                }
             }
         }
     }
@@ -233,6 +259,7 @@ class LGGamingViewController: UIViewController {
             var destinationViewController : LGPostGameViewController = segue.destinationViewController as LGPostGameViewController
             destinationViewController.match = self.match
             destinationViewController.matchResult = self.matchResult
+            destinationViewController.isAsynchronousGame = self.isAsynchronousGame
             destinationViewController.hidesBottomBarWhenPushed = true;
         }
     }

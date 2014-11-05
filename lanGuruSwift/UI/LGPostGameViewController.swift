@@ -35,6 +35,8 @@ class LGPostGameViewController: UIViewController {
     let localUser : User = User.getLocalUser()
     let matchClient : LGMatchClient = LGMatchClient.self()
     
+    var isAsynchronousGame : Bool = false
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -90,8 +92,11 @@ class LGPostGameViewController: UIViewController {
     //@Felix: to do: make sure match is closed if there is no internet connection
     @IBAction func backButtonPressed(sender: AnyObject)
     {
-        let matchDictionary : [String : AnyObject] = ["id": self.match!.identity]
-        self.matchClient.closeMatch(matchDictionary)
+        if !self.isAsynchronousGame
+        {
+            let matchDictionary : [String : AnyObject] = ["id": self.match!.identity]
+            self.matchClient.closeMatch(matchDictionary)
+        }
 
         let previousViewController : UIViewController = self.navigationController!.viewControllers[0] as UIViewController
         self.navigationController!.popToViewController(previousViewController, animated: true)
