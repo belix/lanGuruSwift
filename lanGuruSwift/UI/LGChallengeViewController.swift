@@ -101,6 +101,7 @@ class LGChallengeViewController: UIViewController, UITableViewDelegate, UITableV
         cell.usernameLabel.text = user.username
         cell.userRankingLabel.text = "\(user.ranking)"
         cell.matchRequestImageView.hidden = true
+        cell.cellType = CellType.standard
         
         //for active match requests
         for match in self.activeMatches!
