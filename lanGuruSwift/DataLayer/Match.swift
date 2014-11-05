@@ -39,8 +39,8 @@ class Match: NSObject {
         get {
             return [
             "id"            : "identity",
-            "opponent1"     : "opponent1",
-            "opponent2"     : "opponent2",
+            "username1"     : "opponent1",
+            "username2"     : "opponent2",
             "nativelang1"   : "nativelang1",
             "nativelang2"   : "nativelang2",
             "ranking1"      : "ranking1",
@@ -73,6 +73,14 @@ class Match: NSObject {
     {
         var matchResponseDescriptor = RKResponseDescriptor(mapping: matchEntityMapper(),
             method: RKRequestMethod.Any , pathPattern: nil, keyPath: "match", statusCodes:nil)
+        
+        return matchResponseDescriptor
+    }
+    
+    class var responseDescriptorForActiveMatches: RKResponseDescriptor
+    {
+        var matchResponseDescriptor = RKResponseDescriptor(mapping: matchEntityMapper(),
+            method: RKRequestMethod.Any , pathPattern: nil, keyPath: "matches", statusCodes:nil)
         
         return matchResponseDescriptor
     }

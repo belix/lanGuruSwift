@@ -15,7 +15,11 @@ class LGFriendTableViewCell: UITableViewCell {
     @IBOutlet weak var userTitleLabel: UILabel!
     
     @IBOutlet weak var userRankingLabel: UILabel!
-    override func awakeFromNib() {
+    var matchRequestID : NSInteger = 0
+    
+    @IBOutlet weak var matchRequestImageView: UIImageView!
+    override func awakeFromNib()
+    {
         super.awakeFromNib()
         
         self.profileImageView.layer.cornerRadius = 30

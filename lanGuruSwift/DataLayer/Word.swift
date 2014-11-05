@@ -61,7 +61,6 @@ class Word: NSManagedObject {
             wordModel.addObject(innerWordsModel)
         }
         
-        NSLog("wordModel %@", wordModel)
         return wordModel;
     }
     
