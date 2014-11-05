@@ -124,12 +124,29 @@ class LGChallengeViewController: UIViewController, UITableViewDelegate, UITableV
         //accept match request
         if !cell.matchRequestImageView.hidden
         {
-            let popover : LGMatchRequestPopoverView = NSBundle.mainBundle().loadNibNamed("LGMatchRequestPopoverView", owner: self, options: nil)[0] as LGMatchRequestPopoverView
+            var friend : User = model[indexPath.row] as User
+            
+            let popover : LGMatchAcceptPopoverView = NSBundle.mainBundle().loadNibNamed("LGMatchRequestPopoverView", owner: self, options: nil)[0] as LGMatchAcceptPopoverView
             popover.frame = CGRectMake(self.view.frame.size.width/2 - popover.frame.size.width/2, self.view.frame.size.height/2 - popover.frame.size.height/2, popover.frame.size.width, popover.frame.size.height)
+            
             popover.delegate = self
-            popover.descriptionLabel.text = String(format:"%@ will die zu einem Duell herausfordern. Hast du Bock?" ,cell.usernameLabel.text!)
+            popover.descriptionLabel.text = String(format:"You are challenged by %@" ,cell.usernameLabel.text!)
+            
+            popover.localUserNameLabel.text = self.localUser.username;
+            var profilePictureImageData = NSData(base64EncodedString: self.localUser.profilePicture, options: .allZeros)
+            popover.localUserProfilePicture.image = UIImage(data: profilePictureImageData!)
+            popover.localUserProfilePicture.layer.cornerRadius = popover.localUserProfilePicture.frame.size.height/2
+            popover.localUserProfilePicture.clipsToBounds = true
+            
+            popover.opponentNameLabel.text = friend.username;
+            profilePictureImageData = NSData(base64EncodedString: friend.profilePicture, options: .allZeros)
+            popover.opponentProfilePicture.image = UIImage(data: profilePictureImageData!)
+            popover.opponentProfilePicture.layer.cornerRadius = popover.opponentProfilePicture.frame.size.height/2
+            popover.opponentProfilePicture.clipsToBounds = true
+            
             popover.matchRequestID = cell.matchRequestID
             popover.layoutIfNeeded()
+
             self.view.addSubview(popover)
             
         }//create match request
@@ -137,29 +154,48 @@ class LGChallengeViewController: UIViewController, UITableViewDelegate, UITableV
         {
             var friend : User = model[indexPath.row] as User
             
-            var alert = UIAlertController(title: "Challenge", message: String(format: "Willst du %@ zu einem Match herausfordern", friend.username), preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(UIAlertAction(title:"Jap", style: UIAlertActionStyle.Default, handler: { alertAction in
-                self.matchMakingClient.checkForFriendChallenge(friend,fromUser:self.localUser){
-                    (matchID) -> Void in
-                    
-                    if(matchID != 0)
-                    {
-                        self.searchingForFriend = true
-                        self.searchingFriendMatchID = matchID
-                        self.performSegueWithIdentifier("showMatchmaking", sender: nil)
-                    }
-                }
-            }))
-            alert.addAction(UIAlertAction(title:"Nope", style: UIAlertActionStyle.Default, handler: { alertAction in
-                alert.dismissViewControllerAnimated(true, completion: nil)
-            }))
-            self.presentViewController(alert, animated: true, completion: nil)
-        }
-        
+            let popover : LGMatchRequestPopoverView = NSBundle.mainBundle().loadNibNamed("LGMatchRequestPopoverView", owner: self, options: nil)[1] as LGMatchRequestPopoverView
+            popover.frame = CGRectMake(self.view.frame.size.width/2 - popover.frame.size.width/2, self.view.frame.size.height/2 - popover.frame.size.height/2, popover.frame.size.width, popover.frame.size.height)
+            
+            popover.delegate = self
+            popover.descriptionLabel.text = String(format:"Challenge %@" ,cell.usernameLabel.text!)
+            
+            popover.localUserNameLabel.text = self.localUser.username;
+            var profilePictureImageData = NSData(base64EncodedString: self.localUser.profilePicture, options: .allZeros)
+            popover.localUserProfilePicture.image = UIImage(data: profilePictureImageData!)
+            popover.localUserProfilePicture.layer.cornerRadius = popover.localUserProfilePicture.frame.size.height/2
+            popover.localUserProfilePicture.clipsToBounds = true
 
+            popover.opponentNameLabel.text = friend.username;
+            profilePictureImageData = NSData(base64EncodedString: friend.profilePicture, options: .allZeros)
+            popover.opponentProfilePicture.image = UIImage(data: profilePictureImageData!)
+            popover.opponentProfilePicture.layer.cornerRadius = popover.opponentProfilePicture.frame.size.height/2
+            popover.opponentProfilePicture.clipsToBounds = true
+
+            popover.friendToChallenge = friend
+            popover.layoutIfNeeded()
+            self.view.addSubview(popover)
+            
+        }
     }
     
-    func enterGame(matchID : Int)
+    //open new match request
+    func startMatchRequest(friendToChallenge : User)
+    {
+        self.matchMakingClient.checkForFriendChallenge(friendToChallenge,fromUser:self.localUser){
+            (matchID) -> Void in
+            
+            if(matchID != 0)
+            {
+                self.searchingForFriend = true
+                self.searchingFriendMatchID = matchID
+                self.performSegueWithIdentifier("showMatchmaking", sender: nil)
+            }
+        }
+    }
+    
+    //match request accepted
+    func acceptMatchRequest(matchID : Int)
     {
         self.searchingForFriend = true
         self.isAccepter = true

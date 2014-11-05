@@ -10,5 +10,6 @@ import Foundation
 
 protocol LGMatchRequestPopoverDelegate
 {
-    func enterGame(matchID : Int)
+    func startMatchRequest(friendToChallenge : User)
+    func acceptMatchRequest(matchID : Int)
 }

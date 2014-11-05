@@ -15,6 +15,7 @@
 		052AE45B1A0A7EBF008CDE74 /* LGMatchRequestPopoverView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 052AE45A1A0A7EBF008CDE74 /* LGMatchRequestPopoverView.xib */; };
 		052AE45F1A0A8487008CDE74 /* LGMatchRequestPopoverDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052AE45E1A0A8487008CDE74 /* LGMatchRequestPopoverDelegate.swift */; };
 		052AE4641A0AA0A4008CDE74 /* LGUserClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 052AE4631A0AA0A4008CDE74 /* LGUserClient.m */; };
+		052AE4661A0AC37D008CDE74 /* LGMatchAcceptPopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052AE4651A0AC37D008CDE74 /* LGMatchAcceptPopoverView.swift */; };
 		0542FA0F19F9A6F5004207EA /* LGRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0542FA0E19F9A6F5004207EA /* LGRootViewController.swift */; };
 		055942151A07C1030005A09D /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0559420D1A07C1030005A09D /* Match.swift */; };
 		055942161A07C1030005A09D /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0559420E1A07C1030005A09D /* Word.swift */; };
@@ -68,6 +69,7 @@
 		052AE45E1A0A8487008CDE74 /* LGMatchRequestPopoverDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LGMatchRequestPopoverDelegate.swift; path = UI/LGMatchRequestPopoverDelegate.swift; sourceTree = "<group>"; };
 		052AE4621A0AA0A4008CDE74 /* LGUserClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGUserClient.h; path = NetworkLayer/LGUserClient.h; sourceTree = "<group>"; };
 		052AE4631A0AA0A4008CDE74 /* LGUserClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LGUserClient.m; path = NetworkLayer/LGUserClient.m; sourceTree = "<group>"; };
+		052AE4651A0AC37D008CDE74 /* LGMatchAcceptPopoverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LGMatchAcceptPopoverView.swift; path = UI/LGMatchAcceptPopoverView.swift; sourceTree = "<group>"; };
 		0542FA0E19F9A6F5004207EA /* LGRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LGRootViewController.swift; path = UI/LGRootViewController.swift; sourceTree = "<group>"; };
 		0559420D1A07C1030005A09D /* Match.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Match.swift; path = DataLayer/Match.swift; sourceTree = "<group>"; };
 		0559420E1A07C1030005A09D /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Word.swift; path = DataLayer/Word.swift; sourceTree = "<group>"; };
@@ -136,6 +138,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		052AE4671A0AC382008CDE74 /* Popover */ = {
+			isa = PBXGroup;
+			children = (
+				052AE45E1A0A8487008CDE74 /* LGMatchRequestPopoverDelegate.swift */,
+				052AE4651A0AC37D008CDE74 /* LGMatchAcceptPopoverView.swift */,
+				052AE4581A0A7EAC008CDE74 /* LGMatchRequestPopoverView.swift */,
+				052AE45A1A0A7EBF008CDE74 /* LGMatchRequestPopoverView.xib */,
+			);
+			name = Popover;
+			sourceTree = "<group>";
+		};
 		055942231A07C19B0005A09D /* Login/Registration */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,9 +220,7 @@
 				0503314419FD2EC10089E7F1 /* LGFriendTableViewCell.swift */,
 				0503313C19FD226F0089E7F1 /* LGRepeatViewController.swift */,
 				0503313A19FD210D0089E7F1 /* LGChallengeViewController.swift */,
-				052AE4581A0A7EAC008CDE74 /* LGMatchRequestPopoverView.swift */,
-				052AE45E1A0A8487008CDE74 /* LGMatchRequestPopoverDelegate.swift */,
-				052AE45A1A0A7EBF008CDE74 /* LGMatchRequestPopoverView.xib */,
+				052AE4671A0AC382008CDE74 /* Popover */,
 			);
 			name = TabBar;
 			sourceTree = "<group>";
@@ -494,6 +505,7 @@
 				055942411A07C24F0005A09D /* PNTUtility.m in Sources */,
 				055942361A07C1CC0005A09D /* LGVocabularyClient.m in Sources */,
 				050603301A097A1B00351C04 /* LGActiveMatchesClient.m in Sources */,
+				052AE4661A0AC37D008CDE74 /* LGMatchAcceptPopoverView.swift in Sources */,
 				055942351A07C1CC0005A09D /* LGClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

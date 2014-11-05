@@ -1,5 +1,5 @@
 //
-//  LGMatchRequestPopoverView.swift
+//  LGMatchAcceptPopoverView.swift
 //  lanGuruSwift
 //
 //  Created by Felix Belau on 05.11.14.
@@ -8,15 +8,8 @@
 
 import UIKit
 
-class LGMatchRequestPopoverView: UIView {
-
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
-    }
-    */
+class LGMatchAcceptPopoverView: UIView {
+    
     @IBOutlet weak var localUserProfilePicture: UIImageView!
     @IBOutlet weak var opponentProfilePicture: UIImageView!
     
@@ -26,17 +19,20 @@ class LGMatchRequestPopoverView: UIView {
     var delegate:LGMatchRequestPopoverDelegate! = nil
     var matchRequestID : Int = 0
     
-    var friendToChallenge : User?
-    
     @IBOutlet weak var descriptionLabel: UILabel!
-
+    
     @IBAction func closeButtonPressed(sender: AnyObject)
     {
         self.removeFromSuperview()
     }
-    
-    @IBAction func enterGameButtonPressed(sender: AnyObject)
+   
+    @IBAction func acceptMatchRequest(sender: AnyObject)
     {
-        self.delegate.startMatchRequest(self.friendToChallenge!)
+        self.delegate.acceptMatchRequest(matchRequestID)
+    }
+  
+    @IBAction func declineMatchRequest(sender: AnyObject)
+    {
+    
     }
 }
