@@ -14,6 +14,8 @@
 
 -(void)sendFinalMatchResults:(NSDictionary*)matchResults withCompletion:(void (^)(id Match))returnMatch;
 
+-(void)sendFinalMatchResultsForAsynchronousGame:(NSDictionary*)matchResults withCompletion:(void (^)(id Match))returnMatch;
+
 -(void)closeMatch:(NSDictionary *)matchDictionary;
 
 @end

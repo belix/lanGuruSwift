@@ -13,6 +13,8 @@ class Match: NSObject {
     var identity : Int = 0
     var opponent1 : String = ""
     var opponent2 : String = ""
+    var opponent1UserID : Int = 0
+    var opponent2UserID : Int = 0
     var nativelang1 : String = ""
     var nativelang2 : String = ""
     var ranking1 : Int = 0
@@ -41,11 +43,13 @@ class Match: NSObject {
             "id"            : "identity",
             "username1"     : "opponent1",
             "username2"     : "opponent2",
+            "user1"         : "opponent1UserID",
+            "user2"         : "opponent2UserID",                
             "nativelang1"   : "nativelang1",
             "nativelang2"   : "nativelang2",
             "ranking1"      : "ranking1",
             "ranking2"      : "ranking2",
-            "active"        : "status",
+            "status"        : "status",
             "words"         : "content",
             "result1"       : "result1",
             "result2"       : "result2",

@@ -14,7 +14,8 @@ class LGGamingViewController: UIViewController {
     @IBOutlet weak var rightButton: PNTButton!
     @IBOutlet weak var leftButton: PNTButton!
     @IBOutlet weak var lowerButton: PNTButton!
-    
+    @IBOutlet weak var buttonContainer: UIView!
+  
     @IBOutlet weak var centralSearchField: UITextField!
     @IBOutlet weak var leftSearchField: UITextField!
     @IBOutlet weak var rightSearchField: UITextField!
@@ -46,6 +47,8 @@ class LGGamingViewController: UIViewController {
     
     let matchClient : LGMatchClient = LGMatchClient.self()
     let localUser : User = User.getLocalUser()
+    
+    var isAsynchronousGame : Bool = false
 
     override func viewDidLoad()
     {
@@ -102,13 +105,13 @@ class LGGamingViewController: UIViewController {
         
         if time <= 0
         {
+            self.buttonContainer.hidden = true;
             timer.invalidate()
             endMatch()
         }
-        else
+        else if !self.isAsynchronousGame
         {
-            //@Felix : todo timestamp + result mitgeben
-            let matchDictionary : [String : AnyObject] = ["id": self.match!.identity , "opponent": (self.localUser.username == self.match!.opponent1 ? "opponent1" : "opponent2"), "score" : self.localUserScore, "result" : self.gameResultString, "timestamp" : ""]
+            let matchDictionary : [String : AnyObject] = ["id": self.match!.identity , "opponent": (self.localUser.userID == self.match!.opponent1UserID ? "opponent1" : "opponent2"), "score" : self.localUserScore, "result" : self.gameResultString, "timestamp" : ""]
             
             matchClient.updateMatchScore(matchDictionary){ (opponentScore) -> Void in
             
@@ -119,20 +122,43 @@ class LGGamingViewController: UIViewController {
     
     func endMatch()
     {
-        let matchDictionary : [String : AnyObject] = ["id": self.match!.identity , "opponent": (self.localUser.username == self.match!.opponent1 ? "opponent1" : "opponent2"), "result" : self.gameResultString, "username" : self.localUser.username]
-        matchClient.sendFinalMatchResults(matchDictionary){ (match) -> Void in
+        if self.isAsynchronousGame
+        {
+            let matchDictionary : [String : AnyObject] = ["id": self.match!.identity , "opponent": (self.localUser.userID == self.match!.opponent1UserID ? "opponent1" : "opponent2"), "result" : self.gameResultString, "score" : self.localUserScore, "username" : self.localUser.username, "finished" : 1]
             
-            if match != nil
-            {
-                self.matchResult = match as? Match
-                NSLog("beste match %@", match as Match)
-                NSLog("success");
-                self.performSegueWithIdentifier("showPostScreen", sender: nil)
+            matchClient.sendFinalMatchResultsForAsynchronousGame(matchDictionary){ (match) -> Void in
+                
+                if match != nil
+                {
+                    self.matchResult = match as? Match
+                    self.performSegueWithIdentifier("showPostScreen", sender: nil)
+                }
+                else
+                {
+                    //Felix : to do: make weakself
+                    self.endMatch()
+                }
             }
-            else
-            {
-                //Felix : to do: make weakself
-                self.endMatch()
+        }
+        else
+        {
+            let matchDictionary : [String : AnyObject] = ["id": self.match!.identity , "opponent": (self.localUser.userID == self.match!.opponent1UserID ? "opponent1" : "opponent2"), "result" : self.gameResultString,
+                "score" : self.localUserScore, "userid" : self.localUser.userID, "finished" : 1]
+            
+            matchClient.sendFinalMatchResults(matchDictionary){ (match) -> Void in
+                
+                if match != nil
+                {
+                    self.matchResult = match as? Match
+                    NSLog("beste match %@", match as Match)
+                    NSLog("success");
+                    self.performSegueWithIdentifier("showPostScreen", sender: nil)
+                }
+                else
+                {
+                    //Felix : to do: make weakself
+                    self.endMatch()
+                }
             }
         }
     }
@@ -220,9 +246,6 @@ class LGGamingViewController: UIViewController {
         touchedAnswerButton.setNeedsDisplay();
     }
 
-
-
-    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -233,6 +256,7 @@ class LGGamingViewController: UIViewController {
             var destinationViewController : LGPostGameViewController = segue.destinationViewController as LGPostGameViewController
             destinationViewController.match = self.match
             destinationViewController.matchResult = self.matchResult
+            destinationViewController.isAsynchronousGame = self.isAsynchronousGame
             destinationViewController.hidesBottomBarWhenPushed = true;
         }
     }

@@ -64,6 +64,27 @@
     }];
 }
 
+
+-(void)sendFinalMatchResultsForAsynchronousGame:(NSDictionary*)matchResults withCompletion:(void (^)(id Match))returnMatch
+{
+    //get responseDescripter from Match Class
+    RKResponseDescriptor *responseDescriptor = [Match responseDescriptor];
+    [self.objectManager addResponseDescriptor:responseDescriptor];
+    
+    // POST to create
+    [self.objectManager postObject:nil path:@"/matchmaking/finish-async-match" parameters:matchResults success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
+        Match *match = [[mappingResult dictionary] valueForKey:@"match"];
+        
+        returnMatch(match);
+        
+    } failure:^(RKObjectRequestOperation *operation, NSError *error){
+        
+        NSLog(@"ERRROR %@",operation.HTTPRequestOperation.responseString);
+        returnMatch(nil);
+    }];
+}
+
+
 -(void)closeMatch:(NSDictionary *)matchDictionary
 {    
     NSError *error;

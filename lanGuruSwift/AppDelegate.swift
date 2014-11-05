@@ -23,6 +23,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //initialize core data manager
         LGCoreDataManager.sharedInstance().setupStoreManager()
         
+        UIApplication.sharedApplication().registerForRemoteNotifications()
+        let settings = UIUserNotificationSettings(forTypes: .Alert, categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+        
         //load vocabulary once
         if self.vabularyAlreadDownloaded() == false
         {
@@ -48,6 +52,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         return false
+    }
+    
+    
+    // implemented in your application delegate
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData!)
+    {
+        println("Got token data! \(deviceToken)")
+    }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError!)
+    {
+        println("Couldn't register: \(error)")
     }
     
     func logWords()

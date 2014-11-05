@@ -365,6 +365,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="buttonContainer" destination="EjO-Tr-8zh" id="C6w-X1-Akf"/>
                         <outlet property="centralSearchField" destination="VL4-Wu-UHt" id="qg2-QO-hnk"/>
                         <outlet property="hiddenSearchField" destination="CmI-vX-nuc" id="lvU-25-pwY"/>
                         <outlet property="leftButton" destination="Hyn-qh-Sut" id="1Il-G7-zHW"/>
@@ -385,7 +386,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lNS-aH-V2I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3623" y="1790"/>
+            <point key="canvasLocation" x="3627" y="1813"/>
         </scene>
         <!--Post Game View Controller-->
         <scene sceneID="eEE-1G-pzp">
@@ -712,7 +713,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fNM-3X-rAb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4403" y="1822"/>
+            <point key="canvasLocation" x="4301" y="1813"/>
         </scene>
         <!--Matchmaking View Controller-->
         <scene sceneID="a94-q1-54R">

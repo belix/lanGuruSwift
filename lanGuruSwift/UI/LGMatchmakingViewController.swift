@@ -32,6 +32,7 @@ class LGMatchmakingViewController: UIViewController {
     var isAccepter : Bool = false
     var searchingFriendMatchID : NSInteger = 0
     var searchingStatus : Int = 0
+    var isAsynchronousGame : Bool = false
     
     
     override func viewDidLoad()
@@ -101,6 +102,12 @@ class LGMatchmakingViewController: UIViewController {
             if match != nil
             {
                 self.currentMatch = match as? Match
+                
+                if self.currentMatch!.status == 2 || self.currentMatch!.status == 3
+                {
+                    self.isAsynchronousGame = true
+                }
+                
                 self.setupOpponentInterface()
                 
                 var timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("pushToGame"), userInfo: nil, repeats: false)
@@ -117,6 +124,7 @@ class LGMatchmakingViewController: UIViewController {
     {
         //change searching status to 2 (challengerPlayed)
         self.searchingStatus = 2
+        self.isAsynchronousGame = true
     }
     
     func pushToGame()
@@ -150,6 +158,7 @@ class LGMatchmakingViewController: UIViewController {
         if segue.identifier == "showGame"{
             var destinationViewController : LGGamingViewController = segue.destinationViewController as LGGamingViewController
             destinationViewController.match = self.currentMatch
+            destinationViewController.isAsynchronousGame = self.isAsynchronousGame
             destinationViewController.hidesBottomBarWhenPushed = true;
         }
     }
