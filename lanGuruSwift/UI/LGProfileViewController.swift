@@ -9,9 +9,11 @@
 import UIKit
 
 class LGProfileViewController: UIViewController {
-
+    
     @IBOutlet weak var profilePictureImageView: UIImageView!
     @IBOutlet weak var coverImageView: UIImageView!
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var userPointsLabel: UILabel!
     
     override func viewDidLoad()
     {
@@ -22,10 +24,31 @@ class LGProfileViewController: UIViewController {
         let coverImageData = NSData(base64EncodedString: localUser.coverPicture, options: .allZeros)
         self.coverImageView.image = UIImage(data:coverImageData!)
         
+        addEffect()
+        
         let profilePictureImageData = NSData(base64EncodedString: localUser.profilePicture, options: .allZeros)
         self.profilePictureImageView.image = UIImage(data: profilePictureImageData!)
         self.profilePictureImageView.layer.cornerRadius = self.profilePictureImageView.frame.size.height/2
         self.profilePictureImageView.clipsToBounds = true
+        
+        self.usernameLabel.text = localUser.username
+        self.userPointsLabel.text = "\(String(Int(localUser.ranking))) Pts"
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        
+    }
+    
+    func addEffect() {
+        var effect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        
+        var effectView = UIVisualEffectView(effect: effect)
+        
+        effectView.frame = CGRectMake(0, 0, 600, 265)
+        
+        self.coverImageView.addSubview(effectView)
     }
 
     /*
