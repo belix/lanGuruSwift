@@ -18,6 +18,9 @@ class LGRootViewController: UIViewController {
         {
             performSegueWithIdentifier("skipLogin", sender: nil)
         }
+        
+        self.navigationController?.navigationBar.hidden = true
+
     }
 
     /*

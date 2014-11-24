@@ -6,3 +6,5 @@
 *.xcbkptlist
 
 *.xcbkptlist
+
+*.DS_Store

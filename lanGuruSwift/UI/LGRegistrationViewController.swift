@@ -8,25 +8,21 @@
 
 import UIKit
 
-class LGRegistrationViewController: UIViewController, FBLoginViewDelegate{
+class LGRegistrationViewController: UIViewController{
 
-    @IBOutlet weak var profilePictureView: FBProfilePictureView!
-    @IBOutlet weak var facebookLoginView: FBLoginView!
 
     @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
     @IBOutlet weak var registerButton: UIButton!
     
-    var facebookID : String?
     var loginClient : LGLoginClient = LGLoginClient()
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
 
-        self.facebookLoginView.readPermissions = ["public_profile", "email", "user_friends"];
-        self.facebookLoginView.delegate = self;
     }
 
     func loginViewShowingLoggedInUser(loginView: FBLoginView)
@@ -37,8 +33,6 @@ class LGRegistrationViewController: UIViewController, FBLoginViewDelegate{
     func loginViewFetchedUserInfo(loginView: FBLoginView?, user: FBGraphUser)
     {
         NSLog("graph User %@", user.last_name)
-        self.profilePictureView.profileID =  user.objectID
-        self.facebookID = user.objectID
     }
     
     func loginViewShowingLoggedOutUser(loginView: FBLoginView?)
@@ -48,7 +42,7 @@ class LGRegistrationViewController: UIViewController, FBLoginViewDelegate{
     
     @IBAction func registerButtonPressed(sender: UIButton)
     {
-        var userDictionary : NSDictionary = ["user" : ["username" : self.usernameTextField.text, "password" : self.passwordTextField.text, "nativelang" : "", "foreignlang" : "", "email" : "", "fbid" : self.facebookID, "devicetoken" : ""]]
+        var userDictionary : NSDictionary = ["user" : ["username" : self.usernameTextField.text, "email" : self.emailTextField.text, "password" : self.passwordTextField.text, "nativelang" : "", "foreignlang" : "", "devicetoken" : ""]]
         
         self.loginClient.registerUser(userDictionary) { (success) -> Void in
             if success{

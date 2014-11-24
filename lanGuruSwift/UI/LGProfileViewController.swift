@@ -42,7 +42,7 @@ class LGProfileViewController: UIViewController {
     }
     
     func addEffect() {
-        var effect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        var effect = UIBlurEffect(style: UIBlurEffectStyle.ExtraLight)
         
         var effectView = UIVisualEffectView(effect: effect)
         
