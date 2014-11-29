@@ -27,7 +27,7 @@
     //server request - with completion block
     [self.objectManager postObject:nil path:path parameters:userDict success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult)
     {
-        NSLog(@"result %@",mappingResult.array);
+        NSLog(@"result555 %@",mappingResult.array);
 
         User *user = mappingResult.array[0];
         [[NSUserDefaults standardUserDefaults] setObject:user.userID forKey:@"localUserID"];
@@ -53,7 +53,7 @@
     // POST to create
     [self.objectManager postObject:nil path:@"/registration/register-user" parameters:userDict success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult)
     {
-        NSLog(@"result %@",mappingResult.array);
+        NSLog(@"result555 %@",mappingResult.array);
         User *user = mappingResult.array[0];
         [[NSUserDefaults standardUserDefaults] setObject:user.userID forKey:@"localUserID"];
         [[NSUserDefaults standardUserDefaults] synchronize];

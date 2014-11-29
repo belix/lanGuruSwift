@@ -22,3 +22,4 @@
 #import "PNTButton.h"
 #import "PNTUtility.h"
 #import "LGProgressBar.h"
+#import <CommonCrypto/CommonCrypto.h>

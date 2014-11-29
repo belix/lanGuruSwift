@@ -95,9 +95,9 @@ class LGChallengeViewController: UIViewController, UITableViewDelegate, UITableV
         let cell: LGFriendTableViewCell = tableView.dequeueReusableCellWithIdentifier("friendCell", forIndexPath: indexPath) as LGFriendTableViewCell
         
         var user : User = model[indexPath.row] as User
-        
         let profilePictureImageData = NSData(base64EncodedString: user.profilePicture, options: .allZeros)
         cell.profileImageView.image = UIImage(data: profilePictureImageData!)
+        
         cell.usernameLabel.text = user.username
         cell.userRankingLabel.text = "\(user.ranking)"
         cell.matchRequestImageView.hidden = true
