@@ -69,7 +69,7 @@ class LGRootViewController: UIViewController {
 
             var userDictionary : NSDictionary = ["user" : ["username" : self.usernameTextField.text, "password" : self.passwordTextField.text.md5]]
 
-            self.loginClient.loginForUser(userDictionary, isFacebookLogin: true) { (success) -> Void in
+            self.loginClient.loginForUser(userDictionary, isFacebookLogin: false) { (success) -> Void in
                 if success{
                     
                     self.performSegueWithIdentifier("loginFinished", sender: nil)
