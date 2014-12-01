@@ -11,7 +11,7 @@ import CoreData
 
 @objc class User: NSManagedObject {
 
-    @NSManaged var coverPicture: String
+    @NSManaged var coverPicture: String?
     @NSManaged var currentLesson: NSNumber
     @NSManaged var currentLevel: NSNumber
     @NSManaged var facebookID: String
@@ -19,12 +19,40 @@ import CoreData
     @NSManaged var lessonProgress: NSNumber
     @NSManaged var levelProgress: NSNumber
     @NSManaged var nativeLanguage: String
-    @NSManaged var profilePicture: String
+    @NSManaged var profilePicture: String?
     @NSManaged var rank: NSNumber
     @NSManaged var ranking: NSNumber
     @NSManaged var userID: NSNumber
     @NSManaged var username: String
     
+    
+    func getProfilePictureImage() -> UIImage
+    {
+        if self.profilePicture != nil && self.profilePicture != ""
+        {
+            if let profilePictureImageData = NSData(base64EncodedString: self.profilePicture!, options: .allZeros)
+            {
+                return UIImage(data: profilePictureImageData)!
+            }
+            
+        }
+        
+        return UIImage(named: "facebook_leader_avatar")!
+    }
+    
+    func getCoverPictureImage() -> UIImage
+    {
+        if self.coverPicture != nil && self.coverPicture != ""
+        {
+            if let coverPictureImageData = NSData(base64EncodedString: self.coverPicture!, options: .allZeros)
+            {
+                return UIImage(data: coverPictureImageData)!
+            }
+            
+        }
+        
+        return UIImage(named: "facebook_leader_avatar")!
+    }
     
     class func getLocalUser() -> User
     {

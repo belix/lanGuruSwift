@@ -57,13 +57,11 @@ class LGGamingViewController: UIViewController {
         model = match!.content
         
         //setup statusbar
-        var profilePictureImageData = NSData(base64EncodedString: match!.opponentProfilePic, options: .allZeros)
-        self.opponentProfilePictureImageView.image = UIImage(data:profilePictureImageData!)
+        self.opponentProfilePictureImageView.image = match!.getOpponentProfilePictureImage()
         self.opponentProfilePictureImageView.layer.cornerRadius = self.opponentProfilePictureImageView.frame.size.height/2
         self.opponentProfilePictureImageView.clipsToBounds = true
 
-        profilePictureImageData = NSData(base64EncodedString: User.getLocalUser().profilePicture, options: .allZeros)
-        self.localUserProfilePictureView.image = UIImage(data:profilePictureImageData!)
+        self.localUserProfilePictureView.image = User.getLocalUser().getProfilePictureImage()
         self.localUserProfilePictureView.layer.cornerRadius = self.localUserProfilePictureView.frame.size.height/2
         self.localUserProfilePictureView.clipsToBounds = true
         

@@ -39,11 +39,9 @@ class LGMatchmakingViewController: UIViewController {
     {
         super.viewDidLoad()
         
-        let coverImageData = NSData(base64EncodedString: localUser.coverPicture, options: .allZeros)
-        self.localUserCoverPictureImageView.image = UIImage(data:coverImageData!)
-
-        let profilePictureImageData = NSData(base64EncodedString: localUser.profilePicture, options: .allZeros)
-        self.localUserProfilePictureImageView.image = UIImage(data:profilePictureImageData!)
+        self.localUserCoverPictureImageView.image = localUser.getCoverPictureImage()
+        self.localUserProfilePictureImageView.image = localUser.getProfilePictureImage()
+        
         self.localUserProfilePictureImageView.layer.cornerRadius = self.localUserProfilePictureImageView.frame.size.height/2
         self.localUserProfilePictureImageView.clipsToBounds = true
 
@@ -135,12 +133,10 @@ class LGMatchmakingViewController: UIViewController {
     
     func setupOpponentInterface()
     {
-        let coverImageData = NSData(base64EncodedString: self.currentMatch!.opponentCoverPic, options: .allZeros)
-        self.opponentCoverPictureImageView.image = UIImage(data:coverImageData!)
+        self.opponentCoverPictureImageView.image = self.currentMatch!.getOpponentCoverPictureImage()
         self.opponentCoverPictureImageView.hidden = false
 
-        let profilePictureImageData = NSData(base64EncodedString: self.currentMatch!.opponentProfilePic, options: .allZeros)
-        self.opponentProfilePictureImageView.image = UIImage(data:profilePictureImageData!)
+        self.opponentProfilePictureImageView.image = self.currentMatch!.getOpponentProfilePictureImage()
         self.opponentProfilePictureImageView.layer.cornerRadius = self.opponentProfilePictureImageView.frame.size.height/2
         self.opponentProfilePictureImageView.clipsToBounds = true
         

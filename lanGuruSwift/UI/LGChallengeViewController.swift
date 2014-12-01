@@ -95,9 +95,9 @@ class LGChallengeViewController: UIViewController, UITableViewDelegate, UITableV
         let cell: LGFriendTableViewCell = tableView.dequeueReusableCellWithIdentifier("friendCell", forIndexPath: indexPath) as LGFriendTableViewCell
         
         var user : User = model[indexPath.row] as User
-        let profilePictureImageData = NSData(base64EncodedString: user.profilePicture, options: .allZeros)
-        cell.profileImageView.image = UIImage(data: profilePictureImageData!)
         
+        cell.profileImageView.image = user.getProfilePictureImage();
+
         cell.usernameLabel.text = user.username
         cell.userRankingLabel.text = "\(user.ranking)"
         cell.matchRequestImageView.hidden = true
@@ -141,14 +141,12 @@ class LGChallengeViewController: UIViewController, UITableViewDelegate, UITableV
             popover.descriptionLabel.text = String(format:"You are challenged by %@" ,cell.usernameLabel.text!)
             
             popover.localUserNameLabel.text = self.localUser.username;
-            var profilePictureImageData = NSData(base64EncodedString: self.localUser.profilePicture, options: .allZeros)
-            popover.localUserProfilePicture.image = UIImage(data: profilePictureImageData!)
+            popover.localUserProfilePicture.image = self.localUser.getProfilePictureImage()
             popover.localUserProfilePicture.layer.cornerRadius = popover.localUserProfilePicture.frame.size.height/2
             popover.localUserProfilePicture.clipsToBounds = true
             
             popover.opponentNameLabel.text = friend.username;
-            profilePictureImageData = NSData(base64EncodedString: friend.profilePicture, options: .allZeros)
-            popover.opponentProfilePicture.image = UIImage(data: profilePictureImageData!)
+            popover.opponentProfilePicture.image = friend.getProfilePictureImage()
             popover.opponentProfilePicture.layer.cornerRadius = popover.opponentProfilePicture.frame.size.height/2
             popover.opponentProfilePicture.clipsToBounds = true
             
@@ -185,14 +183,17 @@ class LGChallengeViewController: UIViewController, UITableViewDelegate, UITableV
             popover.descriptionLabel.text = String(format:"Challenge %@" ,cell.usernameLabel.text!)
             
             popover.localUserNameLabel.text = self.localUser.username;
-            var profilePictureImageData = NSData(base64EncodedString: self.localUser.profilePicture, options: .allZeros)
-            popover.localUserProfilePicture.image = UIImage(data: profilePictureImageData!)
+//            var profilePictureImageData = NSData(base64EncodedString: self.localUser.profilePicture, options: .allZeros)
+//            popover.localUserProfilePicture.image = UIImage(data: profilePictureImageData!)
+            
+            popover.localUserProfilePicture.image = self.localUser.getProfilePictureImage()
             popover.localUserProfilePicture.layer.cornerRadius = popover.localUserProfilePicture.frame.size.height/2
             popover.localUserProfilePicture.clipsToBounds = true
 
             popover.opponentNameLabel.text = friend.username;
-            profilePictureImageData = NSData(base64EncodedString: friend.profilePicture, options: .allZeros)
-            popover.opponentProfilePicture.image = UIImage(data: profilePictureImageData!)
+//            profilePictureImageData = NSData(base64EncodedString: friend.profilePicture, options: .allZeros)
+//            popover.opponentProfilePicture.image = UIImage(data: profilePictureImageData!)
+            popover.opponentProfilePicture.image = friend.getProfilePictureImage()
             popover.opponentProfilePicture.layer.cornerRadius = popover.opponentProfilePicture.frame.size.height/2
             popover.opponentProfilePicture.clipsToBounds = true
 

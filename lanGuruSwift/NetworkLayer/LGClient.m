@@ -29,6 +29,8 @@
         [self.objectManager.HTTPClient setDefaultHeader:@"Content-Type" value:@"application/json"];
         
         self.objectManager.managedObjectStore = [LGCoreDataManager sharedInstance].managedObjectStore;
+        
+        
     }
     return self;
 }

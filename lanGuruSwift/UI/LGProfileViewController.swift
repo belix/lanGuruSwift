@@ -20,14 +20,11 @@ class LGProfileViewController: UIViewController {
         super.viewDidLoad()
 
         let localUser : User = User.getLocalUser()
-
-        let coverImageData = NSData(base64EncodedString: localUser.coverPicture, options: .allZeros)
-        self.coverImageView.image = UIImage(data:coverImageData!)
+        self.coverImageView.image = localUser.getCoverPictureImage()
         
         addEffect()
         
-        let profilePictureImageData = NSData(base64EncodedString: localUser.profilePicture, options: .allZeros)
-        self.profilePictureImageView.image = UIImage(data: profilePictureImageData!)
+        self.profilePictureImageView.image = localUser.getProfilePictureImage()
         self.profilePictureImageView.layer.cornerRadius = self.profilePictureImageView.frame.size.height/2
         self.profilePictureImageView.clipsToBounds = true
         

@@ -17,7 +17,7 @@
 
 -(void)loginForUser:(NSDictionary*)userDict isFacebookLogin:(BOOL)isFacebookLogin completion:(void (^)(BOOL success))success
 {
-
+    
     //get responseDescripter from UserClass
     RKResponseDescriptor *responseDescriptor = [User responseDescriptor];
     [self.objectManager addResponseDescriptor:responseDescriptor];

@@ -37,7 +37,6 @@
 		055942431A07C24F0005A09D /* LGProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0559423F1A07C24F0005A09D /* LGProgressBar.m */; };
 		055942461A07C28B0005A09D /* lanGuruSwift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 055942441A07C28B0005A09D /* lanGuruSwift.xcdatamodeld */; };
 		057C81371A005131004C63AA /* LGPostGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057C81361A005131004C63AA /* LGPostGameViewController.swift */; };
-		0581057019F7FE7F000FB82A /* LGLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0581056F19F7FE7F000FB82A /* LGLoginViewController.swift */; };
 		0593007619F53CBD004526DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0593007519F53CBD004526DC /* AppDelegate.swift */; };
 		0593008019F53CBD004526DC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0593007F19F53CBD004526DC /* Images.xcassets */; };
 		0593008319F53CBD004526DC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0593008119F53CBD004526DC /* LaunchScreen.xib */; };
@@ -102,7 +101,6 @@
 		055942401A07C24F0005A09D /* PNTButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PNTButton.h; path = OldCode/PNTButton.h; sourceTree = "<group>"; };
 		055942451A07C28B0005A09D /* lanGuruSwift.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = lanGuruSwift.xcdatamodel; sourceTree = "<group>"; };
 		057C81361A005131004C63AA /* LGPostGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LGPostGameViewController.swift; path = UI/LGPostGameViewController.swift; sourceTree = "<group>"; };
-		0581056F19F7FE7F000FB82A /* LGLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LGLoginViewController.swift; path = UI/LGLoginViewController.swift; sourceTree = "<group>"; };
 		0593007019F53CBD004526DC /* lanGuruSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lanGuruSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0593007419F53CBD004526DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0593007519F53CBD004526DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -155,7 +153,6 @@
 		055942231A07C19B0005A09D /* Login/Registration */ = {
 			isa = PBXGroup;
 			children = (
-				0581056F19F7FE7F000FB82A /* LGLoginViewController.swift */,
 				05FB9A8319F9920000FBD772 /* LGRegistrationViewController.swift */,
 				0542FA0E19F9A6F5004207EA /* LGRootViewController.swift */,
 			);
@@ -480,7 +477,6 @@
 				055942151A07C1030005A09D /* Match.swift in Sources */,
 				05FB9A8219F97EA200FBD772 /* LGProfileViewController.swift in Sources */,
 				0542FA0F19F9A6F5004207EA /* LGRootViewController.swift in Sources */,
-				0581057019F7FE7F000FB82A /* LGLoginViewController.swift in Sources */,
 				052AE4691A0ACBD6008CDE74 /* LGMatchFinishedPopoverView.swift in Sources */,
 				052AE45F1A0A8487008CDE74 /* LGMatchRequestPopoverDelegate.swift in Sources */,
 				055942331A07C1CC0005A09D /* LGMatchmakingClient.m in Sources */,

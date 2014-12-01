@@ -48,8 +48,7 @@ class LGPostGameViewController: UIViewController {
         self.opponentProfilePictureImageView.clipsToBounds = true
         self.opponentNameLabel.text = (self.localUser.username == self.match!.opponent1 ? self.match!.opponent2 : self.match!.opponent1)
         
-        profilePictureImageData = NSData(base64EncodedString: localUser.profilePicture, options: .allZeros)
-        self.localUserProfilePictureView.image = UIImage(data:profilePictureImageData!)
+        self.localUserProfilePictureView.image = localUser.getProfilePictureImage()
         self.localUserProfilePictureView.layer.cornerRadius = self.localUserProfilePictureView.frame.size.height/2
         self.localUserProfilePictureView.clipsToBounds = true
         self.localUserNameLabel.text = self.localUser.username

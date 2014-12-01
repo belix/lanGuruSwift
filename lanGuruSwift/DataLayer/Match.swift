@@ -36,6 +36,32 @@ class Match: NSObject {
     var opponentCoverPic : String = ""
     var opponentProfilePic : String = ""
     
+    func getOpponentCoverPictureImage() -> UIImage
+    {
+        if self.opponentCoverPic != ""
+        {
+            if let opponentCoverPictureImageData = NSData(base64EncodedString: self.opponentCoverPic, options: .allZeros)
+            {
+                return UIImage(data: opponentCoverPictureImageData)!
+            }
+        }
+        
+        return UIImage(named: "facebook_leader_avatar")!
+    }
+    
+    func getOpponentProfilePictureImage() -> UIImage
+    {
+        if self.opponentProfilePic != ""
+        {
+            if let opponentProflePictureImageData = NSData(base64EncodedString: self.opponentProfilePic, options: .allZeros)
+            {
+                return UIImage(data: opponentProflePictureImageData)!
+            }
+        }
+        
+        return UIImage(named: "facebook_leader_avatar")!
+    }
+    
     class var mappingDictionary: NSDictionary
     {
         get {

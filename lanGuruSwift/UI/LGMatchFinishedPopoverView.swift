@@ -45,14 +45,14 @@ class LGMatchFinishedPopoverView: UIView {
         self.gamePointsLabel.text = String(format: "%i - %i", localUserScore, opponentUserScore)
         
         self.localUserNameLabel.text = localUser.username;
-        var profilePictureImageData = NSData(base64EncodedString: localUser.profilePicture, options: .allZeros)
-        self.localUserProfilePicture.image = UIImage(data: profilePictureImageData!)
+        self.localUserProfilePicture.image = localUser.getProfilePictureImage()
+        
         self.localUserProfilePicture.layer.cornerRadius = self.localUserProfilePicture.frame.size.height/2
         self.localUserProfilePicture.clipsToBounds = true
         
         self.opponentNameLabel.text = opponent.username;
-        profilePictureImageData = NSData(base64EncodedString: opponent.profilePicture, options: .allZeros)
-        self.opponentProfilePicture.image = UIImage(data: profilePictureImageData!)
+        self.opponentProfilePicture.image = opponent.getProfilePictureImage()
+        
         self.opponentProfilePicture.layer.cornerRadius = self.opponentProfilePicture.frame.size.height/2
         self.opponentProfilePicture.clipsToBounds = true
     }

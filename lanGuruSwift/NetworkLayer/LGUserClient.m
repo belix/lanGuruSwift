@@ -20,6 +20,12 @@
     [self.objectManager addResponseDescriptor:responseDescriptor];
     
     NSMutableArray *facebookFriendsIDs = [[NSUserDefaults standardUserDefaults] objectForKey:@"facebookFriends"];
+    if (facebookFriendsIDs.count < 1)
+    {
+        success(NO);
+        return;
+    }
+    
     NSDictionary *userDict = @{@"fbids" : facebookFriendsIDs};
     
     // POST to create

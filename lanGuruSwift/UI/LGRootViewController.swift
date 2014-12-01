@@ -8,23 +8,33 @@
 
 import UIKit
 
-class LGRootViewController: UIViewController {
+class LGRootViewController: UIViewController, FBLoginViewDelegate {
 
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    
-    var loginClient : LGLoginClient = LGLoginClient()
+    @IBOutlet weak var facebookLoginView: FBLoginView!
 
+    var loginClient : LGLoginClient
+
+    required init(coder aDecoder: NSCoder) {
+        self.loginClient = LGLoginClient()
+        super.init(coder: aDecoder)
+    }
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
+        self.facebookLoginView.readPermissions = ["public_profile", "email", "user_friends"];
+        self.facebookLoginView.delegate = self;
+        
         if NSUserDefaults.standardUserDefaults().objectForKey("localUserID") != nil
         {
-            //performSegueWithIdentifier("skipLogin", sender: nil)
+            performSegueWithIdentifier("loginFinished", sender: nil)
         }
         
         self.navigationController?.navigationBar.hidden = true
+        self.loginClient = LGLoginClient()
 
     }
     
@@ -84,6 +94,38 @@ class LGRootViewController: UIViewController {
         }
 
         
+    }
+    
+    
+    func loginViewShowingLoggedInUser(loginView: FBLoginView)
+    {
+        NSLog("logged in")
+    }
+    
+    func loginViewFetchedUserInfo(loginView: FBLoginView?, user: FBGraphUser)
+    {
+        NSLog("graph User %@", user.last_name)
+        var userDictionary : NSDictionary = ["fbid" : user.objectID]
+        var loginClient : LGLoginClient = LGLoginClient()
+        loginClient.loginForUser(userDictionary, isFacebookLogin: true) { (success) -> Void in
+            if success{
+                
+                var facebookClient : LGFacebookClient = LGFacebookClient()
+                facebookClient.downloadProfilePicture()
+                facebookClient.loadFriendsDetails()
+                NSLog("success")
+                
+                self.performSegueWithIdentifier("loginFinished", sender: nil)
+            }
+            else{
+                NSLog("fail")
+            }
+        }
+    }
+    
+    func loginViewShowingLoggedOutUser(loginView: FBLoginView?)
+    {
+        NSLog("logged out")
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
