@@ -49,6 +49,9 @@
 		A97CC12B1A2DDA8800DEA08C /* beep-horn.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A97CC12A1A2DDA8800DEA08C /* beep-horn.mp3 */; };
 		A97CC12D1A2DDAE000DEA08C /* beep-holdtone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A97CC12C1A2DDAE000DEA08C /* beep-holdtone.mp3 */; };
 		A97CC1301A2DDBA600DEA08C /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97CC12F1A2DDBA600DEA08C /* Sound.swift */; };
+		A97CC1321A2DF91600DEA08C /* alarm-sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = A97CC1311A2DF91600DEA08C /* alarm-sound.wav */; };
+		A97CC1351A2DFB1B00DEA08C /* beep-xylo.aif in Resources */ = {isa = PBXBuildFile; fileRef = A97CC1331A2DFB1B00DEA08C /* beep-xylo.aif */; };
+		A97CC1361A2DFB1B00DEA08C /* fail.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A97CC1341A2DFB1B00DEA08C /* fail.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +125,9 @@
 		A97CC12A1A2DDA8800DEA08C /* beep-horn.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "beep-horn.mp3"; sourceTree = "<group>"; };
 		A97CC12C1A2DDAE000DEA08C /* beep-holdtone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "beep-holdtone.mp3"; sourceTree = "<group>"; };
 		A97CC12F1A2DDBA600DEA08C /* Sound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
+		A97CC1311A2DF91600DEA08C /* alarm-sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "alarm-sound.wav"; sourceTree = "<group>"; };
+		A97CC1331A2DFB1B00DEA08C /* beep-xylo.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = "beep-xylo.aif"; sourceTree = "<group>"; };
+		A97CC1341A2DFB1B00DEA08C /* fail.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = fail.mp3; sourceTree = "<group>"; };
 		C62C723800CCDC4C71B44BF5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -348,6 +354,9 @@
 		A97CC12E1A2DDAEB00DEA08C /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				A97CC1331A2DFB1B00DEA08C /* beep-xylo.aif */,
+				A97CC1341A2DFB1B00DEA08C /* fail.mp3 */,
+				A97CC1311A2DF91600DEA08C /* alarm-sound.wav */,
 				A97CC12F1A2DDBA600DEA08C /* Sound.swift */,
 				A97CC12C1A2DDAE000DEA08C /* beep-holdtone.mp3 */,
 				A97CC12A1A2DDA8800DEA08C /* beep-horn.mp3 */,
@@ -437,9 +446,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A97CC1351A2DFB1B00DEA08C /* beep-xylo.aif in Resources */,
 				A97CC12D1A2DDAE000DEA08C /* beep-holdtone.mp3 in Resources */,
+				A97CC1361A2DFB1B00DEA08C /* fail.mp3 in Resources */,
 				0593009F19F53CF4004526DC /* Main.storyboard in Resources */,
 				052AE45B1A0A7EBF008CDE74 /* LGMatchRequestPopoverView.xib in Resources */,
+				A97CC1321A2DF91600DEA08C /* alarm-sound.wav in Resources */,
 				A97CC12B1A2DDA8800DEA08C /* beep-horn.mp3 in Resources */,
 				0593008319F53CBD004526DC /* LaunchScreen.xib in Resources */,
 				0593008019F53CBD004526DC /* Images.xcassets in Resources */,

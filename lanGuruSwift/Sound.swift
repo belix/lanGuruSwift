@@ -41,10 +41,17 @@ class Sound : NSObject {
         }
     }
     
-    func playSoundWithVolume(volume : Float) {
+    func playSoundWithVolume(volume : Float, withLoopCount loopCount : Int?) {
+        if(loopCount != nil) {
+            self.audioPlayer.numberOfLoops = loopCount!
+
+        }
+
         self.audioPlayer.prepareToPlay()
         self.audioPlayer.volume = volume
         self.setSessionPlayer()
+
+        
         self.audioPlayer.play()
     }
     
