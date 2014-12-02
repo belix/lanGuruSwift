@@ -50,6 +50,8 @@ class LGGamingViewController: UIViewController {
     
     var isAsynchronousGame : Bool = false
 
+    var sound : Sound = Sound()
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -112,6 +114,11 @@ class LGGamingViewController: UIViewController {
     {
         time -= 1
         progressBar.percent = time / 30.0;
+        
+        if(time > 0 && time <= 3) {
+            self.sound.readFileIntoAVPlayer("alarm-sound", withType: "wav")
+            self.sound.playSoundWithVolume(7.0, withLoopCount: 2)
+        }
         
         if time <= 0
         {
@@ -189,6 +196,15 @@ class LGGamingViewController: UIViewController {
         self.gameResultString = self.gameResultString + (sender.tag == 1 ? "\(1)" : "\(0)")
 
         testAnimation()
+        
+        if(sender.tag == 1) {
+            self.sound.readFileIntoAVPlayer("beep-holdtone", withType: "mp3")
+            self.sound.playSoundWithVolume(15.0, withLoopCount: 1)
+        }
+        else {
+            self.sound.readFileIntoAVPlayer("fail", withType: "mp3")
+            self.sound.playSoundWithVolume(7.0, withLoopCount: 1)
+        }
         
         updateSearchFieldViews()
     }
