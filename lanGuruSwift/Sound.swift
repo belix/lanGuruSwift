@@ -11,7 +11,13 @@ import AVFoundation
 
 class Sound : NSObject {
     
-    var audioPlayer:AVAudioPlayer = AVAudioPlayer()
+    /// The player.
+    var audioPlayer:AVAudioPlayer!
+    
+    /**
+    Uses AvAudioPlayer to play a sound file.
+    The player instance needs to be an instance variable. Otherwise it will disappear before playing.
+    */
     
     
     func readFileIntoAVPlayer(fileName : NSString, withType fileType : NSString) {
