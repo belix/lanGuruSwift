@@ -46,6 +46,9 @@
 		05FB9A8219F97EA200FBD772 /* LGProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FB9A8119F97EA200FBD772 /* LGProfileViewController.swift */; };
 		05FB9A8419F9920000FBD772 /* LGRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FB9A8319F9920000FBD772 /* LGRegistrationViewController.swift */; };
 		1D85B55CAF1C58C7672A8E72 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C62C723800CCDC4C71B44BF5 /* libPods.a */; };
+		A97CC12B1A2DDA8800DEA08C /* beep-horn.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A97CC12A1A2DDA8800DEA08C /* beep-horn.mp3 */; };
+		A97CC12D1A2DDAE000DEA08C /* beep-holdtone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A97CC12C1A2DDAE000DEA08C /* beep-holdtone.mp3 */; };
+		A97CC1301A2DDBA600DEA08C /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97CC12F1A2DDBA600DEA08C /* Sound.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +119,9 @@
 		05FB9A8319F9920000FBD772 /* LGRegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LGRegistrationViewController.swift; path = UI/LGRegistrationViewController.swift; sourceTree = "<group>"; };
 		4CCF9536C539C4E903C538C5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		78A1DBED9B8503ADC4578BA9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		A97CC12A1A2DDA8800DEA08C /* beep-horn.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "beep-horn.mp3"; sourceTree = "<group>"; };
+		A97CC12C1A2DDAE000DEA08C /* beep-holdtone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "beep-holdtone.mp3"; sourceTree = "<group>"; };
+		A97CC12F1A2DDBA600DEA08C /* Sound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
 		C62C723800CCDC4C71B44BF5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -248,6 +254,7 @@
 		0593007219F53CBD004526DC /* lanGuruSwift */ = {
 			isa = PBXGroup;
 			children = (
+				A97CC12E1A2DDAEB00DEA08C /* Sounds */,
 				055942241A07C1BE0005A09D /* NetworkLayer */,
 				059300C419F57154004526DC /* UserInterface */,
 				059300C219F57130004526DC /* DataLayer */,
@@ -338,6 +345,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A97CC12E1A2DDAEB00DEA08C /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				A97CC12F1A2DDBA600DEA08C /* Sound.swift */,
+				A97CC12C1A2DDAE000DEA08C /* beep-holdtone.mp3 */,
+				A97CC12A1A2DDA8800DEA08C /* beep-horn.mp3 */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -420,8 +437,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A97CC12D1A2DDAE000DEA08C /* beep-holdtone.mp3 in Resources */,
 				0593009F19F53CF4004526DC /* Main.storyboard in Resources */,
 				052AE45B1A0A7EBF008CDE74 /* LGMatchRequestPopoverView.xib in Resources */,
+				A97CC12B1A2DDA8800DEA08C /* beep-horn.mp3 in Resources */,
 				0593008319F53CBD004526DC /* LaunchScreen.xib in Resources */,
 				0593008019F53CBD004526DC /* Images.xcassets in Resources */,
 			);
@@ -479,6 +498,7 @@
 				0542FA0F19F9A6F5004207EA /* LGRootViewController.swift in Sources */,
 				052AE4691A0ACBD6008CDE74 /* LGMatchFinishedPopoverView.swift in Sources */,
 				052AE45F1A0A8487008CDE74 /* LGMatchRequestPopoverDelegate.swift in Sources */,
+				A97CC1301A2DDBA600DEA08C /* Sound.swift in Sources */,
 				055942331A07C1CC0005A09D /* LGMatchmakingClient.m in Sources */,
 				052AE4591A0A7EAC008CDE74 /* LGMatchRequestPopoverView.swift in Sources */,
 				055942161A07C1030005A09D /* Word.swift in Sources */,

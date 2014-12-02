@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AVFoundation
+
 
 extension String  {
     var md5: String! {
@@ -28,7 +30,7 @@ extension String  {
     }
 }
 
-class LGRegistrationViewController: UIViewController{
+class LGRegistrationViewController: UIViewController, AVAudioPlayerDelegate{
 
 
     @IBOutlet weak var usernameTextField: UITextField!
@@ -39,6 +41,7 @@ class LGRegistrationViewController: UIViewController{
     @IBOutlet weak var foreignLangPic: UIImageView!
     @IBOutlet weak var nativeLangPic: UIImageView!
     
+    
     var loginClient : LGLoginClient = LGLoginClient()
     var indexForeign = 1
     var indexNative = 0
@@ -47,7 +50,6 @@ class LGRegistrationViewController: UIViewController{
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
         // TO-DO: wir müssen noch abfangen welche Sprachen initial gesetzt werden, um die indexForeign und indexNative
         // korrekt zu setzen
         
@@ -71,9 +73,20 @@ class LGRegistrationViewController: UIViewController{
         NSLog("logged out")
     }
     
+    func audioPlayerDidFinishPlaying(player: AVAudioPlayer!, successfully flag: Bool) {
+        println("finished playing \(flag)")
+    }
+    
+    
+    func audioPlayerDecodeErrorDidOccur(player: AVAudioPlayer!, error: NSError!) {
+        println("\(error.localizedDescription)")
+    }
+
+    
     @IBAction func registerButtonPressed(sender: UIButton)
     {
         
+
         let userValid = (self.usernameTextField.text != "") ? true : false
         let passwordValid = (self.passwordTextField.text != "") ? true : false
         

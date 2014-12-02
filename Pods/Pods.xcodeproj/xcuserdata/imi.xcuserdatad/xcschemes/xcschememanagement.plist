@@ -34,6 +34,11 @@
 			<key>orderHint</key>
 			<integer>7</integer>
 		</dict>
+		<key>Pods-pop.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -47,7 +52,37 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>3C2E25D0352A75BF6B3C01CA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4232213D9FD19070F8963A20</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>42E8CE979DBCF0AB0B525C8E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>569B2AAE89DD36BBA7B49C15</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>607793126F9A79AA15382335</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6C4B463D59C7F1A6B799DC32</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7F15EBC809E48C299353F93D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -73,6 +108,16 @@
 			<true/>
 		</dict>
 		<key>C8BB79E112D1378CD744A897</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E54108AE84F68C67E9681A2D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FE86111BCEACF7DCB86D0AB4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
