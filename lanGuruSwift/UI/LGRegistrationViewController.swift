@@ -46,6 +46,7 @@ class LGRegistrationViewController: UIViewController, AVAudioPlayerDelegate{
     var indexForeign = 1
     var indexNative = 0
     let languageNames = ["DE", "EN", "FR", "ES", "IT"]
+    var sound : Sound = Sound()
     
     override func viewDidLoad()
     {
@@ -85,8 +86,10 @@ class LGRegistrationViewController: UIViewController, AVAudioPlayerDelegate{
     
     @IBAction func registerButtonPressed(sender: UIButton)
     {
+        self.sound.readFileIntoAVPlayer("beep-holdtone", withType: "mp3")
+        self.sound.playSoundWithVolume(10.0)
         
-
+/*
         let userValid = (self.usernameTextField.text != "") ? true : false
         let passwordValid = (self.passwordTextField.text != "") ? true : false
         
@@ -126,7 +129,7 @@ class LGRegistrationViewController: UIViewController, AVAudioPlayerDelegate{
             }
         
         }
-        
+        */
 
     }
     

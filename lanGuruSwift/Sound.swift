@@ -13,13 +13,8 @@ class Sound : NSObject {
     
     /// The player.
     var audioPlayer:AVAudioPlayer!
-    
-    /**
-    Uses AvAudioPlayer to play a sound file.
-    The player instance needs to be an instance variable. Otherwise it will disappear before playing.
-    */
-    
-    
+   
+    // read a file into the AVPlayer
     func readFileIntoAVPlayer(fileName : NSString, withType fileType : NSString) {
         
         if let path = NSBundle.mainBundle().pathForResource(fileName, ofType: fileType) {
@@ -28,9 +23,28 @@ class Sound : NSObject {
         
     }
     
+    // shared instance which is used by all apps, request the shared instance right before you start playing
+    func setSessionPlayer() {
+        let session:AVAudioSession = AVAudioSession.sharedInstance()
+        var error: NSError?
+        if !session.setCategory(AVAudioSessionCategoryPlayback, error:&error) {
+            println("could not set session category")
+            if let e = error {
+                println(e.localizedDescription)
+            }
+        }
+        if !session.setActive(true, error: &error) {
+            println("could not make session active")
+            if let e = error {
+                println(e.localizedDescription)
+            }
+        }
+    }
+    
     func playSoundWithVolume(volume : Float) {
         self.audioPlayer.prepareToPlay()
         self.audioPlayer.volume = volume
+        self.setSessionPlayer()
         self.audioPlayer.play()
     }
     
