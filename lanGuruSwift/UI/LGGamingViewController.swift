@@ -95,6 +95,18 @@ class LGGamingViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
+    func testAnimation()
+    {
+        
+        var positionAnimation : POPSpringAnimation = POPSpringAnimation(propertyNamed: kPOPLayerPosition)
+        positionAnimation.toValue = NSValue(CGPoint: self.localPlayerScoreLabel.center)
+        self.localPlayerScoreLabel.layer.pop_addAnimation(positionAnimation, forKey: "layerPositionAnimation")
+        
+        var scaleAnimation : POPSpringAnimation = POPSpringAnimation(propertyNamed: kPOPLayerPosition)
+        scaleAnimation.toValue = NSValue(CGSize: CGSizeMake(5,5))
+        scaleAnimation.springBounciness = 10.0
+        self.localPlayerScoreLabel.layer.pop_addAnimation(positionAnimation, forKey: "scaleAnimation")
+    }
     
     func timerDidFire(timer:NSTimer!)
     {
@@ -176,6 +188,8 @@ class LGGamingViewController: UIViewController {
         
         self.gameResultString = self.gameResultString + (sender.tag == 1 ? "\(1)" : "\(0)")
 
+        testAnimation()
+        
         updateSearchFieldViews()
     }
     

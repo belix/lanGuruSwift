@@ -10,6 +10,7 @@
 #import <RestKit/RestKit.h>
 #import <AFNetworking/AFNetworking.h>
 #import <FacebookSDK/FacebookSDK.h>
+#import <POP/POP.h>
 #import "LGCoreDataManager.h"
 #import "LGLoginClient.h"
 #import "LGFacebookClient.h"
